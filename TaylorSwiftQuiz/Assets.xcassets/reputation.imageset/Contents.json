@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "taylor-swift7-2000-48f9bfb372c34e36866773b1ede0b372.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
