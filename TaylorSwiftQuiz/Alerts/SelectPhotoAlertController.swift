@@ -15,9 +15,8 @@ enum TypeSelected {
 
 class SelectPhotoAlertController: NSObject {
 
-    let controller: SecondScreenVC?
-    
-    init(controller: SecondScreenVC?) {
+    let controller: PlayerDetailsViewController?
+    init(controller: PlayerDetailsViewController?) {
         self.controller = controller
     }
     
@@ -42,7 +41,5 @@ class SelectPhotoAlertController: NSObject {
         alertController.addAction(cancel)
         
         controller?.present(alertController, animated: true)
-        
     }
-    
 }

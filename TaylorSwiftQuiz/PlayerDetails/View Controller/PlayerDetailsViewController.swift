@@ -1,5 +1,5 @@
 //
-//  SecondScreenVC.swift
+//  PlayerDetailsViewController.swift
 //  TaylorSwiftQuiz
 //
 //  Created by Guilherme Viana on 23/09/2023.
@@ -9,17 +9,17 @@ import UIKit
 import PhotosUI
 
 
-class SecondScreenVC: UIViewController {
+class PlayerDetailsViewController: UIViewController {
     
-    var secondScreenView: SecondsScreenView?
+    var screen: PlayerDetailsView?
     
     var alertController: SelectPhotoAlertController?
         
     var cameraPicker: UIImagePickerController = UIImagePickerController()
         
     override func loadView() {
-        secondScreenView = SecondsScreenView()
-        view = secondScreenView
+        screen = PlayerDetailsView()
+        view = screen
     }
 
     override func viewDidLoad() {
@@ -27,8 +27,8 @@ class SecondScreenVC: UIViewController {
         navigationController?.navigationBar.isHidden = true
         configCameraPicker()
         alertController = SelectPhotoAlertController(controller: self)
-        secondScreenView?.delegate(delegate: self)
-        secondScreenView?.playerNameTextField.delegate = self
+        screen?.delegate(delegate: self)
+        screen?.playerNameTextField.delegate = self
     }
     
     func configCameraPicker() {
@@ -36,31 +36,28 @@ class SecondScreenVC: UIViewController {
     }
 }
 
-extension SecondScreenVC: UINavigationControllerDelegate, UIImagePickerControllerDelegate, PHPickerViewControllerDelegate {
+extension PlayerDetailsViewController {
     
+}
+
+extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate, PHPickerViewControllerDelegate {
     func presentPHPicker() {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
-        
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         present(picker, animated: true)
     }
     
     func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
-        guard let itemProvider = results.first?.itemProvider else {
-                    return
-                }
+        guard let itemProvider = results.first?.itemProvider else { return }
         if itemProvider.canLoadObject(ofClass: UIImage.self) {
-            itemProvider.loadObject(ofClass: UIImage.self) {
-                [weak self] (image, error) in
+            itemProvider.loadObject(ofClass: UIImage.self) { [weak self] (image, error) in
                 if let selectedImage = image as? UIImage {
                     DispatchQueue.main.async {
-                        self?.secondScreenView?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
+                        self?.screen?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
                     }
-                } else {
-                    return
-                }
+                } else { return }
             }
         }
         picker.dismiss(animated: true)
@@ -69,9 +66,9 @@ extension SecondScreenVC: UINavigationControllerDelegate, UIImagePickerControlle
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
             picker.dismiss(animated: true)
             if let selectedImage = info[.originalImage] as? UIImage {
-                    self.secondScreenView?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
-                    self.secondScreenView?.playerChooseImageButton.imageView?.contentMode = .scaleToFill
-                }
+                self.screen?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
+                self.screen?.playerChooseImageButton.imageView?.contentMode = .scaleToFill
+            }
         }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -80,12 +77,11 @@ extension SecondScreenVC: UINavigationControllerDelegate, UIImagePickerControlle
     
 }
 
-extension SecondScreenVC: SecondScreenViewProtocol, UITextFieldDelegate {
-    
+extension PlayerDetailsViewController: PlayerDetailsViewProtocol, UITextFieldDelegate {
     func tappedChooseImage() {
-        secondScreenView?.playerChooseImageButton.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
+        screen?.playerChooseImageButton.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.secondScreenView?.playerChooseImageButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 0.7)
+            self.screen?.playerChooseImageButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 0.7)
         }
         
         self.alertController?.chooseImage(completion: { option in
@@ -105,27 +101,16 @@ extension SecondScreenVC: SecondScreenViewProtocol, UITextFieldDelegate {
         })
         }
     
-    func tappedChooseFavEraButton() {
-        let chooseEra = ChooseEraModalVC()
-        chooseEra.modalTransitionStyle = .flipHorizontal
-        present(chooseEra, animated: true)
-        
-        secondScreenView?.chooseFavoriteEraButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.4) {
-            self.secondScreenView?.chooseFavoriteEraButton.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
-        }
-    }
-    
     func tappedNextStepButton() {
         let nextScreen = ChooseDifficultyVC()
             self.navigationController?.pushViewController(nextScreen, animated: true)
         
-        secondScreenView?.nextStepButton.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
+        screen?.nextStepButton.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.secondScreenView?.nextStepButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 0.7)
+            self.screen?.nextStepButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 0.7)
         }
         
-        TemporaryDataStorage.shared.playerName = secondScreenView?.playerNameTextField.text ?? ""
+        TemporaryDataStorage.shared.playerName = screen?.playerNameTextField.text ?? ""
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -136,16 +121,16 @@ extension SecondScreenVC: SecondScreenViewProtocol, UITextFieldDelegate {
         let minCharacterLimit = 5
         
         if updatedText.count > maxCharacterLimit {
-            secondScreenView?.animationMaxCharacters()
+            screen?.animationMaxCharacters()
             return false
         }
         
        if textField.text?.count ?? 0 < minCharacterLimit {
-            secondScreenView?.animationMinCharacters()
+            screen?.animationMinCharacters()
             return true
        }
         
-        secondScreenView?.alertMaxCharactersLabel.alpha = 0.0
+        screen?.alertMaxCharactersLabel.alpha = 0.0
         
         return true
     }
@@ -156,22 +141,21 @@ extension SecondScreenVC: SecondScreenViewProtocol, UITextFieldDelegate {
         let minCharacterLimit = 5
         
         if let text = textField.text, text.isEmpty {
-            secondScreenView?.playerNameLabel.text = "Hello, \nplayer!"
-            secondScreenView?.nextStepButton.isEnabled = false
-            secondScreenView?.alertMaxCharactersLabel.alpha = 0.0
+            screen?.playerNameLabel.text = "Hello, \nplayer!"
+            screen?.nextStepButton.isEnabled = false
+            screen?.alertMaxCharactersLabel.alpha = 0.0
         } else if let text = textField.text, text.count < minCharacterLimit {
-            secondScreenView?.playerNameLabel.text = "Hello, \n\(current ?? "player")!"
-            secondScreenView?.animationMinCharacters()
-            secondScreenView?.nextStepButton.isEnabled = false
+            screen?.playerNameLabel.text = "Hello, \n\(current ?? "player")!"
+            screen?.animationMinCharacters()
+            screen?.nextStepButton.isEnabled = false
         } else {
-            secondScreenView?.playerNameLabel.text = "Hello, \n\(current ?? "player")!"
-            secondScreenView?.nextStepButton.isEnabled = true
+            screen?.playerNameLabel.text = "Hello, \n\(current ?? "player")!"
+            screen?.nextStepButton.isEnabled = true
         }
         
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    
         textField.resignFirstResponder()
         return true
     }

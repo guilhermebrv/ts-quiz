@@ -14,7 +14,6 @@ protocol FirstScreenViewProtocol: AnyObject {
 class FirstScreenView: UIView {
     
     private weak var delegate: FirstScreenViewProtocol?
-    
     public func delegate(delegate: FirstScreenViewProtocol?) {
         self.delegate = delegate
     }
@@ -37,9 +36,7 @@ class FirstScreenView: UIView {
     }()
     
     lazy var name2Label: UILabel = {
-        
         let label = UILabel()
-        
         let labelText = " Quiz "
         let attributedstring = NSMutableAttributedString(string: labelText)
         attributedstring.addAttribute(NSAttributedString.Key.kern, value: 30.2, range: NSRange(location: 0, length: labelText.count))
@@ -52,18 +49,14 @@ class FirstScreenView: UIView {
     }()
     
     lazy var imageView: UIImageView = {
-        
         let image = UIImageView()
         image.image = UIImage(named: "initial-image")
         image.translatesAutoresizingMaskIntoConstraints = false
-    
         return image
     }()
     
     lazy var startGameButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start Game", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -72,7 +65,6 @@ class FirstScreenView: UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
         button.addTarget(self, action: #selector(tappedStartGameButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -90,6 +82,19 @@ class FirstScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func animateStartGameButton() {
+        self.startGameButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.startGameButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        }
+    }
+    
+    public func tappedImageAnimation() {
+        UIView.animate(withDuration: 0.3) {
+            self.imageView.frame.origin.x += 300
+        }
+    }
+    
     public func imageInitialAnimation() {
         nameLabel.alpha = 0.0
         name2Label.alpha = 0.0
@@ -105,19 +110,6 @@ class FirstScreenView: UIView {
         }
     }
     
-    public func tappedimageAnimation() {
-        UIView.animate(withDuration: 0.3) {
-            self.imageView.frame.origin.x += 300
-        }
-    }
-    
-    public func animateStartGameButton() {
-        self.startGameButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.startGameButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        }
-    }
-    
     private func addElements() {
         addSubview(bgView)
         addSubview(nameLabel)
@@ -128,7 +120,6 @@ class FirstScreenView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            
             bgView.topAnchor.constraint(equalTo: topAnchor),
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.bottomAnchor.constraint(equalTo: bottomAnchor),
@@ -149,8 +140,7 @@ class FirstScreenView: UIView {
             startGameButton.topAnchor.constraint(equalTo: imageView.bottomAnchor),
             startGameButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             startGameButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            startGameButton.heightAnchor.constraint(equalToConstant: 60),
-            
+            startGameButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     

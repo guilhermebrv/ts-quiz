@@ -5,19 +5,16 @@
 //  Created by Guilherme Viana on 23/09/2023.
 //
 
-protocol SecondScreenViewProtocol: AnyObject {
+protocol PlayerDetailsViewProtocol: AnyObject {
     func tappedChooseImage()
-    func tappedChooseFavEraButton()
     func tappedNextStepButton()
 }
 
 import UIKit
 
-class SecondsScreenView: UIView {
-    
-    private weak var delegate: SecondScreenViewProtocol?
-    
-    public func delegate(delegate: SecondScreenViewProtocol?) {
+class PlayerDetailsView: UIView {
+    private weak var delegate: PlayerDetailsViewProtocol?
+    public func delegate(delegate: PlayerDetailsViewProtocol?) {
         self.delegate = delegate
     }
     
@@ -40,14 +37,11 @@ class SecondsScreenView: UIView {
     }()
     
     lazy var playerNameTextField: UITextField = {
-        
         let textfield = UITextField()
-        
         let attributes: [NSAttributedString.Key: Any] = [
             .font: UIFont(name: "Suisse Int'l Mono", size: 18.0)!,
             .foregroundColor: UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 1.0)
         ]
-        
         textfield.translatesAutoresizingMaskIntoConstraints = false
         textfield.attributedPlaceholder = NSAttributedString(string: "Insert your name", attributes: attributes)
         textfield.textColor = .black
@@ -58,7 +52,6 @@ class SecondsScreenView: UIView {
         textfield.layer.cornerRadius = 30
         textfield.autocorrectionType = .no
         textfield.tintColor = .black
-        
         return textfield
     }()
     
@@ -70,7 +63,6 @@ class SecondsScreenView: UIView {
         label.alpha = 0.0
         label.textAlignment = .center
         label.font = UIFont(name: "Suisse Int'l Mono", size: 10)
-        
         return label
     }()
     
@@ -86,10 +78,8 @@ class SecondsScreenView: UIView {
     
     lazy var playerChooseImageButton: UIButton = {
         let button = UIButton(type: .system)
-        
         let image = UIImage(named: "player-photo")
         let paintedimage = image?.withTintColor(.black).withRenderingMode(.alwaysOriginal)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setBackgroundImage(paintedimage, for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
@@ -105,33 +95,8 @@ class SecondsScreenView: UIView {
         delegate?.tappedChooseImage()
     }
     
-    lazy var chooseFavoriteEraButton: UIButton = {
-        
-        let button = UIButton(type: .system)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Choose favorite era", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Suisse Int'l Mono", size: 22)
-        button.backgroundColor = UIColor(red: 204/255, green: 213/255, blue: 174/255, alpha: 0.8)
-        button.clipsToBounds = true
-        button.layer.cornerRadius = 30
-        button.layer.borderWidth = 2
-        button.layer.borderColor = UIColor.black.cgColor
-        button.addTarget(self, action: #selector(tappedChooseFavEraButton), for: .touchUpInside)
-        
-        return button
-    }()
-    
-    @objc func tappedChooseFavEraButton(_ sender: UIButton) {
-        delegate?.tappedChooseFavEraButton()
-    }
-
-    
     lazy var nextStepButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -142,7 +107,6 @@ class SecondsScreenView: UIView {
         button.isEnabled = false
         button.addTarget(self, action: #selector(tappedNextStepButton), for: .touchUpInside)
         button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
         return button
     }()
     
@@ -167,7 +131,6 @@ class SecondsScreenView: UIView {
         addSubview(alertMaxCharactersLabel)
         addSubview(photoLabel)
         addSubview(playerChooseImageButton)
-        addSubview(chooseFavoriteEraButton)
         addSubview(nextStepButton)
     }
     
@@ -209,23 +172,17 @@ class SecondsScreenView: UIView {
             alertMaxCharactersLabel.topAnchor.constraint(equalTo: playerNameTextField.bottomAnchor, constant: 5),
             
             photoLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
-            photoLabel.topAnchor.constraint(equalTo: alertMaxCharactersLabel.bottomAnchor, constant: 20),
+            photoLabel.topAnchor.constraint(equalTo: alertMaxCharactersLabel.bottomAnchor, constant: 70),
             
             playerChooseImageButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             playerChooseImageButton.topAnchor.constraint(equalTo: photoLabel.bottomAnchor, constant: 15),
             playerChooseImageButton.heightAnchor.constraint(equalToConstant: 180),
             playerChooseImageButton.widthAnchor.constraint(equalToConstant: 180),
             
-            chooseFavoriteEraButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            chooseFavoriteEraButton.heightAnchor.constraint(equalToConstant: 60),
-            chooseFavoriteEraButton.topAnchor.constraint(equalTo: playerChooseImageButton.bottomAnchor, constant: 45),
-            chooseFavoriteEraButton.leadingAnchor.constraint(equalTo: playerNameTextField.leadingAnchor),
-            chooseFavoriteEraButton.trailingAnchor.constraint(equalTo: playerNameTextField.trailingAnchor),
-            
             nextStepButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nextStepButton.topAnchor.constraint(equalTo: chooseFavoriteEraButton.bottomAnchor, constant: 30),
-            nextStepButton.leadingAnchor.constraint(equalTo: chooseFavoriteEraButton.leadingAnchor),
-            nextStepButton.trailingAnchor.constraint(equalTo: chooseFavoriteEraButton.trailingAnchor),
+            nextStepButton.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -60),
+            nextStepButton.leadingAnchor.constraint(equalTo: playerNameTextField.leadingAnchor),
+            nextStepButton.trailingAnchor.constraint(equalTo: playerNameTextField.trailingAnchor),
             nextStepButton.heightAnchor.constraint(equalToConstant: 60),
 
         ])

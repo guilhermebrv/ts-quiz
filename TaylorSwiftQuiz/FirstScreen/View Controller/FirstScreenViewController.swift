@@ -16,7 +16,7 @@ class FirstScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        screen?.tappedimageAnimation()
+        screen?.tappedImageAnimation()
         screen?.imageInitialAnimation()
     }
 
@@ -33,10 +33,10 @@ class FirstScreenViewController: UIViewController {
 extension FirstScreenViewController: FirstScreenViewProtocol {
     func tappedStartGameButton() {
         screen?.animateStartGameButton()
-        screen?.tappedimageAnimation()
+        screen?.tappedImageAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            let secondscreen = SecondScreenVC()
-            self.navigationController?.pushViewController(secondscreen, animated: true)
+            let playerDetails = PlayerDetailsViewController()
+            self.navigationController?.pushViewController(playerDetails, animated: true)
         }
     }
 }

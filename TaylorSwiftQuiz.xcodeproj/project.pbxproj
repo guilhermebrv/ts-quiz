@@ -20,8 +20,8 @@
 		2B93C0E42ABF001A001A2431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B93C0E32ABF001A001A2431 /* Assets.xcassets */; };
 		2B93C0E72ABF001A001A2431 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B93C0E52ABF001A001A2431 /* LaunchScreen.storyboard */; };
 		2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0EF2ABF1828001A2431 /* FirstScreenView.swift */; };
-		2B93C1172ABF468E001A2431 /* SecondsScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1162ABF468E001A2431 /* SecondsScreenView.swift */; };
-		2B93C1192ABF46A6001A2431 /* SecondScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1182ABF46A6001A2431 /* SecondScreenVC.swift */; };
+		2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1162ABF468E001A2431 /* PlayerDetailsView.swift */; };
+		2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1182ABF46A6001A2431 /* PlayerDetailsViewController.swift */; };
 		2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */; };
 		2B93C1202AC164BD001A2431 /* ChooseEraModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */; };
 		2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */; };
@@ -30,7 +30,8 @@
 		2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */; };
 		2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */; };
 		2BAD55B12B30B52A00CC0598 /* Suisse Int'l Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */; };
-		2BAD55B32B30BEAD00CC0598 /* FirstScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55B22B30BEAD00CC0598 /* FirstScreenViewModel.swift */; };
+		2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */; };
+		2BAD55C02B32205800CC0598 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BF2B32205800CC0598 /* Player.swift */; };
 		2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA51172AC4321D00E5C874 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,8 +51,8 @@
 		2B93C0E62ABF001A001A2431 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2B93C0E82ABF001A001A2431 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B93C0EF2ABF1828001A2431 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
-		2B93C1162ABF468E001A2431 /* SecondsScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondsScreenView.swift; sourceTree = "<group>"; };
-		2B93C1182ABF46A6001A2431 /* SecondScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondScreenVC.swift; sourceTree = "<group>"; };
+		2B93C1162ABF468E001A2431 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
+		2B93C1182ABF46A6001A2431 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
 		2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalVC.swift; sourceTree = "<group>"; };
 		2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalView.swift; sourceTree = "<group>"; };
 		2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyView.swift; sourceTree = "<group>"; };
@@ -60,7 +61,8 @@
 		2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
 		2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Suisse Int'l Mono.ttf"; path = "../../../../Downloads/Suisse Int'l Mono.ttf"; sourceTree = "<group>"; };
-		2BAD55B22B30BEAD00CC0598 /* FirstScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewModel.swift; sourceTree = "<group>"; };
+		2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
+		2BAD55BF2B32205800CC0598 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2BFA51172AC4321D00E5C874 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -122,17 +124,18 @@
 		2B93C0D92ABF0017001A2431 /* TaylorSwiftQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				2BAD55BE2B32204800CC0598 /* Model */,
+				2BAD55BD2B321C7000CC0598 /* Alerts */,
 				2B1662612AC344BA009ECF71 /* Questions */,
 				2B16625A2AC2F1C9009ECF71 /* Data */,
 				2B1662552AC2E782009ECF71 /* ChooseEra2 */,
-				2B93C1262AC17232001A2431 /* SelectPhotoAlert */,
 				2B93C1212AC16813001A2431 /* ChooseDifficulty */,
 				2B93C11C2AC1646E001A2431 /* ChooseEra */,
-				2B93C1152ABF4308001A2431 /* SecondScreen */,
+				2B93C1152ABF4308001A2431 /* PlayerDetails */,
 				2B93C0EE2ABF1807001A2431 /* FirstScreen */,
+				2BAD55B72B30BF8800CC0598 /* Supporting */,
 				2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */,
 				2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */,
-				2BAD55B72B30BF8800CC0598 /* Supporting */,
 				2B93C0E82ABF001A001A2431 /* Info.plist */,
 			);
 			path = TaylorSwiftQuiz;
@@ -142,19 +145,19 @@
 			isa = PBXGroup;
 			children = (
 				2BAD55B62B30BEDE00CC0598 /* View Controller */,
-				2BAD55B52B30BED900CC0598 /* View Model */,
 				2BAD55B42B30BED500CC0598 /* View */,
 			);
 			path = FirstScreen;
 			sourceTree = "<group>";
 		};
-		2B93C1152ABF4308001A2431 /* SecondScreen */ = {
+		2B93C1152ABF4308001A2431 /* PlayerDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2B93C1182ABF46A6001A2431 /* SecondScreenVC.swift */,
-				2B93C1162ABF468E001A2431 /* SecondsScreenView.swift */,
+				2BAD55BA2B3219E400CC0598 /* ViewModel */,
+				2BAD55B92B32184F00CC0598 /* View Controller */,
+				2BAD55B82B32184B00CC0598 /* View */,
 			);
-			path = SecondScreen;
+			path = PlayerDetails;
 			sourceTree = "<group>";
 		};
 		2B93C11C2AC1646E001A2431 /* ChooseEra */ = {
@@ -177,28 +180,12 @@
 			path = ChooseDifficulty;
 			sourceTree = "<group>";
 		};
-		2B93C1262AC17232001A2431 /* SelectPhotoAlert */ = {
-			isa = PBXGroup;
-			children = (
-				2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */,
-			);
-			path = SelectPhotoAlert;
-			sourceTree = "<group>";
-		};
 		2BAD55B42B30BED500CC0598 /* View */ = {
 			isa = PBXGroup;
 			children = (
 				2B93C0EF2ABF1828001A2431 /* FirstScreenView.swift */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		2BAD55B52B30BED900CC0598 /* View Model */ = {
-			isa = PBXGroup;
-			children = (
-				2BAD55B22B30BEAD00CC0598 /* FirstScreenViewModel.swift */,
-			);
-			path = "View Model";
 			sourceTree = "<group>";
 		};
 		2BAD55B62B30BEDE00CC0598 /* View Controller */ = {
@@ -218,6 +205,46 @@
 				2B93C0E52ABF001A001A2431 /* LaunchScreen.storyboard */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		2BAD55B82B32184B00CC0598 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B93C1162ABF468E001A2431 /* PlayerDetailsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BAD55B92B32184F00CC0598 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B93C1182ABF46A6001A2431 /* PlayerDetailsViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2BAD55BA2B3219E400CC0598 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BAD55BD2B321C7000CC0598 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */,
+			);
+			path = Alerts;
+			sourceTree = "<group>";
+		};
+		2BAD55BE2B32204800CC0598 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BAD55BF2B32205800CC0598 /* Player.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,22 +319,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BAD55C02B32205800CC0598 /* Player.swift in Sources */,
 				2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */,
 				2B1662602AC32C84009ECF71 /* ChooseEra2TableViewCell.swift in Sources */,
-				2BAD55B32B30BEAD00CC0598 /* FirstScreenViewModel.swift in Sources */,
 				2B3EFF7A2AC1E56E00546686 /* ErasTableViewCell.swift in Sources */,
 				2B1662592AC2E7B7009ECF71 /* ChooseEra2VC.swift in Sources */,
-				2B93C1172ABF468E001A2431 /* SecondsScreenView.swift in Sources */,
+				2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */,
 				2B93C1252AC16859001A2431 /* ChooseDifficultyVC.swift in Sources */,
 				2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */,
 				2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
 				2B93C1202AC164BD001A2431 /* ChooseEraModalView.swift in Sources */,
+				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
 				2B1662572AC2E7A4009ECF71 /* ChooseEra2View.swift in Sources */,
 				2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */,
 				2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */,
 				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
-				2B93C1192ABF46A6001A2431 /* SecondScreenVC.swift in Sources */,
+				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
 				2B3EFF782AC1DEBB00546686 /* TaylorEras.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
