@@ -1,5 +1,5 @@
 //
-//  ChooseEra2VC.swift
+//  ChooseEra2ViewController.swift
 //  TaylorSwiftQuiz
 //
 //  Created by Guilherme Viana on 26/09/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ChooseEra2VC: UIViewController {
+class ChooseEra2ViewController: UIViewController {
     
     let eras: [String] = ["taylor-swift", "fearless", "speak-now", "red", "1989", "reputation", "lover", "folklore", "evermore", "midnights"]
 
@@ -28,7 +28,7 @@ class ChooseEra2VC: UIViewController {
     }
 }
 
-extension ChooseEra2VC: ChooseEra2ViewProtocol, UITableViewDelegate, UITableViewDataSource {
+extension ChooseEra2ViewController: ChooseEra2ViewProtocol, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return eras.count

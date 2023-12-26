@@ -8,11 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2B1662572AC2E7A4009ECF71 /* ChooseEra2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */; };
-		2B1662592AC2E7B7009ECF71 /* ChooseEra2VC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662582AC2E7B7009ECF71 /* ChooseEra2VC.swift */; };
+		2B1662592AC2E7B7009ECF71 /* ChooseEra2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */; };
 		2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */; };
 		2B1662602AC32C84009ECF71 /* ChooseEra2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */; };
 		2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662622AC344D1009ECF71 /* QuestionsView.swift */; };
 		2B1662662AC344FE009ECF71 /* QuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsVC.swift */; };
+		2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */; };
+		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
+		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
+		2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */; };
 		2B3EFF782AC1DEBB00546686 /* TaylorEras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EFF772AC1DEBB00546686 /* TaylorEras.swift */; };
 		2B3EFF7A2AC1E56E00546686 /* ErasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EFF792AC1E56E00546686 /* ErasTableViewCell.swift */; };
 		2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */; };
@@ -25,7 +29,7 @@
 		2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */; };
 		2B93C1202AC164BD001A2431 /* ChooseEraModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */; };
 		2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */; };
-		2B93C1252AC16859001A2431 /* ChooseDifficultyVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1242AC16859001A2431 /* ChooseDifficultyVC.swift */; };
+		2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */; };
 		2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */; };
 		2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */; };
 		2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */; };
@@ -37,11 +41,15 @@
 
 /* Begin PBXFileReference section */
 		2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2View.swift; sourceTree = "<group>"; };
-		2B1662582AC2E7B7009ECF71 /* ChooseEra2VC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2VC.swift; sourceTree = "<group>"; };
+		2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2ViewController.swift; sourceTree = "<group>"; };
 		2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryDataStorage.swift; sourceTree = "<group>"; };
 		2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2TableViewCell.swift; sourceTree = "<group>"; };
 		2B1662622AC344D1009ECF71 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		2B1662652AC344FE009ECF71 /* QuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsVC.swift; sourceTree = "<group>"; };
+		2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
+		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
+		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
 		2B3EFF772AC1DEBB00546686 /* TaylorEras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaylorEras.swift; sourceTree = "<group>"; };
 		2B3EFF792AC1E56E00546686 /* ErasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasTableViewCell.swift; sourceTree = "<group>"; };
 		2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaylorSwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +64,7 @@
 		2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalVC.swift; sourceTree = "<group>"; };
 		2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalView.swift; sourceTree = "<group>"; };
 		2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyView.swift; sourceTree = "<group>"; };
-		2B93C1242AC16859001A2431 /* ChooseDifficultyVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyVC.swift; sourceTree = "<group>"; };
+		2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewController.swift; sourceTree = "<group>"; };
 		2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoAlertController.swift; sourceTree = "<group>"; };
 		2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
@@ -81,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */,
-				2B1662582AC2E7B7009ECF71 /* ChooseEra2VC.swift */,
+				2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */,
 				2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */,
 			);
 			path = ChooseEra2;
@@ -105,6 +113,40 @@
 			path = Questions;
 			sourceTree = "<group>";
 		};
+		2B2F68C72B3B359C00ABCCD4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */,
+				2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */,
+				2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		2B2F68CA2B3B4A7C00ABCCD4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B2F68CB2B3B4A8300ABCCD4 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2B2F68CC2B3B4E8C00ABCCD4 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
 		2B93C0CE2ABF0017001A2431 = {
 			isa = PBXGroup;
 			children = (
@@ -124,13 +166,14 @@
 		2B93C0D92ABF0017001A2431 /* TaylorSwiftQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				2B2F68C72B3B359C00ABCCD4 /* Extensions */,
 				2BAD55BE2B32204800CC0598 /* Model */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
 				2B1662612AC344BA009ECF71 /* Questions */,
 				2B16625A2AC2F1C9009ECF71 /* Data */,
 				2B1662552AC2E782009ECF71 /* ChooseEra2 */,
-				2B93C1212AC16813001A2431 /* ChooseDifficulty */,
 				2B93C11C2AC1646E001A2431 /* ChooseEra */,
+				2B93C1212AC16813001A2431 /* ChooseDifficulty */,
 				2B93C1152ABF4308001A2431 /* PlayerDetails */,
 				2B93C0EE2ABF1807001A2431 /* FirstScreen */,
 				2BAD55B72B30BF8800CC0598 /* Supporting */,
@@ -153,7 +196,7 @@
 		2B93C1152ABF4308001A2431 /* PlayerDetails */ = {
 			isa = PBXGroup;
 			children = (
-				2BAD55BA2B3219E400CC0598 /* ViewModel */,
+				2BAD55BA2B3219E400CC0598 /* View Model */,
 				2BAD55B92B32184F00CC0598 /* View Controller */,
 				2BAD55B82B32184B00CC0598 /* View */,
 			);
@@ -174,8 +217,9 @@
 		2B93C1212AC16813001A2431 /* ChooseDifficulty */ = {
 			isa = PBXGroup;
 			children = (
-				2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */,
-				2B93C1242AC16859001A2431 /* ChooseDifficultyVC.swift */,
+				2B2F68CC2B3B4E8C00ABCCD4 /* View Model */,
+				2B2F68CB2B3B4A8300ABCCD4 /* View Controller */,
+				2B2F68CA2B3B4A7C00ABCCD4 /* View */,
 			);
 			path = ChooseDifficulty;
 			sourceTree = "<group>";
@@ -223,12 +267,12 @@
 			path = "View Controller";
 			sourceTree = "<group>";
 		};
-		2BAD55BA2B3219E400CC0598 /* ViewModel */ = {
+		2BAD55BA2B3219E400CC0598 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
 				2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */,
 			);
-			path = ViewModel;
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		2BAD55BD2B321C7000CC0598 /* Alerts */ = {
@@ -320,12 +364,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BAD55C02B32205800CC0598 /* Player.swift in Sources */,
+				2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */,
+				2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */,
+				2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */,
 				2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */,
 				2B1662602AC32C84009ECF71 /* ChooseEra2TableViewCell.swift in Sources */,
 				2B3EFF7A2AC1E56E00546686 /* ErasTableViewCell.swift in Sources */,
-				2B1662592AC2E7B7009ECF71 /* ChooseEra2VC.swift in Sources */,
+				2B1662592AC2E7B7009ECF71 /* ChooseEra2ViewController.swift in Sources */,
 				2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */,
-				2B93C1252AC16859001A2431 /* ChooseDifficultyVC.swift in Sources */,
+				2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */,
 				2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */,
 				2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
@@ -335,6 +382,7 @@
 				2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */,
 				2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */,
 				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
+				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
 				2B3EFF782AC1DEBB00546686 /* TaylorEras.swift in Sources */,

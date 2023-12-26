@@ -21,7 +21,7 @@ class PlayerDetailsView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
+        view.backgroundColor = .bgGreen
         return view
     }()
     
@@ -47,7 +47,7 @@ class PlayerDetailsView: UIView {
         textfield.textColor = .black
         textfield.font = UIFont(name: "Apercu Mono", size: 20)
         textfield.textAlignment = .center
-        textfield.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        textfield.backgroundColor = .customWhite
         textfield.clipsToBounds = true
         textfield.layer.cornerRadius = 30
         textfield.autocorrectionType = .no
@@ -84,7 +84,7 @@ class PlayerDetailsView: UIView {
         button.setBackgroundImage(paintedimage, for: .normal)
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.borderWidth = 3
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 0.7)
+        button.backgroundColor = .customWhite.withAlphaComponent(0.7)
         button.clipsToBounds = true
         button.layer.cornerRadius = 90
         button.addTarget(self, action: #selector(tappedChooseImage), for: .touchUpInside)
@@ -106,7 +106,7 @@ class PlayerDetailsView: UIView {
         button.layer.borderColor = UIColor.black.cgColor
         button.isEnabled = false
         button.addTarget(self, action: #selector(tappedNextStepButton), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         return button
     }()
     

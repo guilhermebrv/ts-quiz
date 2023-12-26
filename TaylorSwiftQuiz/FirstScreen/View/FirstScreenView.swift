@@ -85,7 +85,7 @@ class FirstScreenView: UIView {
     public func animateStartGameButton() {
         self.startGameButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.startGameButton.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+            self.startGameButton.backgroundColor = .bgGreen
         }
     }
     

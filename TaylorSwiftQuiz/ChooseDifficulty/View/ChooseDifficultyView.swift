@@ -18,7 +18,6 @@ protocol ChooseDifficultyViewProtocol: AnyObject {
 class ChooseDifficultyView: UIView {
     
     private weak var delegate: ChooseDifficultyViewProtocol?
-    
     public func delegate(delegate: ChooseDifficultyViewProtocol?) {
         self.delegate = delegate
     }
@@ -26,23 +25,20 @@ class ChooseDifficultyView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
+        view.backgroundColor = .bgGreen
         return view
     }()
     
     lazy var backButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Back", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Suisse Int'l Mono", size: 18)
         button.layer.borderWidth = 2
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.borderColor = UIColor.black.cgColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -62,16 +58,13 @@ class ChooseDifficultyView: UIView {
     }()
     
     lazy var easyButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedEasyButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -89,16 +82,13 @@ class ChooseDifficultyView: UIView {
     }()
     
     lazy var intermediateButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedIntermediateButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -116,16 +106,13 @@ class ChooseDifficultyView: UIView {
     }()
     
     lazy var hardButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedHardButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -143,9 +130,7 @@ class ChooseDifficultyView: UIView {
     }()
     
     lazy var nextButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -155,8 +140,7 @@ class ChooseDifficultyView: UIView {
         button.layer.borderColor = UIColor.black.cgColor
         button.isEnabled = false
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
+        button.backgroundColor = .customWhite
         return button
     }()
     
@@ -235,11 +219,7 @@ class ChooseDifficultyView: UIView {
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             nextButton.leadingAnchor.constraint(equalTo: chooseDifficultyLabel.leadingAnchor),
             nextButton.trailingAnchor.constraint(equalTo: chooseDifficultyLabel.trailingAnchor),
-            nextButton.heightAnchor.constraint(equalToConstant: 60),
-
-
-
+            nextButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
-    
 }
