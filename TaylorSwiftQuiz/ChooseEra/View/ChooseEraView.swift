@@ -56,7 +56,8 @@ class ChooseEraView: UIView {
     lazy var erasTableView: UITableView = {
         let tableview = UITableView()
         tableview.translatesAutoresizingMaskIntoConstraints = false
-        tableview.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
+        tableview.backgroundColor = .bgGreen
+        tableview.isUserInteractionEnabled = true
         tableview.showsVerticalScrollIndicator = false
         tableview.separatorStyle = .none
         tableview.register(ChooseEraTableViewCell.self, forCellReuseIdentifier: ChooseEraTableViewCell.identifier)

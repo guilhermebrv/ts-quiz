@@ -10,7 +10,7 @@ import UIKit
 class ChooseEraTableViewCellView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
-        view.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
+        view.backgroundColor = .bgGreen
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()

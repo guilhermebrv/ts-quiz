@@ -14,28 +14,22 @@ class ChooseEraTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        configScreen()
+        addSubview(screen)
+        screen.pin(to: self)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func configScreen() {
-        
-        
-        
-        
-    }
-    
+}
+
+extension ChooseEraTableViewCell {
     public func setupCell(era: String) {
-        screen.chooseEraButton.imageView?.image = UIImage(named: era)
+        screen.chooseEraButton.setBackgroundImage(UIImage(named: era), for: .normal)
     }
-    
     public func selectEraEffect() {
         screen.chooseEraButton.alpha = 1.0
     }
-    
     public func deselectEraEffect() {
         screen.chooseEraButton.alpha = 0.5
     }
