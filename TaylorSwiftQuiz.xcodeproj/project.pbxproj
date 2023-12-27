@@ -7,18 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B1662572AC2E7A4009ECF71 /* ChooseEra2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */; };
-		2B1662592AC2E7B7009ECF71 /* ChooseEra2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */; };
+		2B1662572AC2E7A4009ECF71 /* ChooseEraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662562AC2E7A4009ECF71 /* ChooseEraView.swift */; };
+		2B1662592AC2E7B7009ECF71 /* ChooseEraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662582AC2E7B7009ECF71 /* ChooseEraViewController.swift */; };
 		2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */; };
-		2B1662602AC32C84009ECF71 /* ChooseEra2TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */; };
+		2B1662602AC32C84009ECF71 /* ChooseEraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625F2AC32C84009ECF71 /* ChooseEraTableViewCell.swift */; };
 		2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662622AC344D1009ECF71 /* QuestionsView.swift */; };
-		2B1662662AC344FE009ECF71 /* QuestionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsVC.swift */; };
+		2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */; };
+		2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */; };
+		2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */; };
 		2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */; };
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
 		2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */; };
-		2B3EFF782AC1DEBB00546686 /* TaylorEras.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EFF772AC1DEBB00546686 /* TaylorEras.swift */; };
-		2B3EFF7A2AC1E56E00546686 /* ErasTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B3EFF792AC1E56E00546686 /* ErasTableViewCell.swift */; };
 		2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */; };
 		2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */; };
 		2B93C0E42ABF001A001A2431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B93C0E32ABF001A001A2431 /* Assets.xcassets */; };
@@ -26,8 +26,6 @@
 		2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0EF2ABF1828001A2431 /* FirstScreenView.swift */; };
 		2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1162ABF468E001A2431 /* PlayerDetailsView.swift */; };
 		2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1182ABF46A6001A2431 /* PlayerDetailsViewController.swift */; };
-		2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */; };
-		2B93C1202AC164BD001A2431 /* ChooseEraModalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */; };
 		2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */; };
 		2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */; };
 		2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */; };
@@ -40,18 +38,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2View.swift; sourceTree = "<group>"; };
-		2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2ViewController.swift; sourceTree = "<group>"; };
+		2B1662562AC2E7A4009ECF71 /* ChooseEraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraView.swift; sourceTree = "<group>"; };
+		2B1662582AC2E7B7009ECF71 /* ChooseEraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraViewController.swift; sourceTree = "<group>"; };
 		2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryDataStorage.swift; sourceTree = "<group>"; };
-		2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEra2TableViewCell.swift; sourceTree = "<group>"; };
+		2B16625F2AC32C84009ECF71 /* ChooseEraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraTableViewCell.swift; sourceTree = "<group>"; };
 		2B1662622AC344D1009ECF71 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
-		2B1662652AC344FE009ECF71 /* QuestionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsVC.swift; sourceTree = "<group>"; };
+		2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
+		2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraViewModel.swift; sourceTree = "<group>"; };
+		2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraTableViewCellView.swift; sourceTree = "<group>"; };
 		2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
-		2B3EFF772AC1DEBB00546686 /* TaylorEras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaylorEras.swift; sourceTree = "<group>"; };
-		2B3EFF792AC1E56E00546686 /* ErasTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErasTableViewCell.swift; sourceTree = "<group>"; };
 		2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaylorSwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,8 +59,6 @@
 		2B93C0EF2ABF1828001A2431 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
 		2B93C1162ABF468E001A2431 /* PlayerDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsView.swift; sourceTree = "<group>"; };
 		2B93C1182ABF46A6001A2431 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
-		2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalVC.swift; sourceTree = "<group>"; };
-		2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraModalView.swift; sourceTree = "<group>"; };
 		2B93C1222AC16847001A2431 /* ChooseDifficultyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyView.swift; sourceTree = "<group>"; };
 		2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewController.swift; sourceTree = "<group>"; };
 		2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoAlertController.swift; sourceTree = "<group>"; };
@@ -85,14 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B1662552AC2E782009ECF71 /* ChooseEra2 */ = {
+		2B1662552AC2E782009ECF71 /* ChooseEra */ = {
 			isa = PBXGroup;
 			children = (
-				2B1662562AC2E7A4009ECF71 /* ChooseEra2View.swift */,
-				2B1662582AC2E7B7009ECF71 /* ChooseEra2ViewController.swift */,
-				2B16625F2AC32C84009ECF71 /* ChooseEra2TableViewCell.swift */,
+				2B26BB4C2B3C567D00C95278 /* Table View Cells */,
+				2B26BB4D2B3C569100C95278 /* View Model */,
+				2B26BB4B2B3C567700C95278 /* View Controller */,
+				2B26BB4A2B3C567200C95278 /* View */,
 			);
-			path = ChooseEra2;
+			path = ChooseEra;
 			sourceTree = "<group>";
 		};
 		2B16625A2AC2F1C9009ECF71 /* Data */ = {
@@ -107,10 +104,43 @@
 			isa = PBXGroup;
 			children = (
 				2B1662622AC344D1009ECF71 /* QuestionsView.swift */,
-				2B1662652AC344FE009ECF71 /* QuestionsVC.swift */,
+				2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */,
 				2BFA51172AC4321D00E5C874 /* Questions.swift */,
 			);
 			path = Questions;
+			sourceTree = "<group>";
+		};
+		2B26BB4A2B3C567200C95278 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B1662562AC2E7A4009ECF71 /* ChooseEraView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B26BB4B2B3C567700C95278 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B1662582AC2E7B7009ECF71 /* ChooseEraViewController.swift */,
+			);
+			path = "View Controller";
+			sourceTree = "<group>";
+		};
+		2B26BB4C2B3C567D00C95278 /* Table View Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2B16625F2AC32C84009ECF71 /* ChooseEraTableViewCell.swift */,
+				2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */,
+			);
+			path = "Table View Cells";
+			sourceTree = "<group>";
+		};
+		2B26BB4D2B3C569100C95278 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */,
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 		2B2F68C72B3B359C00ABCCD4 /* Extensions */ = {
@@ -169,10 +199,9 @@
 				2B2F68C72B3B359C00ABCCD4 /* Extensions */,
 				2BAD55BE2B32204800CC0598 /* Model */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
-				2B1662612AC344BA009ECF71 /* Questions */,
 				2B16625A2AC2F1C9009ECF71 /* Data */,
-				2B1662552AC2E782009ECF71 /* ChooseEra2 */,
-				2B93C11C2AC1646E001A2431 /* ChooseEra */,
+				2B1662612AC344BA009ECF71 /* Questions */,
+				2B1662552AC2E782009ECF71 /* ChooseEra */,
 				2B93C1212AC16813001A2431 /* ChooseDifficulty */,
 				2B93C1152ABF4308001A2431 /* PlayerDetails */,
 				2B93C0EE2ABF1807001A2431 /* FirstScreen */,
@@ -201,17 +230,6 @@
 				2BAD55B82B32184B00CC0598 /* View */,
 			);
 			path = PlayerDetails;
-			sourceTree = "<group>";
-		};
-		2B93C11C2AC1646E001A2431 /* ChooseEra */ = {
-			isa = PBXGroup;
-			children = (
-				2B93C11D2AC1648A001A2431 /* ChooseEraModalVC.swift */,
-				2B3EFF792AC1E56E00546686 /* ErasTableViewCell.swift */,
-				2B93C11F2AC164BD001A2431 /* ChooseEraModalView.swift */,
-				2B3EFF772AC1DEBB00546686 /* TaylorEras.swift */,
-			);
-			path = ChooseEra;
 			sourceTree = "<group>";
 		};
 		2B93C1212AC16813001A2431 /* ChooseDifficulty */ = {
@@ -368,26 +386,24 @@
 				2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */,
 				2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */,
 				2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */,
-				2B1662602AC32C84009ECF71 /* ChooseEra2TableViewCell.swift in Sources */,
-				2B3EFF7A2AC1E56E00546686 /* ErasTableViewCell.swift in Sources */,
-				2B1662592AC2E7B7009ECF71 /* ChooseEra2ViewController.swift in Sources */,
+				2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */,
+				2B1662602AC32C84009ECF71 /* ChooseEraTableViewCell.swift in Sources */,
+				2B1662592AC2E7B7009ECF71 /* ChooseEraViewController.swift in Sources */,
 				2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */,
 				2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */,
 				2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */,
-				2B93C11E2AC1648A001A2431 /* ChooseEraModalVC.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
-				2B93C1202AC164BD001A2431 /* ChooseEraModalView.swift in Sources */,
+				2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */,
 				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
-				2B1662572AC2E7A4009ECF71 /* ChooseEra2View.swift in Sources */,
+				2B1662572AC2E7A4009ECF71 /* ChooseEraView.swift in Sources */,
 				2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */,
 				2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */,
 				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
 				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
-				2B3EFF782AC1DEBB00546686 /* TaylorEras.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
-				2B1662662AC344FE009ECF71 /* QuestionsVC.swift in Sources */,
+				2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */,
 				2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

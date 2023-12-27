@@ -1,5 +1,5 @@
 //
-//  ChooseEra2View.swift
+//  ChooseEraView.swift
 //  TaylorSwiftQuiz
 //
 //  Created by Guilherme Viana on 26/09/2023.
@@ -7,16 +7,14 @@
 
 import UIKit
 
-protocol ChooseEra2ViewProtocol: AnyObject {
+protocol ChooseEraViewProtocol: AnyObject {
     func tappedBackButton()
     func tappedStartGameButton()
 }
 
-class ChooseEra2View: UIView {
-
-    private weak var delegate: ChooseEra2ViewProtocol?
-    
-    public func delegate(delegate: ChooseEra2ViewProtocol?){
+class ChooseEraView: UIView {
+    private weak var delegate: ChooseEraViewProtocol?
+    public func delegate(delegate: ChooseEraViewProtocol?){
         self.delegate = delegate
     }
                 
@@ -28,9 +26,7 @@ class ChooseEra2View: UIView {
     }()
     
     lazy var backButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Back", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -39,7 +35,6 @@ class ChooseEra2View: UIView {
         button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
         button.layer.borderColor = UIColor.black.cgColor
         button.addTarget(self, action: #selector(tappedBackButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -64,13 +59,12 @@ class ChooseEra2View: UIView {
         tableview.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
         tableview.showsVerticalScrollIndicator = false
         tableview.separatorStyle = .none
+        tableview.register(ChooseEraTableViewCell.self, forCellReuseIdentifier: ChooseEraTableViewCell.identifier)
         return tableview
     }()
     
     lazy var nextButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -81,7 +75,6 @@ class ChooseEra2View: UIView {
         button.isEnabled = false
         button.addTarget(self, action: #selector(tappedStartGameButton), for: .touchUpInside)
         button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
         return button
     }()
     
@@ -136,7 +129,7 @@ class ChooseEra2View: UIView {
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             nextButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
             nextButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40),
-            nextButton.heightAnchor.constraint(equalToConstant: 60),
+            nextButton.heightAnchor.constraint(equalToConstant: 60)
         ])
     }
     

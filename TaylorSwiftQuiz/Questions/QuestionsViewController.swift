@@ -1,5 +1,5 @@
 //
-//  QuestionsVC.swift
+//  QuestionsViewController.swift
 //  TaylorSwiftQuiz
 //
 //  Created by Guilherme Viana on 26/09/2023.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class QuestionsVC: UIViewController {
+class QuestionsViewController: UIViewController {
     
     var easyquestions = Questions(questions: ["do you know this is the first easy question?", 
                                               "do you know this is the second easy question",
@@ -87,7 +87,7 @@ class QuestionsVC: UIViewController {
     }
 }
 
-extension QuestionsVC: QuestionsViewProtocol {
+extension QuestionsViewController: QuestionsViewProtocol {
     
     func tappedFirstOptionButton() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {

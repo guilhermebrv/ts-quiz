@@ -66,7 +66,7 @@ extension ChooseDifficultyViewController: ChooseDifficultyViewProtocol {
         if let button = screen?.nextButton {
             tappedButtonEffect(button: button)
         }
-        let nextScreen = ChooseEra2ViewController()
+        let nextScreen = ChooseEraViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
     }
     
