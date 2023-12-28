@@ -46,7 +46,7 @@ class QuestionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "\(TemporaryDataStorage.shared.playerName)"
-        label.textColor = .black
+        label.textColor = .customWhite
         label.font = UIFont(name: "Suisse Int'l Mono", size: 15)
         return label
     }()
@@ -55,7 +55,7 @@ class QuestionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "\(TemporaryDataStorage.shared.currentPoints)/10"
-        label.textColor = .black
+        label.textColor = .customWhite
         label.textAlignment = .right
         label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
         return label
@@ -65,11 +65,9 @@ class QuestionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Question \(TemporaryDataStorage.shared.currentQuestion)"
-        label.textColor = .black
+        label.textColor = .customWhite
         label.textAlignment = .center
         label.font = UIFont(name: "Suisse Int'l Mono", size: 30)
-        label.layer.borderColor = UIColor.black.cgColor
-        label.layer.borderWidth = 2
         return label
     }()
     
@@ -77,7 +75,7 @@ class QuestionsView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Which are the colors of the sun?"
-        label.textColor = .black
+        label.textColor = .customWhite
         label.textAlignment = .center
         label.font = UIFont(name: "Apercu Mono", size: 23)
         label.numberOfLines = 0
@@ -102,7 +100,7 @@ class QuestionsView: UIView {
     lazy var firstOptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .customWhite
         label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
         label.numberOfLines = 0
         return label
@@ -126,7 +124,7 @@ class QuestionsView: UIView {
     lazy var secondOptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .customWhite
         label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
         label.numberOfLines = 0
         return label
@@ -150,7 +148,7 @@ class QuestionsView: UIView {
     lazy var thirdOptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.textColor = .black
+        label.textColor = .customWhite
         label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
         label.numberOfLines = 0
         return label

@@ -16,6 +16,8 @@
 		2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */; };
 		2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */; };
 		2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */; };
+		2B2BCF402B3DEB63003D73AA /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */; };
+		2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */; };
 		2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */; };
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
@@ -34,7 +36,6 @@
 		2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */; };
 		2BAD55B12B30B52A00CC0598 /* Suisse Int'l Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */; };
 		2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */; };
-		2BAD55C02B32205800CC0598 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BF2B32205800CC0598 /* Player.swift */; };
 		2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA51172AC4321D00E5C874 /* Questions.swift */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +49,8 @@
 		2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraViewModel.swift; sourceTree = "<group>"; };
 		2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraTableViewCellView.swift; sourceTree = "<group>"; };
 		2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
+		2B2BCF3F2B3DEB63003D73AA /* UserData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserData.xcdatamodel; sourceTree = "<group>"; };
+		2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataModel.swift; sourceTree = "<group>"; };
 		2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
@@ -68,7 +71,6 @@
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
 		2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Suisse Int'l Mono.ttf"; path = "../../../../Downloads/Suisse Int'l Mono.ttf"; sourceTree = "<group>"; };
 		2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
-		2BAD55BF2B32205800CC0598 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		2BFA51172AC4321D00E5C874 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,6 +99,8 @@
 		2B16625A2AC2F1C9009ECF71 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */,
+				2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */,
 				2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */,
 			);
 			path = Data;
@@ -331,7 +335,6 @@
 			isa = PBXGroup;
 			children = (
 				2BFA51172AC4321D00E5C874 /* Questions.swift */,
-				2BAD55BF2B32205800CC0598 /* Player.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -408,7 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2BAD55C02B32205800CC0598 /* Player.swift in Sources */,
+				2B2BCF402B3DEB63003D73AA /* UserData.xcdatamodeld in Sources */,
 				2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */,
 				2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */,
 				2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */,
@@ -431,6 +434,7 @@
 				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
 				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
+				2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */,
 				2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */,
 				2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */,
 			);
@@ -651,6 +655,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2B2BCF3F2B3DEB63003D73AA /* UserData.xcdatamodel */,
+			);
+			currentVersion = 2B2BCF3F2B3DEB63003D73AA /* UserData.xcdatamodel */;
+			path = UserData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2B93C0CF2ABF0017001A2431 /* Project object */;
 }

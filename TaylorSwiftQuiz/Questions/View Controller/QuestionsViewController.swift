@@ -20,6 +20,7 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
+        setEraColor()
         loadQuestion()
     }
 }
@@ -27,6 +28,20 @@ class QuestionsViewController: UIViewController {
 extension QuestionsViewController {
     private func signProtocols() {
         screen?.delegate(delegate: self)
+    }
+    private func setEraColor() {
+        let eraColorMap: [String: UIColor] = [
+                "taylor-swift": .taylorswift,
+                "fearless": .fearless,
+                "speak-now": .speaknow,
+                "red": .tsred,
+                "1989": .ts1989,
+                "reputation": .reputation,
+                "lover": .lover,
+                "folklore": .folklore,
+                "evermore": .evermore,
+                "midnights": .midnights]
+        screen?.bgView.backgroundColor = eraColorMap[TemporaryDataStorage.shared.eraOption]
     }
     private func loadQuestion() {
         screen?.questionNumberLabel.text = "Question \(TemporaryDataStorage.shared.currentQuestion)"
@@ -98,7 +113,6 @@ extension QuestionsViewController: QuestionsViewProtocol {
         }
     }
     func tappedNextButton() {
-        print(TemporaryDataStorage.shared.currentQuestion)
         screen?.nextButton.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             self.screen?.firstOptionButton.backgroundColor = .customWhite

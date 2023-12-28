@@ -8,5 +8,11 @@
 import UIKit
 
 class PlayerDetailsViewModel {
+    
+    private var model: UserDataModel = UserDataModel()
+    private var player: [Player] = [Player]()
 
+    public func savePlayerName(name: String) {
+        model.saveNameData(saving: name)
+    }
 }

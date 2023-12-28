@@ -11,9 +11,10 @@ import PhotosUI
 
 class PlayerDetailsViewController: UIViewController {
     
-    var screen: PlayerDetailsView?
-    var alertController: SelectPhotoAlertController?
-    var cameraPicker: UIImagePickerController = UIImagePickerController()
+    private var viewModel: PlayerDetailsViewModel = PlayerDetailsViewModel()
+    private var screen: PlayerDetailsView?
+    private var alertController: SelectPhotoAlertController?
+    private var cameraPicker: UIImagePickerController = UIImagePickerController()
         
     override func loadView() {
         screen = PlayerDetailsView()
@@ -112,7 +113,7 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         }
         let nextScreen = ChooseDifficultyViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
-        TemporaryDataStorage.shared.playerName = screen?.playerNameTextField.text ?? ""
+        viewModel.savePlayerName(name: screen?.playerNameTextField.text)
     }
 }
 
