@@ -15,6 +15,7 @@
 		2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */; };
 		2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */; };
 		2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */; };
+		2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */; };
 		2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */; };
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
@@ -46,6 +47,7 @@
 		2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
 		2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraViewModel.swift; sourceTree = "<group>"; };
 		2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraTableViewCellView.swift; sourceTree = "<group>"; };
+		2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewModel.swift; sourceTree = "<group>"; };
 		2B2F68C82B3B35AA00ABCCD4 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
@@ -103,9 +105,9 @@
 		2B1662612AC344BA009ECF71 /* Questions */ = {
 			isa = PBXGroup;
 			children = (
-				2B1662622AC344D1009ECF71 /* QuestionsView.swift */,
-				2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */,
-				2BFA51172AC4321D00E5C874 /* Questions.swift */,
+				2B26BB542B3CBC4C00C95278 /* View Controller */,
+				2B26BB532B3CBC4700C95278 /* View Model */,
+				2B26BB522B3CBC4200C95278 /* View */,
 			);
 			path = Questions;
 			sourceTree = "<group>";
@@ -141,6 +143,30 @@
 				2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */,
 			);
 			path = "View Model";
+			sourceTree = "<group>";
+		};
+		2B26BB522B3CBC4200C95278 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B1662622AC344D1009ECF71 /* QuestionsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B26BB532B3CBC4700C95278 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		2B26BB542B3CBC4C00C95278 /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */,
+			);
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		2B2F68C72B3B359C00ABCCD4 /* Extensions */ = {
@@ -304,6 +330,7 @@
 		2BAD55BE2B32204800CC0598 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2BFA51172AC4321D00E5C874 /* Questions.swift */,
 				2BAD55BF2B32205800CC0598 /* Player.swift */,
 			);
 			path = Model;
@@ -402,6 +429,7 @@
 				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
+				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
 				2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */,
 				2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */,

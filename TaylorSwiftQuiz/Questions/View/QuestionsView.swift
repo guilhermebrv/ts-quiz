@@ -13,12 +13,11 @@ protocol QuestionsViewProtocol: AnyObject {
     func tappedFirstOptionButton()
     func tappedSecondOptionButton()
     func tappedThirdOptionButton()
+    func tappedStartNewGameButton()
 }
 
 class QuestionsView: UIView {
-    
     private weak var delegate: QuestionsViewProtocol?
-    
     public func delegate(delegate: QuestionsViewProtocol?) {
         self.delegate = delegate
     }
@@ -26,7 +25,7 @@ class QuestionsView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
+        view.backgroundColor = .bgGreen
         return view
     }()
     
@@ -39,7 +38,7 @@ class QuestionsView: UIView {
         image.layer.borderColor = UIColor.black.cgColor
         image.layer.borderWidth = 2
         image.image = UIImage(named: "player-photo")
-        image.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        image.backgroundColor = .customWhite
         return image
     }()
     
@@ -86,16 +85,13 @@ class QuestionsView: UIView {
     }()
     
     lazy var firstOptionButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedFirstOptionButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -113,16 +109,13 @@ class QuestionsView: UIView {
     }()
     
     lazy var secondOptionButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedSecondOptionButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -140,16 +133,13 @@ class QuestionsView: UIView {
     }()
     
     lazy var thirdOptionButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
+        button.backgroundColor = .customWhite
         button.layer.cornerRadius = 30 / 2
         button.addTarget(self, action: #selector(tappedThirdOptionButton), for: .touchUpInside)
-        
         return button
     }()
     
@@ -167,9 +157,7 @@ class QuestionsView: UIView {
     }()
     
     lazy var confirmButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Confirm answer", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -178,8 +166,7 @@ class QuestionsView: UIView {
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
         button.addTarget(self, action: #selector(tappedConfirmButton), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
+        button.backgroundColor = .customWhite
         return button
     }()
     
@@ -188,9 +175,7 @@ class QuestionsView: UIView {
     }
     
     lazy var nextButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Next question", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -200,8 +185,7 @@ class QuestionsView: UIView {
         button.layer.borderColor = UIColor.black.cgColor
         //button.isEnabled = false
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
+        button.backgroundColor = .customWhite
         return button
     }()
     
@@ -210,9 +194,7 @@ class QuestionsView: UIView {
     }
     
     lazy var startNewGameButton: UIButton = {
-        
         let button = UIButton(type: .system)
-        
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Start new game", for: .normal)
         button.setTitleColor(.black, for: .normal)
@@ -220,12 +202,14 @@ class QuestionsView: UIView {
         button.setTitleColor(.black.withAlphaComponent(0.2), for: .disabled)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        //button.isEnabled = false
-        //button.addTarget(self, action: #selector(tappedNextStepButton), for: .touchUpInside)
-        button.backgroundColor = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
-        
+        button.addTarget(self, action: #selector(tappedStartNewGameButton), for: .touchUpInside)
+        button.backgroundColor = .customWhite
         return button
     }()
+    
+    @objc func tappedStartNewGameButton(_ sender: UIButton) {
+        delegate?.tappedStartNewGameButton()
+    }
 
     override init(frame: CGRect) {
         super.init(frame: frame)
