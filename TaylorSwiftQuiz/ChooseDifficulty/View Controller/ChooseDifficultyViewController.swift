@@ -10,6 +10,7 @@ import UIKit
 class ChooseDifficultyViewController: UIViewController {
 
     private var screen: ChooseDifficultyView?
+    private let viewModel: ChooseDifficultyViewModel = ChooseDifficultyViewModel()
     
     override func loadView() {
         screen = ChooseDifficultyView()
@@ -19,7 +20,7 @@ class ChooseDifficultyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
-        loadPriorDifficulty()
+        //loadPriorDifficulty()
     }
 }
 
@@ -27,7 +28,7 @@ extension ChooseDifficultyViewController {
     private func signProtocols() {
         screen?.delegate(delegate: self)
     }
-    
+    /*
     private func loadPriorDifficulty() {
         if TemporaryDataStorage.shared.difficultyLevel == "easy" {
             tappedEasyButton()
@@ -37,6 +38,7 @@ extension ChooseDifficultyViewController {
             tappedHardButton()
         }
     }
+    */
 }
 
 extension ChooseDifficultyViewController: ChooseDifficultyViewProtocol {
@@ -47,7 +49,7 @@ extension ChooseDifficultyViewController: ChooseDifficultyViewProtocol {
             self.screen?.hardButton.backgroundColor = difficulty == "hard" ? .black : .customWhite
             self.screen?.nextButton.isEnabled = true
         }
-        TemporaryDataStorage.shared.difficultyLevel = difficulty
+        viewModel.saveDifficulty(difficulty)
     }
     
     func tappedEasyButton() {

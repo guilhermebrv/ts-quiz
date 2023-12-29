@@ -113,7 +113,8 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         }
         let nextScreen = ChooseDifficultyViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
-        viewModel.savePlayerName(name: screen?.playerNameTextField.text)
+        viewModel.createNewPlayer()
+        viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
     }
 }
 

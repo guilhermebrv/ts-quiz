@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+class ChooseDifficultyViewModel {
+    
+    private var model: UserDataModel = UserDataModel()
+    
+    public func saveDifficulty(_ difficulty: String) {
+        model.saveDifficulty(difficulty)
+    }
+}
