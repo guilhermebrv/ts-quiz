@@ -33,7 +33,7 @@ class UserDataModel {
         do {
             try context.save()
         } catch {
-            print("error saving player name")
+            print("error saving difficulty")
         }
     }
     
