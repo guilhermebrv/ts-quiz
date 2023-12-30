@@ -14,9 +14,8 @@ class ChooseEraViewModel {
         UserDataModel.shared.saveEra(era)
     }
     
-    public func getEraData() -> [Player] {
-        let players = UserDataModel.shared.readData()
-        return players
+    public func getEraData() -> String {
+        return UserDataModel.shared.newPlayer?.era
     }
     
     public var numberOfRowsInSection: Int {

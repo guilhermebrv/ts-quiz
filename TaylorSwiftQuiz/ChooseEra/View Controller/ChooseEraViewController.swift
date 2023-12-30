@@ -55,7 +55,7 @@ extension ChooseEraViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChooseEraTableViewCell.identifier, for: indexPath) as? ChooseEraTableViewCell
         cell?.setupCell(era: viewModel.eras[indexPath.row])
         let era = viewModel.eras[indexPath.row]
-        if era == viewModel.getEraData()[indexPath.row].era {
+        if era == viewModel.getEraData() {
             cell?.selectEraEffect()
         } else {
             cell?.deselectEraEffect()
