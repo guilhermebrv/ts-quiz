@@ -33,4 +33,8 @@ extension ChooseEraTableViewCell {
     public func deselectEraEffect() {
         screen.chooseEraButton.alpha = 0.5
     }
+    public func isSelected() -> Bool {
+        let result = screen.chooseEraButton.alpha == 1.0 ? true : false
+        return result
+    }
 }
