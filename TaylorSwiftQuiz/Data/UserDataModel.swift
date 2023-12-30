@@ -9,8 +9,13 @@ import UIKit
 import CoreData
 
 class UserDataModel {
+    static let shared = UserDataModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var newPlayer: Player?
+    
+    private init() {
+        
+    }
     
     public func saveNewPlayer() {
         newPlayer = Player(context: context)
@@ -37,6 +42,15 @@ class UserDataModel {
         }
     }
     
+    public func saveEra(_ era: String) {
+        newPlayer?.era = era
+        do {
+            try context.save()
+        } catch {
+            print("error saving favorite era")
+        }
+    }
+    
     public func fetchPlayer() {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
         do {
@@ -54,15 +68,14 @@ class UserDataModel {
         }
     }
 
-    public func readData(initialItems: [Player]) -> [Player] {
+    public func readData() -> [Player] {
         let request: NSFetchRequest<Player> = Player.fetchRequest()
-        var items = initialItems
-                
+        var players = [Player]()
         do {
-            items = try context.fetch(request)
+            players = try context.fetch(request)
         } catch {
             print("error fetching data from context - \(error.localizedDescription)")
         }
-        return items
+        return players
     }
 }

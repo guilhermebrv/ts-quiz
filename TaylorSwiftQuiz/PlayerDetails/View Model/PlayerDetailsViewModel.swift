@@ -9,14 +9,13 @@ import UIKit
 
 class PlayerDetailsViewModel {
     
-    private var model: UserDataModel = UserDataModel()
     //private var player: [Player] = [Player]()
     
     public func createNewPlayer() {
-        model.saveNewPlayer()
+        UserDataModel.shared.saveNewPlayer()
     }
     
     public func savePlayerName(name: String, id: UUID) {
-        model.savePlayerName(name, id)
+        UserDataModel.shared.savePlayerName(name, id)
     }
 }

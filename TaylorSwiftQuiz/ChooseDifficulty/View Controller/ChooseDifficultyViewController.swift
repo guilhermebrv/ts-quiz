@@ -49,7 +49,7 @@ extension ChooseDifficultyViewController: ChooseDifficultyViewProtocol {
             self.screen?.hardButton.backgroundColor = difficulty == "hard" ? .black : .customWhite
             self.screen?.nextButton.isEnabled = true
         }
-        //viewModel.saveDifficulty(difficulty)
+        viewModel.saveDifficulty(difficulty)
     }
     
     func tappedEasyButton() {

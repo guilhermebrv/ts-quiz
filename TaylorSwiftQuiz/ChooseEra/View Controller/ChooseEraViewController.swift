@@ -55,7 +55,7 @@ extension ChooseEraViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: ChooseEraTableViewCell.identifier, for: indexPath) as? ChooseEraTableViewCell
         cell?.setupCell(era: viewModel.eras[indexPath.row])
         let era = viewModel.eras[indexPath.row]
-        if era == TemporaryDataStorage.shared.eraOption {
+        if era == viewModel.getEraData()[indexPath.row].era {
             cell?.selectEraEffect()
         } else {
             cell?.deselectEraEffect()
@@ -64,7 +64,7 @@ extension ChooseEraViewController: UITableViewDelegate, UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print(indexPath.row)
-        TemporaryDataStorage.shared.eraOption = viewModel.eras[indexPath.row]
+        viewModel.saveFavoriteEra(viewModel.eras[indexPath.row])
         if let cell = tableView.cellForRow(at: indexPath) as? ChooseEraTableViewCell {
             cell.selectEraEffect()
         }
