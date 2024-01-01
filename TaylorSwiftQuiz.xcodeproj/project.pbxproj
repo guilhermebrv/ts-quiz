@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2B1662572AC2E7A4009ECF71 /* ChooseEraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662562AC2E7A4009ECF71 /* ChooseEraView.swift */; };
 		2B1662592AC2E7B7009ECF71 /* ChooseEraViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662582AC2E7B7009ECF71 /* ChooseEraViewController.swift */; };
-		2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */; };
 		2B1662602AC32C84009ECF71 /* ChooseEraTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B16625F2AC32C84009ECF71 /* ChooseEraTableViewCell.swift */; };
 		2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662622AC344D1009ECF71 /* QuestionsView.swift */; };
 		2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */; };
@@ -42,7 +41,6 @@
 /* Begin PBXFileReference section */
 		2B1662562AC2E7A4009ECF71 /* ChooseEraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraView.swift; sourceTree = "<group>"; };
 		2B1662582AC2E7B7009ECF71 /* ChooseEraViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraViewController.swift; sourceTree = "<group>"; };
-		2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemporaryDataStorage.swift; sourceTree = "<group>"; };
 		2B16625F2AC32C84009ECF71 /* ChooseEraTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseEraTableViewCell.swift; sourceTree = "<group>"; };
 		2B1662622AC344D1009ECF71 /* QuestionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsView.swift; sourceTree = "<group>"; };
 		2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			children = (
 				2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */,
 				2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */,
-				2B16625D2AC2F2FE009ECF71 /* TemporaryDataStorage.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -431,7 +428,6 @@
 				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
 				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
-				2B16625E2AC2F2FE009ECF71 /* TemporaryDataStorage.swift in Sources */,
 				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
 				2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */,

@@ -110,10 +110,10 @@ extension QuestionsViewController: QuestionsViewProtocol {
             screen?.pointsLabel.text = viewModel.getQuestionNumber() != 10 ? "0\(viewModel.getCurrentPoints())/10" : "\(viewModel.getCurrentPoints())/10"
         }
         screen?.confirmButton.isEnabled = false
-        screen?.firstOptionButton.isEnabled = false
-        screen?.secondOptionButton.isEnabled = false
-        screen?.thirdOptionButton.isEnabled = false
         screen?.nextButton.isEnabled = true
+        [self.screen?.firstOptionButton, self.screen?.secondOptionButton, self.screen?.thirdOptionButton].forEach { button in
+            button?.isEnabled = false
+        }
         currentIndex = currentIndex < 10 ? currentIndex + 1 : currentIndex
         if currentIndex == 10 {
             // code to show final score
@@ -136,12 +136,12 @@ extension QuestionsViewController: QuestionsViewProtocol {
     func tappedNextButton() {
         screen?.nextButton.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-            self.screen?.firstOptionButton.backgroundColor = .customWhite
-            self.screen?.secondOptionButton.backgroundColor = .customWhite
-            self.screen?.thirdOptionButton.backgroundColor = .customWhite
-            self.screen?.firstOptionLabel.textColor = .black
-            self.screen?.secondOptionLabel.textColor = .black
-            self.screen?.thirdOptionLabel.textColor = .black
+            [self.screen?.firstOptionButton, self.screen?.secondOptionButton, self.screen?.thirdOptionButton].forEach { button in
+                button?.backgroundColor = .customWhite
+            }
+            [self.screen?.firstOptionLabel, self.screen?.secondOptionLabel, self.screen?.thirdOptionLabel].forEach { label in
+                label?.textColor = .black
+            }
         }
         if currentIndex == 9 {
             screen?.nextButton.setTitle("Finish game", for: .normal)
