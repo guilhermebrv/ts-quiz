@@ -16,11 +16,13 @@ class ChooseEraViewController: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        checkIfEraIsSelected()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
+        if viewModel.getEraData() != "" {
+            screen?.nextButton.isEnabled = true
+        }
     }
 }
 
@@ -29,11 +31,6 @@ extension ChooseEraViewController {
         screen?.delegate(delegate: self)
         screen?.erasTableView.delegate = self
         screen?.erasTableView.dataSource = self
-    }
-    private func checkIfEraIsSelected() {
-        if viewModel.checkIfEraIsSelected(tableView: screen?.erasTableView ?? UITableView()) {
-            screen?.nextButton.isEnabled = true
-        }
     }
 }
 

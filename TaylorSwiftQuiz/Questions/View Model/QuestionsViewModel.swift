@@ -58,7 +58,34 @@ class QuestionsViewModel {
                                             "3 - this is the eighty easy answer",
                                             "2 - this is the ninety easy answer",
                                             "1 - this is the tenth easy answer"])
+
+    // MARK: SAVE USER DATA
+    public func saveUserOption(_ option: String) {
+        UserDataModel.shared.saveOption(option)
+    }
     
+    public func saveUserPoint() {
+        UserDataModel.shared.newPlayer?.points += 1
+    }
+    
+    public func saveNextQuestion() {
+        UserDataModel.shared.newPlayer?.currentQuestion += 1
+    }
+    
+    // MARK: CHECK FOR USER ANSWER
+    public func checkAnswer(index: Int) -> Bool {
+        if UserDataModel.shared.newPlayer?.selectedOption == easyquestions.correct[index] {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    public func getSelectedOption() -> String {
+        return UserDataModel.shared.newPlayer?.selectedOption ?? ""
+    }
+    
+    // MARK: DATA TO LOAD SCREEN
     public func getQuestions(index: Int) -> String {
         return easyquestions.questions[index]
     }
@@ -75,23 +102,23 @@ class QuestionsViewModel {
         return easyquestions.option3[index]
     }
     
-    public func saveUserOption(_ option: String) {
-        UserDataModel.shared.saveOption(option)
-    }
-    
     public func getEraData() -> String {
         return UserDataModel.shared.newPlayer?.era ?? ""
     }
     
-    public func getDifficultyLevel() -> String {
-        return UserDataModel.shared.newPlayer?.difficulty ?? ""
+    public func getPlayerName() -> String {
+        return UserDataModel.shared.newPlayer?.name ?? ""
     }
     
-    public func checkAnswer(index: Int) -> Bool {
-        if TemporaryDataStorage.shared.currentOption == easyquestions.correct[index] {
-            return true
-        } else {
-            return false
-        }
+    public func getQuestionNumber() -> Int16 {
+        return UserDataModel.shared.newPlayer?.currentQuestion ?? 0
+    }
+    
+    public func getCurrentPoints() -> Int16 {
+        return UserDataModel.shared.newPlayer?.points ?? 0
+    }
+    
+    public func getDifficultyLevel() -> String {
+        return UserDataModel.shared.newPlayer?.difficulty ?? ""
     }
 }

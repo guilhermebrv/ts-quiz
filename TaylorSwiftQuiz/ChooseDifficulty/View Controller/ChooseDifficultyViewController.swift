@@ -20,7 +20,6 @@ class ChooseDifficultyViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
-        //loadPriorDifficulty()
     }
 }
 
@@ -28,17 +27,6 @@ extension ChooseDifficultyViewController {
     private func signProtocols() {
         screen?.delegate(delegate: self)
     }
-    /*
-    private func loadPriorDifficulty() {
-        if TemporaryDataStorage.shared.difficultyLevel == "easy" {
-            tappedEasyButton()
-        } else if TemporaryDataStorage.shared.difficultyLevel == "intermediate" {
-            tappedIntermediateButton()
-        } else if TemporaryDataStorage.shared.difficultyLevel == "hard" {
-            tappedHardButton()
-        }
-    }
-    */
 }
 
 extension ChooseDifficultyViewController: ChooseDifficultyViewProtocol {

@@ -45,7 +45,6 @@ class QuestionsView: UIView {
     lazy var playerName: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "\(TemporaryDataStorage.shared.playerName)"
         label.textColor = .customWhite
         label.font = UIFont(name: "Suisse Int'l Mono", size: 15)
         return label
@@ -54,7 +53,6 @@ class QuestionsView: UIView {
     lazy var pointsLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "\(TemporaryDataStorage.shared.currentPoints)/10"
         label.textColor = .customWhite
         label.textAlignment = .right
         label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
@@ -64,7 +62,6 @@ class QuestionsView: UIView {
     lazy var questionNumberLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Question \(TemporaryDataStorage.shared.currentQuestion)"
         label.textColor = .customWhite
         label.textAlignment = .center
         label.font = UIFont(name: "Suisse Int'l Mono", size: 30)

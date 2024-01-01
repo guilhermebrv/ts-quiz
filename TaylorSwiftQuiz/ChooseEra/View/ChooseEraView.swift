@@ -87,9 +87,6 @@ class ChooseEraView: UIView {
         super.init(frame: frame)
         addElements()
         configConstraints()
-        if TemporaryDataStorage.shared.eraOption != "" {
-            nextButton.isEnabled = true
-        }
     }
     
     required init?(coder: NSCoder) {

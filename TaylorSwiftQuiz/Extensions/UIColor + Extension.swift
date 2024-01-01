@@ -11,7 +11,7 @@ extension UIColor {
     static let bgGreen = UIColor(red: 233/255, green: 237/255, blue: 201/255, alpha: 1.0)
     static let customWhite = UIColor(red: 254/255, green: 250/255, blue: 224/255, alpha: 1.0)
     static let taylorswift = UIColor(red: 8/255, green: 103/255, blue: 67/255, alpha: 1.0)
-    static let fearless = UIColor(red: 251/255, green: 221/255, blue: 175/255, alpha: 1.0)
+    static let fearless = UIColor(red: 232/255, green: 176/255, blue: 68/255, alpha: 1.0)
     static let speaknow = UIColor(red: 109/255, green: 51/255, blue: 100/255, alpha: 1.0)
     static let tsred = UIColor(red: 123/255, green: 34/255, blue: 23/255, alpha: 1.0)
     static let ts1989 = UIColor(red: 113/255, green: 160/255, blue: 186/255, alpha: 1.0)

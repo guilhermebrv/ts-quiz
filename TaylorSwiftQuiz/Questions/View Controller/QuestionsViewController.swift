@@ -20,6 +20,7 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()
+        setPlayerName()
         setEraColor()
         loadQuestion()
     }
@@ -43,8 +44,22 @@ extension QuestionsViewController {
                 "midnights": .midnights]
         screen?.bgView.backgroundColor = eraColorMap[viewModel.getEraData()]
     }
+    private func setPlayerName() {
+        let name = viewModel.getPlayerName()
+        screen?.playerName.text = name
+    }
+    private func setQuestionNumber() {
+        let number = viewModel.getQuestionNumber()
+        screen?.questionNumberLabel.text = "Question \(number)"
+    }
+    
+    private func setCurrentPoints() {
+        let points = viewModel.getCurrentPoints()
+        screen?.pointsLabel.text = "\(points)/10"
+    }
     private func loadQuestion() {
-        screen?.questionNumberLabel.text = "Question \(TemporaryDataStorage.shared.currentQuestion)"
+        let number = viewModel.getQuestionNumber()
+        screen?.questionNumberLabel.text = "Question \(number)"
         screen?.firstOptionButton.isEnabled = true
         screen?.secondOptionButton.isEnabled = true
         screen?.thirdOptionButton.isEnabled = true
@@ -91,8 +106,8 @@ extension QuestionsViewController: QuestionsViewProtocol {
         let result = viewModel.checkAnswer(index: currentIndex)
         changeToGreenOrRed(result)
         if result {
-            TemporaryDataStorage.shared.currentPoints += 1
-            screen?.pointsLabel.text = TemporaryDataStorage.shared.currentQuestion != 10 ? "0\(TemporaryDataStorage.shared.currentPoints)/10" : "\(TemporaryDataStorage.shared.currentPoints)/10"
+            viewModel.saveUserPoint()
+            screen?.pointsLabel.text = viewModel.getQuestionNumber() != 10 ? "0\(viewModel.getCurrentPoints())/10" : "\(viewModel.getCurrentPoints())/10"
         }
         screen?.confirmButton.isEnabled = false
         screen?.firstOptionButton.isEnabled = false
@@ -114,7 +129,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
         if result {
             optionLabelMap[viewModel.easyquestions.correct[currentIndex]]??.textColor = .systemGreen
         } else {
-            let incorrectLabel = optionLabelMap[TemporaryDataStorage.shared.currentOption]
+            let incorrectLabel = optionLabelMap[viewModel.getSelectedOption()]
             incorrectLabel??.textColor = .systemRed
         }
     }
@@ -131,7 +146,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
         if currentIndex == 9 {
             screen?.nextButton.setTitle("Finish game", for: .normal)
         }
-        TemporaryDataStorage.shared.currentQuestion += 1
+        viewModel.saveNextQuestion()
         loadQuestion()
     }
     func tappedStartNewGameButton() {

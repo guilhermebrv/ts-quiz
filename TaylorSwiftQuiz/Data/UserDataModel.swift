@@ -44,6 +44,7 @@ class UserDataModel {
     
     public func saveEra(_ era: String) {
         newPlayer?.era = era
+        newPlayer?.currentQuestion = 1
         do {
             try context.save()
         } catch {
