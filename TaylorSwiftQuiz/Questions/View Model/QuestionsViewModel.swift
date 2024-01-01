@@ -75,6 +75,18 @@ class QuestionsViewModel {
         return easyquestions.option3[index]
     }
     
+    public func saveUserOption(_ option: String) {
+        UserDataModel.shared.saveOption(option)
+    }
+    
+    public func getEraData() -> String {
+        return UserDataModel.shared.newPlayer?.era ?? ""
+    }
+    
+    public func getDifficultyLevel() -> String {
+        return UserDataModel.shared.newPlayer?.difficulty ?? ""
+    }
+    
     public func checkAnswer(index: Int) -> Bool {
         if TemporaryDataStorage.shared.currentOption == easyquestions.correct[index] {
             return true

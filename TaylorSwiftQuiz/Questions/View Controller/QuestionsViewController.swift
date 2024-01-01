@@ -41,14 +41,14 @@ extension QuestionsViewController {
                 "folklore": .folklore,
                 "evermore": .evermore,
                 "midnights": .midnights]
-        screen?.bgView.backgroundColor = eraColorMap[TemporaryDataStorage.shared.eraOption]
+        screen?.bgView.backgroundColor = eraColorMap[viewModel.getEraData()]
     }
     private func loadQuestion() {
         screen?.questionNumberLabel.text = "Question \(TemporaryDataStorage.shared.currentQuestion)"
         screen?.firstOptionButton.isEnabled = true
         screen?.secondOptionButton.isEnabled = true
         screen?.thirdOptionButton.isEnabled = true
-        if TemporaryDataStorage.shared.difficultyLevel == "easy" {
+        if viewModel.getDifficultyLevel() == "easy" {
             screen?.questionLabel.text = viewModel.getQuestions(index: currentIndex)
             screen?.firstOptionLabel.text = viewModel.getAnswer1(index: currentIndex)
             screen?.secondOptionLabel.text = viewModel.getAnswer2(index: currentIndex)
@@ -70,15 +70,21 @@ extension QuestionsViewController: QuestionsViewProtocol {
     }
     func tappedFirstOptionButton() {
         answeredQuestionButton(option: "first")
-        TemporaryDataStorage.shared.currentOption = screen?.firstOptionLabel.text ?? ""
+        if let option = screen?.firstOptionLabel.text {
+            viewModel.saveUserOption(option)
+        }
     }
     func tappedSecondOptionButton() {
         answeredQuestionButton(option: "second")
-        TemporaryDataStorage.shared.currentOption = screen?.secondOptionLabel.text ?? ""
+        if let option = screen?.secondOptionLabel.text {
+            viewModel.saveUserOption(option)
+        }
     }
     func tappedThirdOptionButton() {
         answeredQuestionButton(option: "third")
-        TemporaryDataStorage.shared.currentOption = screen?.thirdOptionLabel.text ?? ""
+        if let option = screen?.thirdOptionLabel.text {
+            viewModel.saveUserOption(option)
+        }
     }
     
     func tappedConfirmButton() {

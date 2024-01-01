@@ -51,6 +51,15 @@ class UserDataModel {
         }
     }
     
+    public func saveOption(_ option: String) {
+        newPlayer?.selectedOption = option
+        do {
+            try context.save()
+        } catch {
+            print("error saving user selected option")
+        }
+    }
+    
     public func fetchPlayer() {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
         do {
