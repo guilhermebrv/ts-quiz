@@ -21,14 +21,25 @@ class TotalScoreView: UIView {
     lazy var bgView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = .bgGreen
         return view
+    }()
+    
+    lazy var playerStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .fill
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
     }()
     
     lazy var playerPhoto: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.contentMode = .scaleToFill
-        image.layer.cornerRadius = 90 / 2
+        image.layer.cornerRadius = 60 / 2
         image.clipsToBounds = true
         image.layer.borderColor = UIColor.black.cgColor
         image.layer.borderWidth = 2
@@ -41,17 +52,38 @@ class TotalScoreView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .customWhite
+        label.text = "Test Name"
         label.font = UIFont(name: "Suisse Int'l Mono", size: 30)
         return label
     }()
     
-    lazy var scoredLabel: UILabel = {
+    lazy var scoreStackView: UIStackView = {
+        let stack = UIStackView()
+        stack.axis = .horizontal
+        stack.alignment = .center
+        stack.distribution = .fill
+        stack.spacing = 10
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        return stack
+    }()
+    
+    lazy var playerScoreLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .customWhite
-        label.text = "You scored"
+        label.text = "8"
         label.textAlignment = .center
-        label.font = UIFont(name: "Suisse Int'l Mono", size: 40)
+        label.font = UIFont(name: "Suisse Int'l Mono", size: 180)
+        return label
+    }()
+    
+    lazy var totalScoredLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .customWhite
+        label.text = "/10"
+        label.textAlignment = .center
+        label.font = UIFont(name: "Suisse Int'l Mono", size: 30)
         return label
     }()
     
@@ -95,6 +127,7 @@ class TotalScoreView: UIView {
         super.init(frame: frame)
         addElements()
         configConstraints()
+        backgroundColor = .bgGreen
     }
     
     required init?(coder: NSCoder) {
@@ -103,9 +136,12 @@ class TotalScoreView: UIView {
     
     private func addElements() {
         addSubview(bgView)
-        addSubview(playerPhoto)
-        addSubview(playerName)
-        addSubview(scoredLabel)
+        playerStackView.addArrangedSubview(playerPhoto)
+        playerStackView.addArrangedSubview(playerName)
+        addSubview(playerStackView)
+        scoreStackView.addArrangedSubview(playerScoreLabel)
+        scoreStackView.addArrangedSubview(totalScoredLabel)
+        addSubview(scoreStackView)
         addSubview(leaderboardButton)
         addSubview(startNewGameButton)
     }
@@ -117,15 +153,26 @@ class TotalScoreView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            playerPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
-            playerPhoto.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
-            playerPhoto.widthAnchor.constraint(equalToConstant: 90),
-            playerPhoto.heightAnchor.constraint(equalToConstant: 90),
+            playerStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            playerStackView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 60),
+                    
+            playerPhoto.widthAnchor.constraint(equalToConstant: 60),
+            playerPhoto.heightAnchor.constraint(equalToConstant: 60),
             
-            playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
-            playerName.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 10),
-            playerName.trailingAnchor.constraint(equalTo: centerXAnchor),
-            playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            scoreStackView.centerXAnchor.constraint(equalTo: centerXAnchor),
+            scoreStackView.topAnchor.constraint(equalTo: playerStackView.bottomAnchor, constant: 30),
+            
+            leaderboardButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            leaderboardButton.topAnchor.constraint(equalTo: scoreStackView.bottomAnchor, constant: 40),
+            leaderboardButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
+            leaderboardButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
+            leaderboardButton.heightAnchor.constraint(equalToConstant: 60),
+            
+            startNewGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
+            startNewGameButton.topAnchor.constraint(equalTo: leaderboardButton.bottomAnchor, constant: 20),
+            startNewGameButton.leadingAnchor.constraint(equalTo: leaderboardButton.leadingAnchor),
+            startNewGameButton.trailingAnchor.constraint(equalTo: leaderboardButton.trailingAnchor),
+            startNewGameButton.heightAnchor.constraint(equalToConstant: 60),
         ])
     }
 }
