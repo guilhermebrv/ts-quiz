@@ -16,8 +16,8 @@ class FirstScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        screen?.tappedImageAnimation()
-        screen?.imageInitialAnimation()
+        tappedImageAnimation()
+        imageInitialAnimation()
     }
 
     override func viewDidLoad() {
@@ -31,12 +31,37 @@ class FirstScreenViewController: UIViewController {
 }
 
 extension FirstScreenViewController: FirstScreenViewProtocol {
-    func tappedStartGameButton() {
-        screen?.animateStartGameButton()
-        screen?.tappedImageAnimation()
+    internal func tappedStartGameButton() {
+        animateStartGameButton()
+        tappedImageAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             let playerDetails = PlayerDetailsViewController()
             self.navigationController?.pushViewController(playerDetails, animated: true)
+        }
+    }
+    private func animateStartGameButton() {
+        screen?.startGameButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            self.screen?.startGameButton.backgroundColor = .bgGreen
+        }
+    }
+    private func tappedImageAnimation() {
+        UIView.animate(withDuration: 0.3) {
+            self.screen?.imageView.frame.origin.x += 300
+        }
+    }
+    private func imageInitialAnimation() {
+        screen?.nameLabel.alpha = 0.0
+        screen?.name2Label.alpha = 0.0
+        screen?.imageView.alpha = 0.0
+        screen?.imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
+        UIView.animate(withDuration: 1.5) {
+            self.screen?.imageView.alpha = 1.0
+            self.screen?.nameLabel.alpha = 1.0
+            self.screen?.imageView.transform = CGAffineTransform.identity
+        }
+        UIView.animate(withDuration: 2.5) {
+            self.screen?.name2Label.alpha = 1.0
         }
     }
 }

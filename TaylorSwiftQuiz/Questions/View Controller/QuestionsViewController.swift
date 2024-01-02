@@ -134,13 +134,17 @@ extension QuestionsViewController: QuestionsViewProtocol {
         }
     }
     func tappedNextButton() {
+        if currentIndex > 9 {
+            let score = TotalScoreViewController()
+            navigationController?.pushViewController(score, animated: true)
+        }
         screen?.nextButton.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             [self.screen?.firstOptionButton, self.screen?.secondOptionButton, self.screen?.thirdOptionButton].forEach { button in
                 button?.backgroundColor = .customWhite
             }
             [self.screen?.firstOptionLabel, self.screen?.secondOptionLabel, self.screen?.thirdOptionLabel].forEach { label in
-                label?.textColor = .black
+                label?.textColor = .customWhite
             }
         }
         if currentIndex == 9 {

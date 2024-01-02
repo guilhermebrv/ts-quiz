@@ -40,6 +40,20 @@ extension PlayerDetailsViewController {
         screen?.playerNameTextField.delegate = self
         cameraPicker.delegate = self
     }
+    private func animationMinCharacters() {
+        screen?.alertMaxCharactersLabel.text = "Minimum of 5 characters!"
+        screen?.alertMaxCharactersLabel.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            self.screen?.alertMaxCharactersLabel.alpha = 0.7
+        }
+    }
+    private func animationMaxCharacters() {
+        screen?.alertMaxCharactersLabel.text = "Maximum characters reached!"
+        screen?.alertMaxCharactersLabel.alpha = 0.0
+        UIView.animate(withDuration: 0.5) {
+            self.screen?.alertMaxCharactersLabel.alpha = 0.7
+        }
+    }
 }
 
 extension PlayerDetailsViewController: UITextFieldDelegate {
@@ -50,14 +64,13 @@ extension PlayerDetailsViewController: UITextFieldDelegate {
         let minCharacterLimit = 5
         
         if updatedText.count > maxCharacterLimit {
-            screen?.animationMaxCharacters()
+            animationMaxCharacters()
             return false
         }
         if textField.text?.count ?? 0 < minCharacterLimit {
-             screen?.animationMinCharacters()
+             animationMinCharacters()
              return true
         }
-        
         screen?.alertMaxCharactersLabel.alpha = 0.0
         return true
     }
@@ -72,7 +85,7 @@ extension PlayerDetailsViewController: UITextFieldDelegate {
             screen?.alertMaxCharactersLabel.alpha = 0.0
             screen?.playerNameLabel.text = "Hello, \nplayer!"
         } else if let text = textField.text, text.count < minCharacterLimit {
-            screen?.animationMinCharacters()
+            animationMinCharacters()
         } else {
             screen?.nextStepButton.isEnabled = true
         }

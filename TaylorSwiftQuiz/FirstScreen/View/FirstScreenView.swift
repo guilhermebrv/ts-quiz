@@ -82,34 +82,6 @@ class FirstScreenView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public func animateStartGameButton() {
-        self.startGameButton.backgroundColor = UIColor.lightGray.withAlphaComponent(0.1)
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
-            self.startGameButton.backgroundColor = .bgGreen
-        }
-    }
-    
-    public func tappedImageAnimation() {
-        UIView.animate(withDuration: 0.3) {
-            self.imageView.frame.origin.x += 300
-        }
-    }
-    
-    public func imageInitialAnimation() {
-        nameLabel.alpha = 0.0
-        name2Label.alpha = 0.0
-        imageView.alpha = 0.0
-        imageView.transform = CGAffineTransform(scaleX: 0.5, y: 0.5)
-        UIView.animate(withDuration: 1.5) {
-            self.imageView.alpha = 1.0
-            self.nameLabel.alpha = 1.0
-            self.imageView.transform = CGAffineTransform.identity
-        }
-        UIView.animate(withDuration: 2.5) {
-            self.name2Label.alpha = 1.0
-        }
-    }
-    
     private func addElements() {
         addSubview(bgView)
         addSubview(nameLabel)

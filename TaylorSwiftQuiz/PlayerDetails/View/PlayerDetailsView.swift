@@ -134,22 +134,6 @@ class PlayerDetailsView: UIView {
         addSubview(nextStepButton)
     }
     
-    public func animationMaxCharacters() {
-        alertMaxCharactersLabel.text = "Maximum characters reached!"
-        alertMaxCharactersLabel.alpha = 0.0
-        UIView.animate(withDuration: 0.5) {
-            self.alertMaxCharactersLabel.alpha = 0.7
-        }
-    }
-    
-    public func animationMinCharacters() {
-        alertMaxCharactersLabel.text = "Minimum of 5 characters!"
-        alertMaxCharactersLabel.alpha = 0.0
-        UIView.animate(withDuration: 0.5) {
-            self.alertMaxCharactersLabel.alpha = 0.7
-        }
-    }
-    
     private func configConstraints() {
         NSLayoutConstraint.activate([
             bgView.topAnchor.constraint(equalTo: topAnchor),

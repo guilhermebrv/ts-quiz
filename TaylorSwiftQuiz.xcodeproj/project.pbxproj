@@ -32,6 +32,9 @@
 		2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */; };
 		2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */; };
 		2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */; };
+		2BA928D52B443123005B9330 /* TotalScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA928D42B443123005B9330 /* TotalScoreView.swift */; };
+		2BA928D72B44312D005B9330 /* TotalScoreViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA928D62B44312D005B9330 /* TotalScoreViewModel.swift */; };
+		2BA928D92B44314C005B9330 /* TotalScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA928D82B44314C005B9330 /* TotalScoreViewController.swift */; };
 		2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */; };
 		2BAD55B12B30B52A00CC0598 /* Suisse Int'l Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */; };
 		2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */; };
@@ -66,6 +69,9 @@
 		2B93C1242AC16859001A2431 /* ChooseDifficultyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewController.swift; sourceTree = "<group>"; };
 		2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPhotoAlertController.swift; sourceTree = "<group>"; };
 		2B93C1292AC18C83001A2431 /* FirstScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenViewController.swift; sourceTree = "<group>"; };
+		2BA928D42B443123005B9330 /* TotalScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalScoreView.swift; sourceTree = "<group>"; };
+		2BA928D62B44312D005B9330 /* TotalScoreViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalScoreViewModel.swift; sourceTree = "<group>"; };
+		2BA928D82B44314C005B9330 /* TotalScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TotalScoreViewController.swift; sourceTree = "<group>"; };
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
 		2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Suisse Int'l Mono.ttf"; path = "../../../../Downloads/Suisse Int'l Mono.ttf"; sourceTree = "<group>"; };
 		2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
@@ -227,6 +233,7 @@
 				2BAD55BE2B32204800CC0598 /* Model */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
 				2B16625A2AC2F1C9009ECF71 /* Data */,
+				2BA928D02B442EF0005B9330 /* TotalScore */,
 				2B1662612AC344BA009ECF71 /* Questions */,
 				2B1662552AC2E782009ECF71 /* ChooseEra */,
 				2B93C1212AC16813001A2431 /* ChooseDifficulty */,
@@ -267,6 +274,40 @@
 				2B2F68CA2B3B4A7C00ABCCD4 /* View */,
 			);
 			path = ChooseDifficulty;
+			sourceTree = "<group>";
+		};
+		2BA928D02B442EF0005B9330 /* TotalScore */ = {
+			isa = PBXGroup;
+			children = (
+				2BA928D32B442F00005B9330 /* ViewController */,
+				2BA928D22B442EFC005B9330 /* View */,
+				2BA928D12B442EF7005B9330 /* ViewModel */,
+			);
+			path = TotalScore;
+			sourceTree = "<group>";
+		};
+		2BA928D12B442EF7005B9330 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BA928D62B44312D005B9330 /* TotalScoreViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2BA928D22B442EFC005B9330 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BA928D42B443123005B9330 /* TotalScoreView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BA928D32B442F00005B9330 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2BA928D82B44314C005B9330 /* TotalScoreViewController.swift */,
+			);
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 		2BAD55B42B30BED500CC0598 /* View */ = {
@@ -408,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2BA928D52B443123005B9330 /* TotalScoreView.swift in Sources */,
 				2B2BCF402B3DEB63003D73AA /* UserData.xcdatamodeld in Sources */,
 				2B2F68C92B3B35AA00ABCCD4 /* UIViewController + Extension.swift in Sources */,
 				2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */,
@@ -419,6 +461,7 @@
 				2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */,
 				2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */,
 				2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */,
+				2BA928D92B44314C005B9330 /* TotalScoreViewController.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
 				2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */,
 				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
@@ -431,6 +474,7 @@
 				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
 				2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */,
+				2BA928D72B44312D005B9330 /* TotalScoreViewModel.swift in Sources */,
 				2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */,
 				2B93C0F02ABF1828001A2431 /* FirstScreenView.swift in Sources */,
 			);
