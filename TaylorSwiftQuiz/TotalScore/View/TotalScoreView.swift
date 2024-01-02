@@ -30,7 +30,7 @@ class TotalScoreView: UIView {
         image.contentMode = .scaleToFill
         image.layer.cornerRadius = 90 / 2
         image.clipsToBounds = true
-        image.layer.borderColor = UIColor.customWhite.cgColor
+        image.layer.borderColor = UIColor.black.cgColor
         image.layer.borderWidth = 2
         image.image = UIImage(named: "player-photo")
         image.backgroundColor = .customWhite

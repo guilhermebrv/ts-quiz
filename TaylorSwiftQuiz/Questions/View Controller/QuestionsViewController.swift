@@ -137,6 +137,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
         if currentIndex > 9 {
             let score = TotalScoreViewController()
             navigationController?.pushViewController(score, animated: true)
+            return
         }
         screen?.nextButton.isEnabled = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
