@@ -18,7 +18,10 @@ class TotalScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        signProtocols()
         setEraColor()
+        setPlayerName()
+        setCurrentPoints()
     }
 }
 
@@ -40,14 +43,23 @@ extension TotalScoreViewController {
                 "midnights": .midnights]
         screen?.bgView.backgroundColor = eraColorMap[viewModel.getFavoriteEra()]
     }
+    private func setPlayerName() {
+        let name = viewModel.getPlayerName()
+        screen?.playerName.text = name
+    }
+    private func setCurrentPoints() {
+        let points = viewModel.getCurrentPoints()
+        screen?.playerScoreLabel.text = String(points)
+    }
 }
 
 extension TotalScoreViewController: TotalScoreViewProtocol {
     func tappedLeaderboardButton() {
-        //
+        // let leaderboard = LeaderboardViewController()
+        //navigationController?.pushViewController(leaderboard, animated: true)
     }
     
     func tappedStartNewGameButton() {
-        //
+        navigationController?.popToRootViewController(animated: true)
     }
 }

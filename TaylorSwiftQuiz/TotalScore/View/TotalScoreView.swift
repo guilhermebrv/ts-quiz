@@ -127,7 +127,6 @@ class TotalScoreView: UIView {
         super.init(frame: frame)
         addElements()
         configConstraints()
-        backgroundColor = .bgGreen
     }
     
     required init?(coder: NSCoder) {

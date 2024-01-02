@@ -11,4 +11,12 @@ class TotalScoreViewModel {
     public func getFavoriteEra() -> String {
         return UserDataModel.shared.newPlayer?.era ?? ""
     }
+    
+    public func getPlayerName() -> String {
+        return UserDataModel.shared.newPlayer?.name ?? ""
+    }
+    
+    public func getCurrentPoints() -> Int16 {
+        return UserDataModel.shared.newPlayer?.points ?? 0
+    }
 }
