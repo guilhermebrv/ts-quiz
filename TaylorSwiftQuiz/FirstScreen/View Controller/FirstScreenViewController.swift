@@ -35,7 +35,7 @@ extension FirstScreenViewController: FirstScreenViewProtocol {
         animateStartGameButton()
         tappedImageAnimation()
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
-            let playerDetails = PlayerDetailsViewController()
+            let playerDetails = LeaderboardsViewController()
             self.navigationController?.pushViewController(playerDetails, animated: true)
         }
     }
