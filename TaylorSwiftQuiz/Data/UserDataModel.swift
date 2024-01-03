@@ -13,9 +13,7 @@ class UserDataModel {
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var newPlayer: Player?
     
-    private init() {
-        
-    }
+    private init() { }
     
     public func saveNewPlayer() {
         newPlayer = Player(context: context)
@@ -29,7 +27,7 @@ class UserDataModel {
         do {
             try context.save()
         } catch {
-            print("error saving player name")
+            print("error saving player name: \(error.localizedDescription)")
         }
     }
     
@@ -38,7 +36,7 @@ class UserDataModel {
         do {
             try context.save()
         } catch {
-            print("error saving difficulty")
+            print("error saving difficulty: \(error.localizedDescription)")
         }
     }
     
@@ -48,7 +46,7 @@ class UserDataModel {
         do {
             try context.save()
         } catch {
-            print("error saving favorite era")
+            print("error saving favorite era: \(error.localizedDescription)")
         }
     }
     
@@ -57,16 +55,28 @@ class UserDataModel {
         do {
             try context.save()
         } catch {
-            print("error saving user selected option")
+            print("error saving user selected option: \(error.localizedDescription)")
         }
     }
+	
+	public func countPlayers() -> Int {
+		let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+
+		do {
+			let count = try context.count(for: fetchRequest)
+			return count
+		} catch let error as NSError {
+			print("error counting number of saved players: \(error.localizedDescription)")
+			return 0
+		}
+	}
     
     public func fetchPlayer() {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
         do {
             let players = try context.fetch(fetchRequest)
         } catch {
-            print("Error fetching players: \(error)")
+			print("Error fetching players: \(error.localizedDescription)")
         }
     }
 

@@ -24,6 +24,8 @@
 		2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */; };
 		2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */; };
 		2B91353D2B45890F002AC412 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */; };
+		2B9135402B45DF9D002AC412 /* LeaderboardTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353F2B45DF9D002AC412 /* LeaderboardTableViewCellView.swift */; };
+		2B9135422B45DFAC002AC412 /* LeaderboardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9135412B45DFAC002AC412 /* LeaderboardTableViewCell.swift */; };
 		2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */; };
 		2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */; };
 		2B93C0E42ABF001A001A2431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B93C0E32ABF001A001A2431 /* Assets.xcassets */; };
@@ -62,6 +64,8 @@
 		2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsViewController.swift; sourceTree = "<group>"; };
 		2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsView.swift; sourceTree = "<group>"; };
 		2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
+		2B91353F2B45DF9D002AC412 /* LeaderboardTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCellView.swift; sourceTree = "<group>"; };
+		2B9135412B45DFAC002AC412 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
 		2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaylorSwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 		2B9135342B4588CD002AC412 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
+				2B91353E2B45DD7C002AC412 /* TableViewCell */,
 				2B9135372B4588DF002AC412 /* ViewController */,
 				2B9135362B4588DB002AC412 /* View */,
 				2B9135352B4588D6002AC412 /* ViewModel */,
@@ -248,6 +253,15 @@
 				2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */,
 			);
 			path = ViewController;
+			sourceTree = "<group>";
+		};
+		2B91353E2B45DD7C002AC412 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				2B91353F2B45DF9D002AC412 /* LeaderboardTableViewCellView.swift */,
+				2B9135412B45DFAC002AC412 /* LeaderboardTableViewCell.swift */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		2B93C0CE2ABF0017001A2431 = {
@@ -505,7 +519,9 @@
 				2BA928D92B44314C005B9330 /* TotalScoreViewController.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
 				2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */,
+				2B9135422B45DFAC002AC412 /* LeaderboardTableViewCell.swift in Sources */,
 				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
+				2B9135402B45DF9D002AC412 /* LeaderboardTableViewCellView.swift in Sources */,
 				2B91353D2B45890F002AC412 /* LeaderboardViewModel.swift in Sources */,
 				2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */,
 				2B1662572AC2E7A4009ECF71 /* ChooseEraView.swift in Sources */,

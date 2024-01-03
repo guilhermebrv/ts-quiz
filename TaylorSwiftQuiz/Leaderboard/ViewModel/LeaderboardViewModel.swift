@@ -8,5 +8,13 @@
 import UIKit
 
 class LeaderboardViewModel {
-
+	
+	public var numberOfRowsInSection: Int {
+		let players = UserDataModel.shared.countPlayers()
+		return players
+	}
+	
+	public var heightForRowAt: CGFloat {
+		return 80
+	}
 }
