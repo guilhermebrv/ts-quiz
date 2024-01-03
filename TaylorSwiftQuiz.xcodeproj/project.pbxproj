@@ -21,6 +21,9 @@
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
 		2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */; };
+		2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */; };
+		2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */; };
+		2B91353D2B45890F002AC412 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */; };
 		2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */; };
 		2B93C0DD2ABF0017001A2431 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */; };
 		2B93C0E42ABF001A001A2431 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B93C0E32ABF001A001A2431 /* Assets.xcassets */; };
@@ -56,6 +59,9 @@
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsViewController.swift; sourceTree = "<group>"; };
+		2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsView.swift; sourceTree = "<group>"; };
+		2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaylorSwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -210,6 +216,40 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		2B9135342B4588CD002AC412 /* Leaderboard */ = {
+			isa = PBXGroup;
+			children = (
+				2B9135372B4588DF002AC412 /* ViewController */,
+				2B9135362B4588DB002AC412 /* View */,
+				2B9135352B4588D6002AC412 /* ViewModel */,
+			);
+			path = Leaderboard;
+			sourceTree = "<group>";
+		};
+		2B9135352B4588D6002AC412 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B9135362B4588DB002AC412 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B9135372B4588DF002AC412 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		2B93C0CE2ABF0017001A2431 = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +273,7 @@
 				2BAD55BE2B32204800CC0598 /* Model */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
 				2B16625A2AC2F1C9009ECF71 /* Data */,
+				2B9135342B4588CD002AC412 /* Leaderboard */,
 				2BA928D02B442EF0005B9330 /* TotalScore */,
 				2B1662612AC344BA009ECF71 /* Questions */,
 				2B1662552AC2E782009ECF71 /* ChooseEra */,
@@ -465,8 +506,11 @@
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
 				2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */,
 				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
+				2B91353D2B45890F002AC412 /* LeaderboardViewModel.swift in Sources */,
+				2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */,
 				2B1662572AC2E7A4009ECF71 /* ChooseEraView.swift in Sources */,
 				2B93C12A2AC18C83001A2431 /* FirstScreenViewController.swift in Sources */,
+				2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */,
 				2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */,
 				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
 				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
