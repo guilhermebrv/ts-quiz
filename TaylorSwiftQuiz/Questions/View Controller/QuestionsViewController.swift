@@ -48,15 +48,6 @@ extension QuestionsViewController {
         let name = viewModel.getPlayerName()
         screen?.playerName.text = name
     }
-    private func setQuestionNumber() {
-        let number = viewModel.getQuestionNumber()
-        screen?.questionNumberLabel.text = "Question \(number)"
-    }
-    
-    private func setCurrentPoints() {
-        let points = viewModel.getCurrentPoints()
-        screen?.pointsLabel.text = "\(points)/10"
-    }
     private func loadQuestion() {
         let number = viewModel.getQuestionNumber()
         screen?.questionNumberLabel.text = "Question \(number)"
@@ -115,20 +106,15 @@ extension QuestionsViewController: QuestionsViewProtocol {
             button?.isEnabled = false
         }
         currentIndex = currentIndex < 10 ? currentIndex + 1 : currentIndex
-        if currentIndex == 10 {
-            // code to show final score
-        }
     }
     func changeToGreenOrRed(_ result: Bool) {
-        let optionLabelMap = [
-            viewModel.easyquestions.option1[currentIndex]: screen?.firstOptionLabel,
-            viewModel.easyquestions.option2[currentIndex]: screen?.secondOptionLabel,
-            viewModel.easyquestions.option3[currentIndex]: screen?.thirdOptionLabel
-        ]
-        
+        let optionLabelMap = [viewModel.easyquestions.option1[currentIndex]: screen?.firstOptionLabel,
+							  viewModel.easyquestions.option2[currentIndex]: screen?.secondOptionLabel,
+							  viewModel.easyquestions.option3[currentIndex]: screen?.thirdOptionLabel]
         if result {
             optionLabelMap[viewModel.easyquestions.correct[currentIndex]]??.textColor = .systemGreen
         } else {
+			optionLabelMap[viewModel.easyquestions.correct[currentIndex]]??.textColor = .systemGreen
             let incorrectLabel = optionLabelMap[viewModel.getSelectedOption()]
             incorrectLabel??.textColor = .systemRed
         }
