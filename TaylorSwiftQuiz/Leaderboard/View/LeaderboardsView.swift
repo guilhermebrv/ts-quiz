@@ -29,11 +29,11 @@ class LeaderboardsView: UIView {
 	lazy var playersScoresTableView: UITableView = {
 		let tableview = UITableView()
 		tableview.translatesAutoresizingMaskIntoConstraints = false
-		tableview.backgroundColor = .bgGreen
-		tableview.isUserInteractionEnabled = true
+		tableview.allowsSelection = false
+		tableview.backgroundColor = .customWhite
 		tableview.showsVerticalScrollIndicator = false
 		tableview.separatorStyle = .none
-		//tableview.register(ChooseEraTableViewCell.self, forCellReuseIdentifier: ChooseEraTableViewCell.identifier)
+		tableview.register(LeaderboardTableViewCell.self, forCellReuseIdentifier: LeaderboardTableViewCell.identifier)
 		return tableview
 	}()
 	
@@ -47,7 +47,7 @@ class LeaderboardsView: UIView {
 		button.layer.borderWidth = 2
 		button.layer.borderColor = UIColor.black.cgColor
 		button.addTarget(self, action: #selector(tappedStartNewGameButton), for: .touchUpInside)
-		button.backgroundColor = .customWhite
+		button.backgroundColor = .white
 		return button
 	}()
 	

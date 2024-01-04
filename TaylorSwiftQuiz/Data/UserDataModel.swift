@@ -65,19 +65,21 @@ class UserDataModel {
 		do {
 			let count = try context.count(for: fetchRequest)
 			return count
-		} catch let error as NSError {
+		} catch {
 			print("error counting number of saved players: \(error.localizedDescription)")
 			return 0
 		}
 	}
     
-    public func fetchPlayer() {
+    public func fetchPlayers() -> [Player] {
         let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
+		var players = [Player]()
         do {
-            let players = try context.fetch(fetchRequest)
+			players = try context.fetch(fetchRequest)
         } catch {
 			print("Error fetching players: \(error.localizedDescription)")
         }
+		return players
     }
 
     public func saveData(saving: [Player]) {

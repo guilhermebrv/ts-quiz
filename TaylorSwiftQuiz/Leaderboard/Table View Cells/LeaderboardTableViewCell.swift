@@ -37,7 +37,6 @@ extension LeaderboardTableViewCell {
 				"midnights": .midnights]
 		screen.bgView.backgroundColor = eraColorMap[player.era ?? ""]
 		screen.playerNameLabel.text = player.name
-		screen.playerScoreLabel.text = String(player.points)
-		screen.difficultyLabel.text = player.difficulty
+		screen.playerScoreButton.setTitle(String(player.points), for: .normal)
 	}
 }

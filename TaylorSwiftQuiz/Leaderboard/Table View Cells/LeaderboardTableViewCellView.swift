@@ -11,7 +11,7 @@ class LeaderboardTableViewCellView: UIView {
 	lazy var bgView: UIView = {
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		view.backgroundColor = .bgGreen
+		view.backgroundColor = .customWhite
 		view.layer.cornerRadius = 15
 		view.clipsToBounds = true
 		return view
@@ -21,20 +21,19 @@ class LeaderboardTableViewCellView: UIView {
 		let image = UIImageView()
 		image.translatesAutoresizingMaskIntoConstraints = false
 		image.contentMode = .scaleToFill
-		image.layer.cornerRadius = 30 / 2
+		image.layer.cornerRadius = 60 / 2
 		image.clipsToBounds = true
 		image.layer.borderColor = UIColor.black.cgColor
 		image.layer.borderWidth = 2
 		image.image = UIImage(named: "player-photo")
-		image.backgroundColor = .customWhite
 		return image
 	}()
 	
 	lazy var playerStackView: UIStackView = {
 		let stack = UIStackView()
-		stack.axis = .horizontal
+		stack.axis = .vertical
 		stack.alignment = .leading
-		stack.distribution = .fill
+		stack.distribution = .fillEqually
 		stack.spacing = 10
 		stack.translatesAutoresizingMaskIntoConstraints = false
 		return stack
@@ -58,26 +57,27 @@ class LeaderboardTableViewCellView: UIView {
 		return label
 	}()
 	
-	lazy var difficultyLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = .customWhite
-		label.text = "easy"
-		label.font = UIFont(name: "Suisse Int'l Mono", size: 12)
-		return label
+	lazy var playerScoreButton: UIButton = {
+		let button = UIButton()
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setTitleColor(.customWhite, for: .normal)
+		button.backgroundColor = .lightGray.withAlphaComponent(0.5)
+		button.titleLabel?.font = UIFont(name: "Suisse Int'l Mono", size: 24)
+		button.clipsToBounds = true
+		button.layer.cornerRadius = 60 / 2
+		return button
 	}()
 	
-	lazy var playerScoreLabel: UILabel = {
-		let label = UILabel()
-		label.translatesAutoresizingMaskIntoConstraints = false
-		label.textColor = .customWhite
-		label.backgroundColor = .lightGray
-		label.clipsToBounds = true
-		label.layer.cornerRadius = 30 / 2
-		label.text = "10"
-		label.font = UIFont(name: "Suisse Int'l Mono", size: 16)
-		return label
-	}()
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		addElements()
+		configConstraints()
+		backgroundColor = .customWhite
+	}
+	
+	required init?(coder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
 	
 	private func addElements() {
 		addSubview(bgView)
@@ -85,31 +85,29 @@ class LeaderboardTableViewCellView: UIView {
 		addSubview(playerStackView)
 		playerStackView.addArrangedSubview(playerNameLabel)
 		playerStackView.addArrangedSubview(playerPositionLabel)
-		addSubview(difficultyLabel)
-		addSubview(playerScoreLabel)
+		addSubview(playerScoreButton)
 	}
 	
 	private func configConstraints() {
 		NSLayoutConstraint.activate([
-			bgView.topAnchor.constraint(equalTo: topAnchor),
-			bgView.bottomAnchor.constraint(equalTo: bottomAnchor),
-			bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
-			bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
+			bgView.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+			bgView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
+			bgView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+			bgView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 			
-			playerPhoto.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
+			playerPhoto.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 20),
 			playerPhoto.centerYAnchor.constraint(equalTo: centerYAnchor),
-			playerPhoto.widthAnchor.constraint(equalToConstant: 30),
-			playerPhoto.heightAnchor.constraint(equalToConstant: 30),
+			playerPhoto.widthAnchor.constraint(equalToConstant: 60),
+			playerPhoto.heightAnchor.constraint(equalToConstant: 60),
 			
 			playerStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
 			playerStackView.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 15),
-			playerStackView.trailingAnchor.constraint(equalTo: difficultyLabel.leadingAnchor, constant: -15),
+			playerStackView.trailingAnchor.constraint(equalTo: playerScoreButton.leadingAnchor, constant: -15),
 			
-			difficultyLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-			difficultyLabel.trailingAnchor.constraint(equalTo: playerScoreLabel.leadingAnchor, constant: -15),
-			
-			playerScoreLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-			playerScoreLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20)
+			playerScoreButton.centerYAnchor.constraint(equalTo: centerYAnchor),
+			playerScoreButton.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -20),
+			playerScoreButton.widthAnchor.constraint(equalToConstant: 60),
+			playerScoreButton.heightAnchor.constraint(equalToConstant: 60)
 		])
 	}
 
