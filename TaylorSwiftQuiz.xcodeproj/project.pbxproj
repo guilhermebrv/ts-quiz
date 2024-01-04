@@ -223,7 +223,7 @@
 		2B9135342B4588CD002AC412 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
-				2B91353E2B45DD7C002AC412 /* TableViewCell */,
+				2B91353E2B45DD7C002AC412 /* Table View Cells */,
 				2B9135372B4588DF002AC412 /* ViewController */,
 				2B9135362B4588DB002AC412 /* View */,
 				2B9135352B4588D6002AC412 /* ViewModel */,
@@ -255,13 +255,13 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
-		2B91353E2B45DD7C002AC412 /* TableViewCell */ = {
+		2B91353E2B45DD7C002AC412 /* Table View Cells */ = {
 			isa = PBXGroup;
 			children = (
 				2B91353F2B45DF9D002AC412 /* LeaderboardTableViewCellView.swift */,
 				2B9135412B45DFAC002AC412 /* LeaderboardTableViewCell.swift */,
 			);
-			path = TableViewCell;
+			path = "Table View Cells";
 			sourceTree = "<group>";
 		};
 		2B93C0CE2ABF0017001A2431 = {
