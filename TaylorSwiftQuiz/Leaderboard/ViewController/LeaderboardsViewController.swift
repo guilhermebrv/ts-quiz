@@ -10,6 +10,15 @@ import UIKit
 class LeaderboardsViewController: UIViewController {
 	private var screen: LeaderboardsView?
 	private var viewModel: LeaderboardViewModel = LeaderboardViewModel()
+	
+	@MainActor
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		Task {
+			await RealmManager.shared.startRealm()
+			fetchData()
+		}
+	}
 
 	override func loadView() {
 		screen = LeaderboardsView()
@@ -27,6 +36,10 @@ extension LeaderboardsViewController {
 		screen?.delegate(delegate: self)
 		screen?.playersScoresTableView.delegate = self
 		screen?.playersScoresTableView.dataSource = self
+	}
+	private func fetchData() {
+		viewModel.fetchDataFromManager()
+		screen?.playersScoresTableView.reloadData()
 	}
 }
 

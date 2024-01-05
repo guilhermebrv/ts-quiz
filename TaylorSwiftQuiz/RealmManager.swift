@@ -9,13 +9,16 @@ import UIKit
 import RealmSwift
 
 class RealmManager {
+	static let shared = RealmManager()
 	let app = App(id: "application-ts-quiz-ylvxc")
 	var realm = try! Realm()
 	@Published var user: User?
 	@Published var configuration: Realm.Configuration?
 	@Published var player: Results<PlayerRealm>?
 	
-	@objc private func startRealm() async {
+	private init() { }
+	
+	@objc public func startRealm() async {
 		user = try? await app.login(credentials: Credentials.anonymous)
 		
 		self.configuration = user?.flexibleSyncConfiguration(initialSubscriptions: { SyncSubscriptionSet in
@@ -29,7 +32,13 @@ class RealmManager {
 		
 		realm = try! await Realm(configuration: configuration!, downloadBeforeOpen: .always)
 		player = realm.objects(PlayerRealm.self)
-						.sorted(byKeyPath: "points", ascending: false)
-						.sorted(byKeyPath: "difficultylevel", ascending: false)
+			.sorted(byKeyPath: "points", ascending: false)
+			.sorted(byKeyPath: "difficultylevel", ascending: false)
+	}
+	
+	public func fetchData() {
+		player = realm.objects(PlayerRealm.self)
+			.sorted(byKeyPath: "points", ascending: false)
+			.sorted(byKeyPath: "difficultylevel", ascending: false)
 	}
 }

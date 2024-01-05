@@ -104,8 +104,7 @@ class QuestionsViewModel {
 	}
 	 */
 	public func savePlayerToRealm() {
-		let id = UserDataModel.shared.newPlayer?.id ?? UUID()
-		let player = PlayerRealm(name: getPlayerName(), id: id, points: getCurrentPoints(), era: getEraData(), difficulty: getDifficultyLevel())
+		let player = PlayerRealm(name: getPlayerName(), points: getCurrentPoints(), rank: 0, era: getEraData(), difficulty: getDifficultyLevel(), difficultyLevel: UserDataModel.shared.newPlayer?.difficultyLevel ?? 1)
 		do {
 			let realm = try Realm()
 			try realm.write {
