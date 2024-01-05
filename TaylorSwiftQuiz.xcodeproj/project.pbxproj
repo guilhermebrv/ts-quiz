@@ -14,6 +14,8 @@
 		2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1662652AC344FE009ECF71 /* QuestionsViewController.swift */; };
 		2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB4E2B3C56A200C95278 /* ChooseEraViewModel.swift */; };
 		2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B26BB502B3C5FF500C95278 /* ChooseEraTableViewCellView.swift */; };
+		2B286DB72B483A4000A6F6CE /* MongoSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2B286DB62B483A4000A6F6CE /* MongoSwift */; };
+		2B286DB92B483A4000A6F6CE /* MongoSwiftSync in Frameworks */ = {isa = PBXBuildFile; productRef = 2B286DB82B483A4000A6F6CE /* MongoSwiftSync */; };
 		2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF3C2B3DB6A9003D73AA /* QuestionsViewModel.swift */; };
 		2B2BCF402B3DEB63003D73AA /* UserData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */; };
 		2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */; };
@@ -93,6 +95,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B286DB92B483A4000A6F6CE /* MongoSwiftSync in Frameworks */,
+				2B286DB72B483A4000A6F6CE /* MongoSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,6 +452,10 @@
 			dependencies = (
 			);
 			name = TaylorSwiftQuiz;
+			packageProductDependencies = (
+				2B286DB62B483A4000A6F6CE /* MongoSwift */,
+				2B286DB82B483A4000A6F6CE /* MongoSwiftSync */,
+			);
 			productName = TaylorSwiftQuiz;
 			productReference = 2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */;
 			productType = "com.apple.product-type.application";
@@ -476,6 +484,9 @@
 				Base,
 			);
 			mainGroup = 2B93C0CE2ABF0017001A2431;
+			packageReferences = (
+				2B286DB52B483A4000A6F6CE /* XCRemoteSwiftPackageReference "mongo-swift-driver" */,
+			);
 			productRefGroup = 2B93C0D82ABF0017001A2431 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -755,6 +766,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		2B286DB52B483A4000A6F6CE /* XCRemoteSwiftPackageReference "mongo-swift-driver" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mongodb/mongo-swift-driver.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		2B286DB62B483A4000A6F6CE /* MongoSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B286DB52B483A4000A6F6CE /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwift;
+		};
+		2B286DB82B483A4000A6F6CE /* MongoSwiftSync */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2B286DB52B483A4000A6F6CE /* XCRemoteSwiftPackageReference "mongo-swift-driver" */;
+			productName = MongoSwiftSync;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */ = {

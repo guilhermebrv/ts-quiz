@@ -71,6 +71,36 @@ class QuestionsViewModel {
     public func saveNextQuestion() {
         UserDataModel.shared.newPlayer?.currentQuestion += 1
     }
+	
+	// MARK: CONVERTING TO JSON TO SAVE IN DATABASE
+	private func convertToDictionary() -> [String: Any] {
+		var playerDict = [String: Any]()
+		playerDict["name"] = UserDataModel.shared.newPlayer?.name
+		//playerDict["id"] = UserDataModel.shared.newPlayer?.id
+		playerDict["points"] = UserDataModel.shared.newPlayer?.points
+		playerDict["era"] = UserDataModel.shared.newPlayer?.era
+		playerDict["difficulty"] = UserDataModel.shared.newPlayer?.difficulty
+		print(playerDict)
+		return playerDict
+	}
+	
+	private func convertToJSON(player: Player) -> Data? {
+		let playerDict = convertToDictionary()
+		do {
+			let jsonData = try JSONSerialization.data(withJSONObject: playerDict, options: [])
+			return jsonData
+		} catch let error as NSError {
+			print("Error converting to JSON: \(error.localizedDescription)")
+			return nil
+		}
+	}
+	
+	public func convertDataToJSON() {
+		if let jsonData = convertToJSON(player: UserDataModel.shared.newPlayer ?? Player()) {
+			//
+		}
+	}
+
     
     // MARK: CHECK FOR USER ANSWER
     public func checkAnswer(index: Int) -> Bool {

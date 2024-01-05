@@ -55,8 +55,8 @@ extension TotalScoreViewController {
 
 extension TotalScoreViewController: TotalScoreViewProtocol {
     func tappedLeaderboardButton() {
-        // let leaderboard = LeaderboardViewController()
-        //navigationController?.pushViewController(leaderboard, animated: true)
+        let leaderboard = LeaderboardsViewController()
+        navigationController?.pushViewController(leaderboard, animated: true)
     }
     
     func tappedStartNewGameButton() {
