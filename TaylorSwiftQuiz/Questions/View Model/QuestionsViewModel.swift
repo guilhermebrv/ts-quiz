@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class QuestionsViewModel {
     public var easyquestions = Questions(questions: ["do you know this is the first easy question?",
@@ -57,8 +58,8 @@ class QuestionsViewModel {
                                             "1 - this is the seventh easy answer",
                                             "3 - this is the eighty easy answer",
                                             "2 - this is the ninety easy answer",
-                                            "1 - this is the tenth easy answer"])
-
+                                            "1 - this is the tenth easy answer"])	
+	
     // MARK: SAVE USER DATA
     public func saveUserOption(_ option: String) {
         UserDataModel.shared.saveOption(option)
@@ -73,10 +74,11 @@ class QuestionsViewModel {
     }
 	
 	// MARK: CONVERTING TO JSON TO SAVE IN DATABASE
+	/*
 	private func convertToDictionary() -> [String: Any] {
 		var playerDict = [String: Any]()
 		playerDict["name"] = UserDataModel.shared.newPlayer?.name
-		//playerDict["id"] = UserDataModel.shared.newPlayer?.id
+		playerDict["id"] = UserDataModel.shared.newPlayer?.id
 		playerDict["points"] = UserDataModel.shared.newPlayer?.points
 		playerDict["era"] = UserDataModel.shared.newPlayer?.era
 		playerDict["difficulty"] = UserDataModel.shared.newPlayer?.difficulty
@@ -100,7 +102,19 @@ class QuestionsViewModel {
 			//
 		}
 	}
-
+	 */
+	public func savePlayerToRealm() {
+		let id = UserDataModel.shared.newPlayer?.id ?? UUID()
+		let player = PlayerRealm(name: getPlayerName(), id: id, points: getCurrentPoints(), era: getEraData(), difficulty: getDifficultyLevel())
+		do {
+			let realm = try Realm()
+			try realm.write {
+				realm.add(player)
+			}
+		} catch {
+			print("error saving player data to Realm - \(error.localizedDescription)")
+		}
+	}
     
     // MARK: CHECK FOR USER ANSWER
     public func checkAnswer(index: Int) -> Bool {

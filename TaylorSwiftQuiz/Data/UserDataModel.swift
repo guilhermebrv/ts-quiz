@@ -33,6 +33,16 @@ class UserDataModel {
     
     public func saveDifficulty(_ difficulty: String) {
         newPlayer?.difficulty = difficulty
+		switch difficulty {
+		case "easy":
+			newPlayer?.difficultyLevel = 1
+		case "intermediate":
+			newPlayer?.difficultyLevel = 2
+		case "hard":
+			newPlayer?.difficultyLevel = 3
+		default:
+			newPlayer?.difficultyLevel = Int16()
+		}
         do {
             try context.save()
         } catch {

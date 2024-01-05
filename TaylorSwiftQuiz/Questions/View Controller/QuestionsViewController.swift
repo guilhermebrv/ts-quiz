@@ -123,7 +123,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
         if currentIndex > 9 {
             let score = TotalScoreViewController()
             navigationController?.pushViewController(score, animated: true)
-			viewModel.convertDataToJSON()
+			viewModel.savePlayerToRealm()
             return
         }
         screen?.nextButton.isEnabled = false
