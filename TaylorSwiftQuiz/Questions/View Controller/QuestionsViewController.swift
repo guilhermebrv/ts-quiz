@@ -54,12 +54,10 @@ extension QuestionsViewController {
         screen?.firstOptionButton.isEnabled = true
         screen?.secondOptionButton.isEnabled = true
         screen?.thirdOptionButton.isEnabled = true
-        if viewModel.getDifficultyLevel() == "easy" {
-            screen?.questionLabel.text = viewModel.getQuestions(index: currentIndex)
-            screen?.firstOptionLabel.text = viewModel.getAnswer1(index: currentIndex)
-            screen?.secondOptionLabel.text = viewModel.getAnswer2(index: currentIndex)
-            screen?.thirdOptionLabel.text = viewModel.getAnswer3(index: currentIndex)
-        }
+		screen?.questionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].question
+		screen?.firstOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[0]
+		screen?.secondOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[1]
+		screen?.thirdOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[2]
         screen?.nextButton.isEnabled = false
         screen?.confirmButton.isEnabled = false
     }
@@ -94,7 +92,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
     }
     
     func tappedConfirmButton() {
-        let result = viewModel.checkAnswer(index: currentIndex)
+		let result = viewModel.checkAnswer(index: currentIndex, difficulty: viewModel.getDifficultyLevel())
         changeToGreenOrRed(result)
         if result {
             viewModel.saveUserPoint()
@@ -108,13 +106,13 @@ extension QuestionsViewController: QuestionsViewProtocol {
         currentIndex = currentIndex < 10 ? currentIndex + 1 : currentIndex
     }
     func changeToGreenOrRed(_ result: Bool) {
-        let optionLabelMap = [viewModel.easyquestions.option1[currentIndex]: screen?.firstOptionLabel,
-							  viewModel.easyquestions.option2[currentIndex]: screen?.secondOptionLabel,
-							  viewModel.easyquestions.option3[currentIndex]: screen?.thirdOptionLabel]
+		let optionLabelMap = [viewModel.playerCurrentQuestions?[self.currentIndex].options[0]: screen?.firstOptionLabel,
+							  viewModel.playerCurrentQuestions?[self.currentIndex].options[1]: screen?.secondOptionLabel,
+							  viewModel.playerCurrentQuestions?[self.currentIndex].options[2]: screen?.thirdOptionLabel]
         if result {
-            optionLabelMap[viewModel.easyquestions.correct[currentIndex]]??.textColor = .systemGreen
+			optionLabelMap[viewModel.playerCurrentQuestions?[self.currentIndex].correct]??.textColor = .systemGreen
         } else {
-			optionLabelMap[viewModel.easyquestions.correct[currentIndex]]??.textColor = .systemGreen
+			optionLabelMap[viewModel.playerCurrentQuestions?[self.currentIndex].correct]??.textColor = .systemGreen
             let incorrectLabel = optionLabelMap[viewModel.getSelectedOption()]
             incorrectLabel??.textColor = .systemRed
         }

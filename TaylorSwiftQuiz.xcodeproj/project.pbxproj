@@ -25,6 +25,7 @@
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
 		2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */; };
+		2B75C3BE2B498834007A3C99 /* Questions.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 2B75C3BD2B498834007A3C99 /* Questions.JSON */; };
 		2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */; };
 		2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */; };
 		2B91353D2B45890F002AC412 /* LeaderboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */; };
@@ -47,7 +48,8 @@
 		2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */; };
 		2BAD55B12B30B52A00CC0598 /* Suisse Int'l Mono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */; };
 		2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */; };
-		2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BFA51172AC4321D00E5C874 /* Questions.swift */; };
+		2BF853712B49B6EB00AE3855 /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF853702B49B6EB00AE3855 /* QuestionsService.swift */; };
+		2BF853732B49B72700AE3855 /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF853722B49B72700AE3855 /* QuestionsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +69,7 @@
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		2B75C3BD2B498834007A3C99 /* Questions.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Questions.JSON; sourceTree = "<group>"; };
 		2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsViewController.swift; sourceTree = "<group>"; };
 		2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsView.swift; sourceTree = "<group>"; };
 		2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
@@ -91,7 +94,8 @@
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
 		2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Suisse Int'l Mono.ttf"; path = "../../../../Downloads/Suisse Int'l Mono.ttf"; sourceTree = "<group>"; };
 		2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
-		2BFA51172AC4321D00E5C874 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
+		2BF853702B49B6EB00AE3855 /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
+		2BF853722B49B72700AE3855 /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,14 +122,15 @@
 			path = ChooseEra;
 			sourceTree = "<group>";
 		};
-		2B16625A2AC2F1C9009ECF71 /* Data */ = {
+		2B16625A2AC2F1C9009ECF71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */,
 				2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */,
+				2BF853722B49B72700AE3855 /* QuestionsData.swift */,
 				2B286DC62B485A9800A6F6CE /* PlayerRealm.swift */,
 			);
-			path = Data;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2B1662612AC344BA009ECF71 /* Questions */ = {
@@ -229,6 +234,14 @@
 			path = "View Model";
 			sourceTree = "<group>";
 		};
+		2B75C3BC2B49880D007A3C99 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				2B75C3BD2B498834007A3C99 /* Questions.JSON */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		2B9135342B4588CD002AC412 /* Leaderboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -292,10 +305,11 @@
 		2B93C0D92ABF0017001A2431 /* TaylorSwiftQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				2B75C3BC2B49880D007A3C99 /* JSON */,
 				2B2F68C72B3B359C00ABCCD4 /* Extensions */,
-				2BAD55BE2B32204800CC0598 /* Model */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
-				2B16625A2AC2F1C9009ECF71 /* Data */,
+				2BF8536F2B49B6D800AE3855 /* Service */,
+				2B16625A2AC2F1C9009ECF71 /* Model */,
 				2B9135342B4588CD002AC412 /* Leaderboard */,
 				2BA928D02B442EF0005B9330 /* TotalScore */,
 				2B1662612AC344BA009ECF71 /* Questions */,
@@ -434,12 +448,12 @@
 			path = Alerts;
 			sourceTree = "<group>";
 		};
-		2BAD55BE2B32204800CC0598 /* Model */ = {
+		2BF8536F2B49B6D800AE3855 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2BFA51172AC4321D00E5C874 /* Questions.swift */,
+				2BF853702B49B6EB00AE3855 /* QuestionsService.swift */,
 			);
-			path = Model;
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -507,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B75C3BE2B498834007A3C99 /* Questions.JSON in Resources */,
 				2BAD55B02B30B52A00CC0598 /* Apercu Mono.otf in Resources */,
 				2BAD55B12B30B52A00CC0598 /* Suisse Int'l Mono.ttf in Resources */,
 				2B93C0E72ABF001A001A2431 /* LaunchScreen.storyboard in Resources */,
@@ -530,6 +545,7 @@
 				2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */,
 				2B1662602AC32C84009ECF71 /* ChooseEraTableViewCell.swift in Sources */,
 				2B1662592AC2E7B7009ECF71 /* ChooseEraViewController.swift in Sources */,
+				2BF853712B49B6EB00AE3855 /* QuestionsService.swift in Sources */,
 				2B93C1172ABF468E001A2431 /* PlayerDetailsView.swift in Sources */,
 				2B286DCB2B486D6100A6F6CE /* RealmManager.swift in Sources */,
 				2B93C1252AC16859001A2431 /* ChooseDifficultyViewController.swift in Sources */,
@@ -537,6 +553,7 @@
 				2BA928D92B44314C005B9330 /* TotalScoreViewController.swift in Sources */,
 				2B1662632AC344D1009ECF71 /* QuestionsView.swift in Sources */,
 				2B26BB512B3C5FF500C95278 /* ChooseEraTableViewCellView.swift in Sources */,
+				2BF853732B49B72700AE3855 /* QuestionsData.swift in Sources */,
 				2B9135422B45DFAC002AC412 /* LeaderboardTableViewCell.swift in Sources */,
 				2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */,
 				2B9135402B45DF9D002AC412 /* LeaderboardTableViewCellView.swift in Sources */,
@@ -547,7 +564,6 @@
 				2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */,
 				2B93C1282AC17265001A2431 /* SelectPhotoAlertController.swift in Sources */,
 				2B286DC72B485A9800A6F6CE /* PlayerRealm.swift in Sources */,
-				2BFA51182AC4321D00E5C874 /* Questions.swift in Sources */,
 				2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */,
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,

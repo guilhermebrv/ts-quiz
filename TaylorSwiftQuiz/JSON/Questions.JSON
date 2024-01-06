@@ -1,0 +1,303 @@
+{
+  "easy": [
+	{
+	  "question": "What is Taylor Swift's full name?",
+	  "options":  ["Taylor Alison Swift", "Taylor Emily Swift", "Taylor Olivia Swift"],
+	  "correct": "Taylor Alison Swift"
+	},
+	{
+	  "question": "In what year was Taylor Swift born?",
+	  "options": ["1987", "1989", "1991"],
+	  "correct": "1989"
+	},
+	{
+	  "question": "What is the title of Taylor Swift's debut album?",
+	  "options":  ["Fearless", "Taylor Swift", "Speak Now"],
+	  "correct": "Taylor Swift"
+	},
+	{
+	  "question": "In what state was Taylor Swift born?",
+	  "options": ["Pennsylvania", "Tennessee", "California"],
+	  "correct": "Pennsylvania"
+	},
+	{
+	  "question": "Which album includes the song 'Shake It Off'?",
+	  "options": ["1989", "Red", "Reputation"],
+	  "correct": "1989"
+	},
+	{
+	  "question": "What genre did Taylor Swift primarily focus on at the beginning of her career?",
+	  "options": ["Pop", "Country", "Rock"],
+	  "correct": "Country"
+	},
+	{
+	  "question": "What instrument is Taylor Swift famously known for playing?",
+	  "options": ["Piano", "Guitar", "Violin"],
+	  "correct": "Guitar"
+	},
+	{
+	  "question": "Who did Taylor Swift collaborate with for the song 'Everything Has Changed'?",
+	  "options":  ["Ed Sheeran", "Justin Bieber", "Shawn Mendes"],
+	  "correct": "Ed Sheeran"
+	},
+	{
+	  "question": "What is the name of Taylor Swift's fourth studio album?",
+	  "options": ["Red", "Lover", "Reputation"],
+	  "correct": "Red"
+	},
+	{
+	  "question": "Which song's music video is set at a high school prom?",
+	  "options": ["Love Story", "You Belong With Me", "22"],
+	  "correct": "You Belong With Me"
+	},
+	{
+	  "question": "What was Taylor Swift's first number-one song on the Billboard Hot 100?",
+	  "options": ["Shake It Off", "Blank Space", "Love Story"],
+	  "correct": "Shake It Off"
+	},
+	{
+	  "question": "What is the title of Taylor Swift's fifth studio album?",
+	  "options":  ["1989", "Reputation", "Lover"],
+	  "correct": "1989"
+	},
+	{
+	  "question": "Which song includes the lyric 'You call me up again just to break me like a promise'?",
+	  "options": ["All Too Well", "I Knew You Were Trouble", "Back to December"],
+	  "correct": "All Too Well"
+	},
+	{
+	  "question": "Who did Taylor Swift collaborate with on the song 'ME!'?",
+	  "options": ["Brendon Urie", "Shawn Mendes", "Zayn Malik"],
+	  "correct": "Brendon Urie"
+	},
+	{
+	  "question": "What is the name of Taylor Swift's first documentary film?",
+	  "options": ["Miss Americana", "Taylor Swift: Journey to Fearless", "The Swift Life"],
+	  "correct": "Miss Americana"
+	},
+	{
+	  "question": "In what year did Taylor Swift release her album 'reputation'?",
+	  "options":  ["2016", "2017", "2018"],
+	  "correct": "2017"
+	},
+	{
+	  "question": "Which song from '1989' was inspired by Taylor Swift's move to New York City?",
+	  "options": ["Welcome to New York", "Style", "Blank Space"],
+	  "correct": "Welcome to New York"
+	},
+	{
+	  "question": "What is Taylor Swift's favorite number?",
+	  "options":  ["13", "7", "22"],
+	  "correct": "13"
+	},
+	{
+	  "question": "Which song features the lyric 'But I got smarter, I got harder in the nick of time'?",
+	  "options": ["Look What You Made Me Do", "Bad Blood", "I Did Something Bad"],
+	  "correct": "Look What You Made Me Do"
+	}
+  ],
+  "intermediate": [
+	{
+	  "question": "Who directed the music video for 'Bad Blood'?",
+	  "options": ["Joseph Kahn", "Mark Romanek", "Anthony Mandler"],
+	  "correct": "Joseph Kahn"
+	},
+	{
+	  "question": "What is the name of the poem Taylor Swift wrote that was included in the deluxe edition of her album 'reputation'?",
+	  "options": ["If You're Anything Like Me", "Why She Disappeared", "The Trick to Holding On"],
+	  "correct": "Why She Disappeared"
+	},
+	{
+	  "question": "What is the name of the song that Taylor Swift wrote in response to Kanye West's interruption at the VMAs?",
+	  "options":  ["Mean", "Innocent", "The Story of Us"],
+	  "correct": "Innocent"
+	},
+	{
+	  "question": "Which music video features Taylor Swift in a futuristic setting as a robot?",
+	  "options": ["...Ready for It?", "End Game", "Bad Blood"],
+	  "correct": "...Ready for It?"
+	},
+	{
+	  "question": "What year did Taylor Swift win the Album of the Year Grammy for 'Fearless'?",
+	  "options":  ["2009", "2010", "2011"],
+	  "correct": "2010"
+	},
+	{
+	  "question": "What was the lead single from Taylor Swift's album 'Speak Now'?",
+	  "options": ["Mine", "Sparks Fly", "Back to December"],
+	  "correct": "Mine"
+	},
+	{
+	  "question": "Which city does Taylor Swift mention in the song 'Cornelia Street'?",
+	  "options":  ["London", "Nashville", "New York"],
+	  "correct": "New York"
+	},
+	{
+	  "question": "In which album does Taylor Swift have a song titled 'The Last Time' featuring Gary Lightbody?",
+	  "options": ["Red", "1989", "Reputation"],
+	  "correct": "Red"
+	},
+	{
+	  "question": "Which song from 'Lover' did Taylor Swift co-write with St. Vincent?",
+	  "options": ["Cruel Summer", "Lover", "The Man"],
+	  "correct": "Cruel Summer"
+	},
+	{
+	  "question": "What instrument does Taylor Swift play in the live performance of 'Back to December' at the 2010 American Music Awards?",
+	  "options": ["Piano", "Guitar", "Ukulele"],
+	  "correct": "Piano"
+	},
+	{
+	  "question": "What unique feature is present in the music video for 'ME!' featuring Brendon Urie?",
+	  "options":  ["A talking snake", "A marching band", "A rain of flowers"],
+	  "correct": "A marching band"
+	},
+	{
+	  "question": "What is the hidden message in the lyrics of the song 'Begin Again' from the album 'Red'?",
+	  "options":  ["I wear heels now", "I've been spending the last eight months thinking", "On a Wednesday in a cafe"],
+	  "correct": "I wear heels now"
+	},
+	{
+	  "question": "What is the name of the app that Taylor Swift released in 2017, which included exclusive content and social networking features?",
+	  "options":  ["Swift Life", "Taylor Nation", "TSwizzle"],
+	  "correct": "Swift Life"
+	},
+	{
+	  "question": "Which Taylor Swift song was inspired by a famous American political family?",
+	  "options": ["The Last Great American Dynasty", "Miss Americana & The Heartbreak Prince", "This Is Why We Can't Have Nice Things"],
+	  "correct": "The Last Great American Dynasty"
+	},
+	{
+	  "question": "What is the name of the song Taylor Swift wrote for the soundtrack of the movie 'One Chance'?",
+	  "options": ["Sweeter Than Fiction", "Eyes Open", "Safe & Sound"],
+	  "correct": "Sweeter Than Fiction"
+	},
+	{
+	  "question": "What color is the dress Taylor Swift wears in the music video for 'Wildest Dreams'?",
+	  "options": ["Yellow", "Blue", "Black"],
+	  "correct": "Yellow"
+	},
+	{
+	  "question": "In the music video for 'Lover', what board game do Taylor Swift and her co-star play?",
+	  "options": ["Chess", "Scrabble", "Monopoly"],
+	  "correct": "Scrabble"
+	},
+	{
+	  "question": "Which song on Taylor Swift's 'Lover' album features the Dixie Chicks?",
+	  "options":  ["Soon You'll Get Better", "The Archer", "Lover"],
+	  "correct": "Soon You'll Get Better"
+	},
+	{
+	  "question": "What is the name of the actress who appears as the love interest in Taylor Swift's music video for 'Wildest Dreams'?",
+	  "options":  ["Pierce Brosnan", "Brad Pitt", "Scott Eastwood"],
+	  "correct": "Scott Eastwood"
+	},
+	{
+	  "question": "In Taylor Swift's song 'I Knew You Were Trouble', to what does she compare the subject of the song?",
+	  "options": ["A ghost in my mind", "A storm in the best sense", "A wolf in sheep's clothing"],
+	  "correct": "A wolf in sheep's clothing"
+	}
+  ],
+  "hard": [
+	{
+	  "question": "What is the name of the painter Taylor Swift references in her song 'The Last Great American Dynasty'?",
+	  "options": ["Salvador Dalí", "Pablo Picasso", "Rebekah Harkness"],
+	  "correct": "Salvador Dalí"
+	},
+	{
+	  "question": "Which track from 'Folklore' is rumored to be about Taylor Swift's grandfather who fought in World War II?",
+	  "options":  ["My Tears Ricochet", "Epiphany", "The Lakes"],
+	  "correct": "Epiphany"
+	},
+	{
+	  "question": "What is the name of the character Taylor Swift voices in the animated movie 'The Lorax'?",
+	  "options": ["Audrey", "Ashley", "Anna"],
+	  "correct": "Audrey"
+	},
+	{
+	  "question": "In the 'Look What You Made Me Do' music video, what is the number of the tombstone next to where Taylor Swift's old self is buried?",
+	  "options": ["89", "13", "31"],
+	  "correct": "13"
+	},
+	{
+	  "question": "In the song 'Invisible String', what specific type of establishment does Taylor Swift mention having worked at?",
+	  "options": ["A cafe", "A yogurt shop", "A bookstore"],
+	  "correct": "A yogurt shop"
+	},
+	{
+	  "question": "Taylor Swift made a cameo appearance in which TV show, playing a character named Elaine?",
+	  "options": ["CSI", "New Girl", "The Office"],
+	  "correct": "CSI"
+	},
+	{
+	  "question": "What is the name of the poem Taylor Swift wrote and included in the 'reputation' magazine?",
+	  "options":  ["The Trick to Holding On", "Why She Disappeared", "If You're Anything Like Me"],
+	  "correct": "The Trick to Holding On"
+	},
+	{
+	  "question": "In which year did Taylor Swift first appear as a musical guest on 'Saturday Night Live'?",
+	  "options": ["2007", "2009", "2011"],
+	  "correct": "2009"
+	},
+	{
+	  "question": "What is the duration of the original version of the song 'All Too Well'?",
+	  "options":  ["5:29", "5:43", "5:13"],
+	  "correct": "5:29"
+	},
+	{
+	  "question": "What is the name of the high school Taylor Swift attended?",
+	  "options": ["Wyomissing Area Junior/Senior High School", "Hendersonville High School", "Reading High School"],
+	  "correct": "Hendersonville High School"
+	},
+	{
+	  "question": "In the 'Blank Space' music video, what breed is the horse that Taylor Swift rides?",
+	  "options": ["Arabian", "Thoroughbred", "Appaloosa"],
+	  "correct": "Arabian"
+	},
+	{
+	  "question": "What is the name of the character Taylor Swift portrays in the film 'Cats'?",
+	  "options":  ["Grizabella", "Bombalurina", "Victoria"],
+	  "correct": "Bombalurina"
+	},
+	{
+	  "question": "In the 'End Game' music video, Taylor Swift can be seen in front of a famous landmark in Tokyo. What is it?",
+	  "options":  ["Tokyo Tower", "Senso-ji Temple", "Shibuya Crossing"],
+	  "correct": "Shibuya Crossing"
+	},
+	{
+	  "question": "In Taylor Swift's 'The Man', she references Leonardo DiCaprio. In which specific setting does she mention him?",
+	  "options": ["On a yacht in Saint-Tropez", "At the Oscars", "In a movie scene"],
+	  "correct": "On a yacht in Saint-Tropez"
+	},
+	{
+	  "question": "Taylor Swift's 'evermore' album features a collaboration with an indie rock band. Which band is it?",
+	  "options": ["The National", "Bon Iver", "Haim"],
+	  "correct": "Haim"
+	},
+	{
+	  "question": "Which artist painted the portrait of Taylor Swift that appears in the music video for 'The Man'?",
+	  "options":  ["Banksy", "Kehinde Wiley", "Damien Hirst"],
+	  "correct": "Kehinde Wiley"
+	},
+	{
+	  "question": "In the music video for 'Bad Blood', what is the name of the character played by Taylor Swift?",
+	  "options": ["Catastrophe", "Arsyn", "Frostbyte"],
+	  "correct": "Catastrophe"
+	},
+	{
+	  "question": "What date did the 1989 World Tour commence from?",
+	  "options": ["July 19th 2015", "May 5th 2015", "May 13th 2015"],
+	  "correct": "May 5th 2015"
+	},
+	{
+	  "question": "Which store was 'Sounds of the Seasons' exclusively released into?",
+	  "options": ["Target", "Walmart", "Amazon"],
+	  "correct": "Target"
+	},
+	{
+	  "question": "What was the name of the person who taught Taylor Swift how to play guitar?",
+	  "options": ["Johnny Cremer", "Reggie Cremer", "Ronnie Cremer"],
+	  "correct": "Ronnie Cremer"
+	}
+  ]
+}
