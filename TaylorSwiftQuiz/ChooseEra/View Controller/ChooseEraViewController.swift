@@ -8,17 +8,14 @@
 import UIKit
 
 class ChooseEraViewController: UIViewController {
-	private var testing: QuestionsViewModel = QuestionsViewModel()
     private var screen: ChooseEraView?
     private let viewModel: ChooseEraViewModel = ChooseEraViewModel()
+	
     override func loadView() {
         screen = ChooseEraView()
         view = screen
     }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-		testing.fetchRequest()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         signProtocols()

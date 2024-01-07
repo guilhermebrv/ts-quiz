@@ -10,18 +10,26 @@ import RealmSwift
 
 class QuestionsViewModel {
 	private var service: QuestionsService = QuestionsService()
-	static var questionsData: QuestionsData?
-	//private var questionsData: QuestionsData?
-	public var playerCurrentQuestions: [Difficulty]?
+	public var questionsData: [Difficulty]?
 
 	// MARK: FETCH QUESTIONS DATA FROM API
-	public func fetchRequest() {
-		service.fetchQuestionsData { result, error in
-			if error == nil {
-				QuestionsViewModel.questionsData = result
-			} else {
-				print("error fetching data to receive questions - \(String(describing: error?.localizedDescription))")
+	public func fetchRequest(completion: @escaping (Bool) -> Void) {
+		service.fetchQuestionsData { [weak self] result, error in
+			guard let data = result, error == nil else {
+				completion(false)
+				return
 			}
+			switch self?.getDifficultyLevel() {
+			case "easy":
+				self?.questionsData = data.easy
+			case "intermediate":
+				self?.questionsData = data.intermediate
+			case "hard":
+				self?.questionsData = data.hard
+			default:
+				completion(true)
+			}
+			completion(true)
 		}
 	}
 	
@@ -62,26 +70,26 @@ class QuestionsViewModel {
     }
 	
 	// MARK: METHOD TO SHUFFLE QUESTIONS
-	private func shuffleQuestions(_ difficulty: String) -> [Difficulty] {
-		var questions: [Difficulty]
-		switch difficulty {
-			case "easy":
-			questions = QuestionsViewModel.questionsData?.easy ?? [Difficulty]()
-			case "intermediate":
-			questions = QuestionsViewModel.questionsData?.intermediate ?? [Difficulty]()
-			case "hard":
-			questions = QuestionsViewModel.questionsData?.hard ?? [Difficulty]()
-			default:
-				return [Difficulty]()
-			}
-		playerCurrentQuestions = questions.shuffled()
-		return playerCurrentQuestions ?? [Difficulty]()
-	}
+//	private func shuffleQuestions(_ difficulty: String) -> [Difficulty] {
+//		var questions: [Difficulty]
+//		switch difficulty {
+//			case "easy":
+//			questions = QuestionsViewModel.questionsData?.easy ?? [Difficulty]()
+//			case "intermediate":
+//			questions = QuestionsViewModel.questionsData?.intermediate ?? [Difficulty]()
+//			case "hard":
+//			questions = QuestionsViewModel.questionsData?.hard ?? [Difficulty]()
+//			default:
+//				return [Difficulty]()
+//			}
+//		playerCurrentQuestions = questions.shuffled()
+//		return playerCurrentQuestions ?? [Difficulty]()
+//	}
     
     // MARK: DATA TO LOAD SCREEN
-	public func getQuestions(difficulty: String) -> [Difficulty] {
-		return shuffleQuestions(difficulty)
-    }
+//	public func getQuestions(difficulty: String) -> [Difficulty] {
+//		return shuffleQuestions(difficulty)
+//    }
 
     public func getEraData() -> String {
         return UserDataModel.shared.newPlayer?.era ?? ""
