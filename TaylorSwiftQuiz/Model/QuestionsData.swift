@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - QuestionsData
 struct QuestionsData: Codable {
-	var easy, intermediate, hard: [Difficulty]
+	var easy, intermediate, hard: [Difficulty]?
 	
 	enum CodingKeys: String, CodingKey {
 		case easy = "easy"

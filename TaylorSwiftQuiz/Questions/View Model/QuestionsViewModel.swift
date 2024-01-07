@@ -10,14 +10,15 @@ import RealmSwift
 
 class QuestionsViewModel {
 	private var service: QuestionsService = QuestionsService()
-	private var questionsData: QuestionsData?
+	static var questionsData: QuestionsData?
+	//private var questionsData: QuestionsData?
 	public var playerCurrentQuestions: [Difficulty]?
 
 	// MARK: FETCH QUESTIONS DATA FROM API
 	public func fetchRequest() {
 		service.fetchQuestionsData { result, error in
 			if error == nil {
-				self.questionsData = result
+				QuestionsViewModel.questionsData = result
 			} else {
 				print("error fetching data to receive questions - \(String(describing: error?.localizedDescription))")
 			}
@@ -51,20 +52,8 @@ class QuestionsViewModel {
 	}
     
     // MARK: CHECK FOR USER ANSWER
-	public func checkAnswer(index: Int, difficulty: String) -> Bool {
-		var correctOption: String?
-		
-		switch difficulty {
-		case "easy":
-			correctOption = questionsData?.easy[index].correct
-		case "intermediate":
-			correctOption = questionsData?.intermediate[index].correct
-		case "hard":
-			correctOption = questionsData?.hard[index].correct
-		default:
-			break
-		}
-		
+	public func checkAnswer(index: Int, questions: [Difficulty]) -> Bool {
+		let correctOption = questions[index].correct
 		return UserDataModel.shared.newPlayer?.selectedOption == correctOption
     }
     
@@ -74,15 +63,14 @@ class QuestionsViewModel {
 	
 	// MARK: METHOD TO SHUFFLE QUESTIONS
 	private func shuffleQuestions(_ difficulty: String) -> [Difficulty] {
-		fetchRequest()
 		var questions: [Difficulty]
 		switch difficulty {
 			case "easy":
-				questions = questionsData?.easy ?? [Difficulty]()
+			questions = QuestionsViewModel.questionsData?.easy ?? [Difficulty]()
 			case "intermediate":
-				questions = questionsData?.intermediate ?? [Difficulty]()
+			questions = QuestionsViewModel.questionsData?.intermediate ?? [Difficulty]()
 			case "hard":
-				questions = questionsData?.hard ?? [Difficulty]()
+			questions = QuestionsViewModel.questionsData?.hard ?? [Difficulty]()
 			default:
 				return [Difficulty]()
 			}

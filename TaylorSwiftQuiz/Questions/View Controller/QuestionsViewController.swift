@@ -11,6 +11,7 @@ class QuestionsViewController: UIViewController {
     var currentIndex: Int = 0
     private var screen: QuestionsView?
     private var viewModel: QuestionsViewModel = QuestionsViewModel()
+	var questions: [Difficulty]?
     
     override func loadView() {
         screen = QuestionsView()
@@ -50,14 +51,15 @@ extension QuestionsViewController {
     }
     private func loadQuestion() {
         let number = viewModel.getQuestionNumber()
+		questions = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())
         screen?.questionNumberLabel.text = "Question \(number)"
         screen?.firstOptionButton.isEnabled = true
         screen?.secondOptionButton.isEnabled = true
         screen?.thirdOptionButton.isEnabled = true
-		screen?.questionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].question
-		screen?.firstOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[0]
-		screen?.secondOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[1]
-		screen?.thirdOptionLabel.text = viewModel.getQuestions(difficulty: viewModel.getDifficultyLevel())[currentIndex].options[2]
+		screen?.questionLabel.text = questions?[currentIndex].question
+		screen?.firstOptionLabel.text = questions?[currentIndex].options?[0]
+		screen?.secondOptionLabel.text = questions?[currentIndex].options?[1]
+		screen?.thirdOptionLabel.text = questions?[currentIndex].options?[2]
         screen?.nextButton.isEnabled = false
         screen?.confirmButton.isEnabled = false
     }
@@ -92,7 +94,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
     }
     
     func tappedConfirmButton() {
-		let result = viewModel.checkAnswer(index: currentIndex, difficulty: viewModel.getDifficultyLevel())
+		let result = viewModel.checkAnswer(index: currentIndex, questions: questions ?? [Difficulty]())
         changeToGreenOrRed(result)
         if result {
             viewModel.saveUserPoint()
@@ -106,9 +108,9 @@ extension QuestionsViewController: QuestionsViewProtocol {
         currentIndex = currentIndex < 10 ? currentIndex + 1 : currentIndex
     }
     func changeToGreenOrRed(_ result: Bool) {
-		let optionLabelMap = [viewModel.playerCurrentQuestions?[self.currentIndex].options[0]: screen?.firstOptionLabel,
-							  viewModel.playerCurrentQuestions?[self.currentIndex].options[1]: screen?.secondOptionLabel,
-							  viewModel.playerCurrentQuestions?[self.currentIndex].options[2]: screen?.thirdOptionLabel]
+		let optionLabelMap = [viewModel.playerCurrentQuestions?[self.currentIndex].options?[0]: screen?.firstOptionLabel,
+							  viewModel.playerCurrentQuestions?[self.currentIndex].options?[1]: screen?.secondOptionLabel,
+							  viewModel.playerCurrentQuestions?[self.currentIndex].options?[2]: screen?.thirdOptionLabel]
         if result {
 			optionLabelMap[viewModel.playerCurrentQuestions?[self.currentIndex].correct]??.textColor = .systemGreen
         } else {
