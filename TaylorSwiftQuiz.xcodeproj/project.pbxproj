@@ -25,6 +25,7 @@
 		2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */; };
 		2B2F68D02B3B4EDE00ABCCD4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */; };
 		2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */; };
+		2B62CE542B4C5B06003FF29D /* AlertStartNewGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B62CE532B4C5B06003FF29D /* AlertStartNewGame.swift */; };
 		2B75C3BE2B498834007A3C99 /* Questions.JSON in Resources */ = {isa = PBXBuildFile; fileRef = 2B75C3BD2B498834007A3C99 /* Questions.JSON */; };
 		2B9135392B4588F0002AC412 /* LeaderboardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */; };
 		2B91353B2B4588FE002AC412 /* LeaderboardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */; };
@@ -69,6 +70,7 @@
 		2B2F68CD2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDifficultyViewModel.swift; sourceTree = "<group>"; };
 		2B2F68CF2B3B4EDE00ABCCD4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		2B2F68D12B3B506400ABCCD4 /* UIColor + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor + Extension.swift"; sourceTree = "<group>"; };
+		2B62CE532B4C5B06003FF29D /* AlertStartNewGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertStartNewGame.swift; sourceTree = "<group>"; };
 		2B75C3BD2B498834007A3C99 /* Questions.JSON */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Questions.JSON; sourceTree = "<group>"; };
 		2B9135382B4588F0002AC412 /* LeaderboardsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsViewController.swift; sourceTree = "<group>"; };
 		2B91353A2B4588FE002AC412 /* LeaderboardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardsView.swift; sourceTree = "<group>"; };
@@ -444,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				2B93C1272AC17265001A2431 /* SelectPhotoAlertController.swift */,
+				2B62CE532B4C5B06003FF29D /* AlertStartNewGame.swift */,
 			);
 			path = Alerts;
 			sourceTree = "<group>";
@@ -568,6 +571,7 @@
 				2B93C1192ABF46A6001A2431 /* PlayerDetailsViewController.swift in Sources */,
 				2B2BCF3D2B3DB6A9003D73AA /* QuestionsViewModel.swift in Sources */,
 				2B93C1232AC16847001A2431 /* ChooseDifficultyView.swift in Sources */,
+				2B62CE542B4C5B06003FF29D /* AlertStartNewGame.swift in Sources */,
 				2B2BCF422B3DFDD5003D73AA /* UserDataModel.swift in Sources */,
 				2BA928D72B44312D005B9330 /* TotalScoreViewModel.swift in Sources */,
 				2B1662662AC344FE009ECF71 /* QuestionsViewController.swift in Sources */,

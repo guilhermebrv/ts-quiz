@@ -163,6 +163,8 @@ extension QuestionsViewController: QuestionsViewProtocol {
         loadQuestion()
     }
     func tappedStartNewGameButton() {
-        navigationController?.popToRootViewController(animated: true)
+		AlertStartNewGame(controller: self).showAlert(title: "Warning", message: "Are you sure you want to start a new game and lose current progress?") {
+			self.navigationController?.popToRootViewController(animated: true)
+		}
     }
 }
