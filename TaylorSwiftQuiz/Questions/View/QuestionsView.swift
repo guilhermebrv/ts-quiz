@@ -242,24 +242,24 @@ class QuestionsView: UIView {
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
             
-            playerPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
+            playerPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             playerPhoto.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             playerPhoto.widthAnchor.constraint(equalToConstant: 30),
             playerPhoto.heightAnchor.constraint(equalToConstant: 30),
             
-            playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             playerName.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 10),
             playerName.trailingAnchor.constraint(equalTo: centerXAnchor),
             playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
 
             pointsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
-            pointsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
+            pointsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             pointsLabel.leadingAnchor.constraint(equalTo: centerXAnchor),
             
-            questionNumberLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: 35),
+            questionNumberLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: 25),
             questionNumberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            questionLabel.topAnchor.constraint(equalTo: questionNumberLabel.bottomAnchor, constant: 25),
+            questionLabel.topAnchor.constraint(equalTo: questionNumberLabel.bottomAnchor, constant: 12),
             questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
@@ -268,7 +268,7 @@ class QuestionsView: UIView {
             firstOptionButton.widthAnchor.constraint(equalToConstant: 30),
             firstOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 30),
+            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 20),
             firstOptionLabel.leadingAnchor.constraint(equalTo: firstOptionButton.trailingAnchor, constant: 20),
             firstOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
@@ -277,7 +277,7 @@ class QuestionsView: UIView {
             secondOptionButton.widthAnchor.constraint(equalToConstant: 30),
             secondOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            secondOptionLabel.topAnchor.constraint(equalTo: firstOptionLabel.bottomAnchor, constant: 40),
+            secondOptionLabel.topAnchor.constraint(equalTo: firstOptionLabel.bottomAnchor, constant: 22),
             secondOptionLabel.leadingAnchor.constraint(equalTo: secondOptionButton.trailingAnchor, constant: 20),
             secondOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
@@ -286,12 +286,12 @@ class QuestionsView: UIView {
             thirdOptionButton.widthAnchor.constraint(equalToConstant: 30),
             thirdOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            thirdOptionLabel.topAnchor.constraint(equalTo: secondOptionLabel.bottomAnchor, constant: 40),
+            thirdOptionLabel.topAnchor.constraint(equalTo: secondOptionLabel.bottomAnchor, constant: 21),
             thirdOptionLabel.leadingAnchor.constraint(equalTo: thirdOptionButton.trailingAnchor, constant: 20),
             thirdOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
             confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            confirmButton.topAnchor.constraint(equalTo: thirdOptionLabel.bottomAnchor, constant: 40),
+            confirmButton.topAnchor.constraint(equalTo: thirdOptionLabel.bottomAnchor, constant: 30),
             confirmButton.leadingAnchor.constraint(equalTo: questionLabel.leadingAnchor),
             confirmButton.trailingAnchor.constraint(equalTo: questionLabel.trailingAnchor),
             confirmButton.heightAnchor.constraint(equalToConstant: 60),

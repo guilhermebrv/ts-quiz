@@ -9,6 +9,7 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     var currentIndex: Int = 0
+	var questions: [Difficulty]?
     private var screen: QuestionsView?
     private var viewModel: QuestionsViewModel = QuestionsViewModel()
     
@@ -49,45 +50,40 @@ extension QuestionsViewController {
         screen?.playerName.text = name
     }
     private func loadQuestion() {
+		var isDataLoaded = false
 		let number = viewModel.getQuestionNumber()
 		screen?.questionNumberLabel.text = "Question \(number)"
-		viewModel.fetchRequest { data in
-			DispatchQueue.main.async {
-				if data {
-					var questions = self.viewModel.questionsData
-					if self.currentIndex == 0 {
-						questions = questions?.shuffled()
+		
+		if !isDataLoaded {
+			viewModel.fetchRequest { data in
+				DispatchQueue.main.async {
+					if data {
+						isDataLoaded = true
+						self.updateQuestions()
+					} else {
+						print("error fetching data from API")
 					}
-					self.screen?.questionLabel.text = questions?[self.currentIndex].question
-					self.screen?.firstOptionLabel.text = questions?[self.currentIndex].options?[0]
-					self.screen?.secondOptionLabel.text = questions?[self.currentIndex].options?[1]
-					self.screen?.thirdOptionLabel.text = questions?[self.currentIndex].options?[2]
-				} else {
-					print("error fetching data from API")
 				}
 			}
+		} else {
+			updateQuestions()
 		}
-//		if viewModel.questionsData?.isEmpty == true {
-//			viewModel.fetchRequest { data in
-//				DispatchQueue.main.async {
-//					if data {
-//						let questions = self.viewModel.questionsData
-//						self.screen?.questionLabel.text = questions?[self.currentIndex].question
-//						self.screen?.firstOptionLabel.text = questions?[self.currentIndex].options?[0]
-//						self.screen?.secondOptionLabel.text = questions?[self.currentIndex].options?[1]
-//						self.screen?.thirdOptionLabel.text = questions?[self.currentIndex].options?[2]
-//					} else {
-//						print("error fetching data from API")
-//					}
-//				}
-//			}
-//		}
 		screen?.firstOptionButton.isEnabled = true
 		screen?.secondOptionButton.isEnabled = true
 		screen?.thirdOptionButton.isEnabled = true
         screen?.nextButton.isEnabled = false
         screen?.confirmButton.isEnabled = false
     }
+	private func updateQuestions() {
+		if self.currentIndex == 0 {
+			questions = viewModel.questionsData
+			questions = questions?.shuffled()
+		}
+		screen?.questionLabel.text = questions?[self.currentIndex].question
+		screen?.firstOptionLabel.text = questions?[self.currentIndex].options?[0]
+		screen?.secondOptionLabel.text = questions?[self.currentIndex].options?[1]
+		screen?.thirdOptionLabel.text = questions?[self.currentIndex].options?[2]
+	}
 }
 
 extension QuestionsViewController: QuestionsViewProtocol {
@@ -119,7 +115,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
     }
     
     func tappedConfirmButton() {
-		let result = viewModel.checkAnswer(index: currentIndex, questions: viewModel.questionsData ?? [Difficulty]())
+		let result = viewModel.checkAnswer(index: currentIndex, questions: questions ?? [Difficulty]())
         changeToGreenOrRed(result)
         if result {
             viewModel.saveUserPoint()
@@ -133,13 +129,13 @@ extension QuestionsViewController: QuestionsViewProtocol {
         currentIndex = currentIndex < 10 ? currentIndex + 1 : currentIndex
     }
     func changeToGreenOrRed(_ result: Bool) {
-		let optionLabelMap = [viewModel.questionsData?[self.currentIndex].options?[0]: screen?.firstOptionLabel,
-							  viewModel.questionsData?[self.currentIndex].options?[1]: screen?.secondOptionLabel,
-							  viewModel.questionsData?[self.currentIndex].options?[2]: screen?.thirdOptionLabel]
+		let optionLabelMap = [questions?[self.currentIndex].options?[0]: screen?.firstOptionLabel,
+							  questions?[self.currentIndex].options?[1]: screen?.secondOptionLabel,
+							  questions?[self.currentIndex].options?[2]: screen?.thirdOptionLabel]
         if result {
-			optionLabelMap[viewModel.questionsData?[self.currentIndex].correct]??.textColor = .systemGreen
+			optionLabelMap[questions?[self.currentIndex].correct]??.textColor = .systemGreen
         } else {
-			optionLabelMap[viewModel.questionsData?[self.currentIndex].correct]??.textColor = .systemGreen
+			optionLabelMap[questions?[self.currentIndex].correct]??.textColor = .systemGreen
             let incorrectLabel = optionLabelMap[viewModel.getSelectedOption()]
             incorrectLabel??.textColor = .systemRed
         }
