@@ -6,27 +6,15 @@
 //
 
 import UIKit
-import RealmSwift
 
 class LeaderboardViewModel {
-	
-	public func fetchDataFromManager() {
-		RealmManager.shared.fetchData()
-	}
-	
-	public var getPlayersData: Results<PlayerRealm> {
-		//let players = UserDataModel.shared.fetchPlayers()
-		let players = RealmManager.shared.player!
+	public var getPlayersData: [Player] {
+		let players = UserDataModel.shared.fetchPlayers()
 		return players
 	}
 	
 	public var numberOfRowsInSection: Int {
-		let playerNumber = RealmManager.shared.player
-		if let players = playerNumber {
-			return players.count
-		} else {
-			return 0
-		}
+		return UserDataModel.shared.countPlayers()
 	}
 	
 	public var heightForRowAt: CGFloat {

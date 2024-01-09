@@ -23,7 +23,7 @@ class LeaderboardTableViewCell: UITableViewCell {
 }
 
 extension LeaderboardTableViewCell {
-	public func setupCell(player: PlayerRealm) {
+	public func setupCell(player: Player) {
 		let eraColorMap: [String: UIColor] = [
 				"taylor-swift": .taylorswift,
 				"fearless": .fearless,
@@ -35,9 +35,8 @@ extension LeaderboardTableViewCell {
 				"folklore": .folklore,
 				"evermore": .evermore,
 				"midnights": .midnights]
-		screen.bgView.backgroundColor = eraColorMap[player.era]
+		screen.bgView.backgroundColor = eraColorMap[player.era ?? ""]
 		screen.playerNameLabel.text = player.name
 		screen.playerScoreButton.setTitle(String(player.points), for: .normal)
-		screen.playerPositionLabel.text = String(player.rank)
 	}
 }

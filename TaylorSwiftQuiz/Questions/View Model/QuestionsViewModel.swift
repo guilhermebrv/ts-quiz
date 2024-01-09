@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import RealmSwift
 
 class QuestionsViewModel {
 	private var service: QuestionsService = QuestionsService()
@@ -45,19 +44,6 @@ class QuestionsViewModel {
     public func saveNextQuestion() {
         UserDataModel.shared.newPlayer?.currentQuestion += 1
     }
-	
-	// MARK: SAVING FROM COREDATA TO REALM
-	public func savePlayerToRealm() {
-		let player = PlayerRealm(name: getPlayerName(), points: getCurrentPoints(), rank: 0, era: getEraData(), difficulty: getDifficultyLevel(), difficultyLevel: UserDataModel.shared.newPlayer?.difficultyLevel ?? 1)
-		do {
-			let realm = try Realm()
-			try realm.write {
-				realm.add(player)
-			}
-		} catch {
-			print("error saving player data to Realm - \(error.localizedDescription)")
-		}
-	}
     
     // MARK: CHECK FOR USER ANSWER
 	public func checkAnswer(index: Int, questions: [Difficulty]) -> Bool {
@@ -68,29 +54,8 @@ class QuestionsViewModel {
     public func getSelectedOption() -> String {
         return UserDataModel.shared.newPlayer?.selectedOption ?? ""
     }
-	
-	// MARK: METHOD TO SHUFFLE QUESTIONS
-//	private func shuffleQuestions(_ difficulty: String) -> [Difficulty] {
-//		var questions: [Difficulty]
-//		switch difficulty {
-//			case "easy":
-//			questions = QuestionsViewModel.questionsData?.easy ?? [Difficulty]()
-//			case "intermediate":
-//			questions = QuestionsViewModel.questionsData?.intermediate ?? [Difficulty]()
-//			case "hard":
-//			questions = QuestionsViewModel.questionsData?.hard ?? [Difficulty]()
-//			default:
-//				return [Difficulty]()
-//			}
-//		playerCurrentQuestions = questions.shuffled()
-//		return playerCurrentQuestions ?? [Difficulty]()
-//	}
     
     // MARK: DATA TO LOAD SCREEN
-//	public func getQuestions(difficulty: String) -> [Difficulty] {
-//		return shuffleQuestions(difficulty)
-//    }
-
     public func getEraData() -> String {
         return UserDataModel.shared.newPlayer?.era ?? ""
     }
