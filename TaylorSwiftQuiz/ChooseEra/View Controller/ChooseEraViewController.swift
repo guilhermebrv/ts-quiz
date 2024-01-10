@@ -68,7 +68,6 @@ extension ChooseEraViewController: UITableViewDelegate, UITableViewDataSource {
         return cell ?? UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(indexPath.row)
         viewModel.saveFavoriteEra(viewModel.eras[indexPath.row])
         if let cell = tableView.cellForRow(at: indexPath) as? ChooseEraTableViewCell {
             cell.selectEraEffect()

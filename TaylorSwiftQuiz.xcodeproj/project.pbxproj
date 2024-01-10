@@ -48,6 +48,7 @@
 		2BAD55BC2B3219F400CC0598 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */; };
 		2BCEFB092B4EEE4700AE381C /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCEFB082B4EEE4700AE381C /* Realm */; };
 		2BCEFB0B2B4EEE4700AE381C /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2BCEFB0A2B4EEE4700AE381C /* RealmSwift */; };
+		2BCEFB0D2B4F09E400AE381C /* RealmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BCEFB0C2B4F09E400AE381C /* RealmService.swift */; };
 		2BF853712B49B6EB00AE3855 /* QuestionsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF853702B49B6EB00AE3855 /* QuestionsService.swift */; };
 		2BF853732B49B72700AE3855 /* QuestionsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF853722B49B72700AE3855 /* QuestionsData.swift */; };
 /* End PBXBuildFile section */
@@ -94,6 +95,7 @@
 		2BAD55AE2B30B52A00CC0598 /* Apercu Mono.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Apercu Mono.otf"; path = "../../../../Downloads/Apercu Mono.otf"; sourceTree = "<group>"; };
 		2BAD55AF2B30B52A00CC0598 /* Suisse Int'l Mono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Suisse Int'l Mono.ttf"; path = "../../../../Downloads/Suisse Int'l Mono.ttf"; sourceTree = "<group>"; };
 		2BAD55BB2B3219F400CC0598 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
+		2BCEFB0C2B4F09E400AE381C /* RealmService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmService.swift; sourceTree = "<group>"; };
 		2BF853702B49B6EB00AE3855 /* QuestionsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsService.swift; sourceTree = "<group>"; };
 		2BF853722B49B72700AE3855 /* QuestionsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -452,6 +454,7 @@
 			isa = PBXGroup;
 			children = (
 				2BF853702B49B6EB00AE3855 /* QuestionsService.swift */,
+				2BCEFB0C2B4F09E400AE381C /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -543,6 +546,7 @@
 				2B2F68CE2B3B4EA800ABCCD4 /* ChooseDifficultyViewModel.swift in Sources */,
 				2B2F68D22B3B506400ABCCD4 /* UIColor + Extension.swift in Sources */,
 				2B93C0DB2ABF0017001A2431 /* AppDelegate.swift in Sources */,
+				2BCEFB0D2B4F09E400AE381C /* RealmService.swift in Sources */,
 				2B26BB4F2B3C56A200C95278 /* ChooseEraViewModel.swift in Sources */,
 				2B1662602AC32C84009ECF71 /* ChooseEraTableViewCell.swift in Sources */,
 				2B1662592AC2E7B7009ECF71 /* ChooseEraViewController.swift in Sources */,

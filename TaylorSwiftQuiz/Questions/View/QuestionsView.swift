@@ -178,7 +178,6 @@ class QuestionsView: UIView {
         button.setTitleColor(.black.withAlphaComponent(0.2), for: .disabled)
         button.layer.borderWidth = 2
         button.layer.borderColor = UIColor.black.cgColor
-        //button.isEnabled = false
         button.addTarget(self, action: #selector(tappedNextButton), for: .touchUpInside)
         button.backgroundColor = .customWhite
         return button
@@ -250,7 +249,6 @@ class QuestionsView: UIView {
             playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             playerName.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 10),
             playerName.trailingAnchor.constraint(equalTo: centerXAnchor),
-            playerName.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
 
             pointsLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             pointsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
@@ -268,7 +266,7 @@ class QuestionsView: UIView {
             firstOptionButton.widthAnchor.constraint(equalToConstant: 30),
             firstOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 20),
+            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 26),
             firstOptionLabel.leadingAnchor.constraint(equalTo: firstOptionButton.trailingAnchor, constant: 20),
             firstOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
@@ -277,7 +275,7 @@ class QuestionsView: UIView {
             secondOptionButton.widthAnchor.constraint(equalToConstant: 30),
             secondOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            secondOptionLabel.topAnchor.constraint(equalTo: firstOptionLabel.bottomAnchor, constant: 22),
+            secondOptionLabel.topAnchor.constraint(equalTo: firstOptionLabel.bottomAnchor, constant: 21),
             secondOptionLabel.leadingAnchor.constraint(equalTo: secondOptionButton.trailingAnchor, constant: 20),
             secondOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
@@ -286,7 +284,7 @@ class QuestionsView: UIView {
             thirdOptionButton.widthAnchor.constraint(equalToConstant: 30),
             thirdOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            thirdOptionLabel.topAnchor.constraint(equalTo: secondOptionLabel.bottomAnchor, constant: 21),
+            thirdOptionLabel.topAnchor.constraint(equalTo: secondOptionLabel.bottomAnchor, constant: 20),
             thirdOptionLabel.leadingAnchor.constraint(equalTo: thirdOptionButton.trailingAnchor, constant: 20),
             thirdOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             

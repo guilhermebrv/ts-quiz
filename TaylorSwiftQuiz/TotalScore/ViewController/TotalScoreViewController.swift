@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TotalScoreViewController: UIViewController {
     private var screen: TotalScoreView?
@@ -22,6 +23,9 @@ class TotalScoreViewController: UIViewController {
         setEraColor()
         setPlayerName()
         setCurrentPoints()
+		Task {
+			await viewModel.saveDataToRealm()
+		}
     }
 }
 

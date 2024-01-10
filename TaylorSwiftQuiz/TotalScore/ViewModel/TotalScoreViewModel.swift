@@ -6,8 +6,15 @@
 //
 
 import UIKit
+import RealmSwift
 
 class TotalScoreViewModel {
+	private let realmService = RealmService()
+	
+	public func saveDataToRealm() async {
+		await realmService.saveRealmService()
+	}
+	
     public func getFavoriteEra() -> String {
         return UserDataModel.shared.newPlayer?.era ?? ""
     }

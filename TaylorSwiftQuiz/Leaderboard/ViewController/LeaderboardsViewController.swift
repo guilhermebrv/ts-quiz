@@ -12,43 +12,9 @@ import RealmSwift
 class LeaderboardsViewController: UIViewController {
 	private var screen: LeaderboardsView?
 	private var viewModel: LeaderboardViewModel = LeaderboardViewModel()
+	private var realmService = RealmService()
 	private var players: Results<PlayerRealm>?
-	private var playersNumber: Int = 0
 	
-	@MainActor
-	public func test() async {
-		let app = RealmSwift.App(id: "ts-quiz2-akffn")
-		do {
-			let user = try await app.login(credentials: .anonymous)
-			let config = user.flexibleSyncConfiguration(initialSubscriptions: { subscriptions in
-				subscriptions.append(QuerySubscription<PlayerRealm>(name: "players"))
-			})
-
-			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
-
-			try realm.write {
-				var player = PlayerRealm()
-				if let name = UserDataModel.shared.newPlayer?.name,
-				   let points = UserDataModel.shared.newPlayer?.points,
-				   let era = UserDataModel.shared.newPlayer?.era {
-					player = PlayerRealm(name, era, points)
-				}
-			  realm.add(player)
-			}
-			
-			players = realm.objects(PlayerRealm.self)
-			playersNumber = players?.count ?? 0
-			
-			DispatchQueue.main.async {
-				self.screen?.playersScoresTableView.reloadData()
-			}
-			
-			UserDataModel.shared.deleteCurrentSessionData()
-		} catch {
-			print("An error occurred: \(error)")
-		}
-	}
-
 	override func loadView() {
 		screen = LeaderboardsView()
 		view = screen
@@ -58,7 +24,7 @@ class LeaderboardsViewController: UIViewController {
         super.viewDidLoad()
 		signProtocols()
 		Task {
-			await test()
+			players = await viewModel.getDataFromRealm(tableview: screen?.playersScoresTableView ?? UITableView())
 		}
     }
 }
@@ -79,7 +45,7 @@ extension LeaderboardsViewController: LeaderboardsViewProtocol {
 
 extension LeaderboardsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return playersNumber
+		return players?.count ?? 0
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
