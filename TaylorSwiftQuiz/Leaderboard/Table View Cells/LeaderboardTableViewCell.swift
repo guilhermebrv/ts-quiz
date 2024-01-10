@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LeaderboardTableViewCell: UITableViewCell {
 	static let identifier: String = String(describing: LeaderboardTableViewCell.self)
@@ -23,7 +24,7 @@ class LeaderboardTableViewCell: UITableViewCell {
 }
 
 extension LeaderboardTableViewCell {
-	public func setupCell(player: Player) {
+	public func setupCell(player: PlayerRealm) {
 		let eraColorMap: [String: UIColor] = [
 				"taylor-swift": .taylorswift,
 				"fearless": .fearless,
@@ -35,7 +36,7 @@ extension LeaderboardTableViewCell {
 				"folklore": .folklore,
 				"evermore": .evermore,
 				"midnights": .midnights]
-		screen.bgView.backgroundColor = eraColorMap[player.era ?? ""]
+		screen.bgView.backgroundColor = eraColorMap[player.era]
 		screen.playerNameLabel.text = player.name
 		screen.playerScoreButton.setTitle(String(player.points), for: .normal)
 	}

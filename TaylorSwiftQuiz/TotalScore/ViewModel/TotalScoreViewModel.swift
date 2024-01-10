@@ -16,7 +16,7 @@ class TotalScoreViewModel {
         return UserDataModel.shared.newPlayer?.name ?? ""
     }
     
-    public func getCurrentPoints() -> Int16 {
+    public func getCurrentPoints() -> Int32 {
         return UserDataModel.shared.newPlayer?.points ?? 0
     }
 }

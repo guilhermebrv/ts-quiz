@@ -6,10 +6,45 @@
 //
 
 import UIKit
+import RealmSwift
 
 class LeaderboardsViewController: UIViewController {
 	private var screen: LeaderboardsView?
 	private var viewModel: LeaderboardViewModel = LeaderboardViewModel()
+	private var players: Results<PlayerRealm>?
+	private var playersNumber: Int = 0
+	
+	@MainActor
+	public func test() async {
+		let app = RealmSwift.App(id: "ts-quiz2-akffn")
+		do {
+			let user = try await app.login(credentials: .anonymous)
+			let config = user.flexibleSyncConfiguration(initialSubscriptions: { subscriptions in
+				subscriptions.append(QuerySubscription<PlayerRealm>(name: "players"))
+			})
+
+			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
+
+			try realm.write {
+				var player = PlayerRealm()
+				if let name = UserDataModel.shared.newPlayer?.name,
+				   let points = UserDataModel.shared.newPlayer?.points,
+				   let era = UserDataModel.shared.newPlayer?.era {
+					player = PlayerRealm(name, era, points)
+				}
+			  realm.add(player)
+			}
+			
+			players = realm.objects(PlayerRealm.self)
+			playersNumber = players?.count ?? 0
+			
+			DispatchQueue.main.async {
+				self.screen?.playersScoresTableView.reloadData()
+			}
+		} catch {
+			print("An error occurred: \(error)")
+		}
+	}
 
 	override func loadView() {
 		screen = LeaderboardsView()
@@ -19,6 +54,9 @@ class LeaderboardsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		signProtocols()
+		Task {
+			await test()
+		}
     }
 }
 
@@ -38,12 +76,14 @@ extension LeaderboardsViewController: LeaderboardsViewProtocol {
 
 extension LeaderboardsViewController: UITableViewDelegate, UITableViewDataSource {
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		return viewModel.numberOfRowsInSection
+		return playersNumber
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: LeaderboardTableViewCell.identifier, for: indexPath) as? LeaderboardTableViewCell
-		cell?.setupCell(player: viewModel.getPlayersData[indexPath.row])
+		if let players = players {
+			cell?.setupCell(player: players[indexPath.row])
+		}
 		return cell ?? UITableViewCell()
 	}
 	

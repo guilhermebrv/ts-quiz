@@ -13,10 +13,6 @@ class LeaderboardViewModel {
 		return players
 	}
 	
-	public var numberOfRowsInSection: Int {
-		return UserDataModel.shared.countPlayers()
-	}
-	
 	public var heightForRowAt: CGFloat {
 		return 100
 	}
