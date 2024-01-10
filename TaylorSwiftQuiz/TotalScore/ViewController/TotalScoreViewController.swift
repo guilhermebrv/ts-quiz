@@ -60,6 +60,7 @@ extension TotalScoreViewController: TotalScoreViewProtocol {
     }
     
     func tappedStartNewGameButton() {
+		UserDataModel.shared.deleteCurrentSessionData()
         navigationController?.popToRootViewController(animated: true)
     }
 }

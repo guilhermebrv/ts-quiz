@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreData
 import RealmSwift
 
 class LeaderboardsViewController: UIViewController {
@@ -41,6 +42,8 @@ class LeaderboardsViewController: UIViewController {
 			DispatchQueue.main.async {
 				self.screen?.playersScoresTableView.reloadData()
 			}
+			
+			UserDataModel.shared.deleteCurrentSessionData()
 		} catch {
 			print("An error occurred: \(error)")
 		}

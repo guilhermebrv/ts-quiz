@@ -163,6 +163,7 @@ extension QuestionsViewController: QuestionsViewProtocol {
     }
     func tappedStartNewGameButton() {
 		AlertStartNewGame(controller: self).showAlert(title: "Warning", message: "Are you sure you want to start a new game and lose current progress?") {
+			UserDataModel.shared.deleteCurrentSessionData()
 			self.navigationController?.popToRootViewController(animated: true)
 		}
     }

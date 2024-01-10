@@ -12,11 +12,13 @@ class UserDataModel {
     static let shared = UserDataModel()
     private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var newPlayer: Player?
+	var currentPlayer: Player?
     
     private init() { }
     
     public func saveNewPlayer() {
         newPlayer = Player(context: context)
+		currentPlayer = newPlayer
         context.insert(newPlayer ?? Player())
     }
     
@@ -92,22 +94,15 @@ class UserDataModel {
 		return players
     }
 
-    public func saveData(saving: [Player]) {
-        do {
-            try context.save()
-        } catch {
-            print("error saving context - \(error.localizedDescription)")
-        }
-    }
-
-    public func readData() -> [Player] {
-        let request: NSFetchRequest<Player> = Player.fetchRequest()
-        var players = [Player]()
-        do {
-            players = try context.fetch(request)
-        } catch {
-            print("error fetching data from context - \(error.localizedDescription)")
-        }
-        return players
-    }
+	public func deleteCurrentSessionData() {
+		if let objectToDelete = currentPlayer {
+			context.delete(objectToDelete)
+			do {
+				try context.save()
+			} catch {
+				print("error deleting object from CoreData")
+			}
+			currentPlayer = nil
+		}
+	}
 }
