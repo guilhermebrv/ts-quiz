@@ -12,6 +12,7 @@ class PlayerRealm: Object {
 	@Persisted public var era: String
 	@Persisted public var name: String
 	@Persisted public var difficulty: String
+	//@Persisted public var rank: Int32
 	@Persisted public var points: Int32
 	
 	convenience init(_ name: String, _ era: String, _ difficulty: String, _ points: Int32) {
@@ -19,6 +20,7 @@ class PlayerRealm: Object {
 		self.name = name
 		self.difficulty = difficulty
 		self.era = era
+		//self.rank = rank
 		self.points = points
 	}
 }

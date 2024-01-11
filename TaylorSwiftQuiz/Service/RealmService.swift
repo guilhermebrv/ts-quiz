@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 class RealmService {
-	private var players: Results<PlayerRealm>?
+	private var players: [PlayerRealm]?
 	
 	@MainActor
 	public func saveRealmService() async {
@@ -37,7 +37,7 @@ class RealmService {
 	}
 	
 	@MainActor
-	public func getRealmData() async -> Results<PlayerRealm>? {
+	public func getRealmData() async -> [PlayerRealm]? {
 		let app = RealmSwift.App(id: "ts-quiz2-akffn")
 		do {
 			let user = try await app.login(credentials: .anonymous)
@@ -48,6 +48,13 @@ class RealmService {
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 			
 			players = realm.objects(PlayerRealm.self)
+				.sorted(by: { if $0.points != $1.points { // pontuation is different
+								return $0.points > $1.points
+							} else { // pontuation is the same, check difficulty
+								let difficulties = ["easy", "intermediate", "hard"]
+								return difficulties.firstIndex(of: $0.difficulty)! < difficulties.firstIndex(of: $1.difficulty)!
+							}
+						})
 		} catch {
 			print("An error occurred: \(error)")
 		}
@@ -55,6 +62,38 @@ class RealmService {
 	}
 	
 	public func rankPlayers() {
-		
+		let realm = try! Realm()
+		let allPlayers = realm.objects(PlayerRealm.self)
+							 .sorted(byKeyPath: "score", ascending: false)
+							 .sorted(by: { if $0.difficulty == $1.difficulty {
+											return false
+										}
+										 if $0.difficulty == "hard" {
+											 return true
+										 }
+										 if $0.difficulty == "intermediate" && $1.difficulty == "easy" {
+											 return true
+										 }
+										 return false
+							 })
+//		try! realm.write {
+//			var currentRank = 1
+//			var previousPlayer: PlayerRealm?
+//			
+//			for player in allPlayers {
+//				if let previous = previousPlayer {
+//					// Mesma pontuação e dificuldade = mesmo rank
+//					if previous.points == player.points && previous.difficulty == player.difficulty {
+//						player.rank = currentRank
+//					} else {
+//						currentRank += 1
+//						player.rank = currentRank
+//					}
+//				} else {
+//					player.rank = currentRank
+//				}
+//				previousPlayer = player
+//			}
+//		}
 	}
 }

@@ -235,7 +235,6 @@ class QuestionsView: UIView {
     
     private func configConstraints() {
         NSLayoutConstraint.activate([
-            
             bgView.topAnchor.constraint(equalTo: topAnchor),
             bgView.bottomAnchor.constraint(equalTo: bottomAnchor),
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -266,7 +265,7 @@ class QuestionsView: UIView {
             firstOptionButton.widthAnchor.constraint(equalToConstant: 30),
             firstOptionButton.heightAnchor.constraint(equalToConstant: 30),
             
-            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 26),
+            firstOptionLabel.topAnchor.constraint(equalTo: questionLabel.bottomAnchor, constant: 32),
             firstOptionLabel.leadingAnchor.constraint(equalTo: firstOptionButton.trailingAnchor, constant: 20),
             firstOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
 
