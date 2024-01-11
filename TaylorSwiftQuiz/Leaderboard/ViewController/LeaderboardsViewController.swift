@@ -24,7 +24,8 @@ class LeaderboardsViewController: UIViewController {
         super.viewDidLoad()
 		signProtocols()
 		Task {
-			players = await viewModel.getDataFromRealm(tableview: screen?.playersScoresTableView ?? UITableView())
+			players = await viewModel.getDataFromRealm()
+			screen?.playersScoresTableView.reloadData()
 		}
     }
 }

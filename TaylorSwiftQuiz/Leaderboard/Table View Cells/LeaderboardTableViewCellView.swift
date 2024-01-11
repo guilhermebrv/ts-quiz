@@ -57,6 +57,14 @@ class LeaderboardTableViewCellView: UIView {
 		return label
 	}()
 	
+	lazy var playerDifficultyLabel: UILabel = {
+		let label = UILabel()
+		label.translatesAutoresizingMaskIntoConstraints = false
+		label.textColor = .customWhite
+		label.font = UIFont(name: "Suisse Int'l Mono", size: 10)
+		return label
+	}()
+	
 	lazy var playerScoreButton: UIButton = {
 		let button = UIButton()
 		button.translatesAutoresizingMaskIntoConstraints = false
@@ -84,6 +92,7 @@ class LeaderboardTableViewCellView: UIView {
 		addSubview(playerPhoto)
 		addSubview(playerStackView)
 		playerStackView.addArrangedSubview(playerNameLabel)
+		//playerStackView.addArrangedSubview(playerDifficultyLabel)
 		playerStackView.addArrangedSubview(playerPositionLabel)
 		addSubview(playerScoreButton)
 	}

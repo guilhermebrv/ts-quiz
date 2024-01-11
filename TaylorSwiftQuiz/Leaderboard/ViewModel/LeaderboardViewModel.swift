@@ -11,8 +11,8 @@ import RealmSwift
 class LeaderboardViewModel {
 	private let realmService = RealmService()
 	
-	public func getDataFromRealm(tableview: UITableView) async -> Results<PlayerRealm>? {
-		let players = await realmService.getRealmData(tableToUpdate: tableview) ?? nil
+	public func getDataFromRealm() async -> Results<PlayerRealm>? {
+		let players = await realmService.getRealmData() ?? nil
 		return players
 	}
 	

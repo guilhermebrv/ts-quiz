@@ -24,8 +24,9 @@ class RealmService {
 				var player = PlayerRealm()
 				if let name = UserDataModel.shared.newPlayer?.name,
 				   let points = UserDataModel.shared.newPlayer?.points,
+				   let difficulty = UserDataModel.shared.newPlayer?.difficulty,
 				   let era = UserDataModel.shared.newPlayer?.era {
-					player = PlayerRealm(name, era, points)
+					player = PlayerRealm(name, era, difficulty, points)
 				}
 			  realm.add(player)
 			}
@@ -36,7 +37,7 @@ class RealmService {
 	}
 	
 	@MainActor
-	public func getRealmData(tableToUpdate: UITableView) async -> Results<PlayerRealm>? {
+	public func getRealmData() async -> Results<PlayerRealm>? {
 		let app = RealmSwift.App(id: "ts-quiz2-akffn")
 		do {
 			let user = try await app.login(credentials: .anonymous)
@@ -47,13 +48,13 @@ class RealmService {
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 			
 			players = realm.objects(PlayerRealm.self)
-			
-			DispatchQueue.main.async {
-				tableToUpdate.reloadData()
-			}
 		} catch {
 			print("An error occurred: \(error)")
 		}
 		return players ?? nil
+	}
+	
+	public func rankPlayers() {
+		
 	}
 }
