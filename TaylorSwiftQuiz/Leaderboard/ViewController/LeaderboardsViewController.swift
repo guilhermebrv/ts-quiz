@@ -13,7 +13,7 @@ class LeaderboardsViewController: UIViewController {
 	private var screen: LeaderboardsView?
 	private var viewModel: LeaderboardViewModel = LeaderboardViewModel()
 	private var realmService = RealmService()
-	private var players: [PlayerRealm]?
+	private var players: Results<PlayerRealm>?
 	
 	override func loadView() {
 		screen = LeaderboardsView()

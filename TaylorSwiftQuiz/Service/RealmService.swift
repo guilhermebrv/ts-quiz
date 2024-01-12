@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 class RealmService {
-	private var players: [PlayerRealm]?
+	private var orderedPlayers: [PlayerRealm]?
 	
 	@MainActor
 	public func saveRealmService() async {
@@ -26,7 +26,7 @@ class RealmService {
 				   let points = UserDataModel.shared.newPlayer?.points,
 				   let difficulty = UserDataModel.shared.newPlayer?.difficulty,
 				   let era = UserDataModel.shared.newPlayer?.era {
-					player = PlayerRealm(name, era, difficulty, points)
+					player = PlayerRealm(name, era, difficulty, 0, points)
 				}
 			  realm.add(player)
 			}
@@ -37,63 +37,54 @@ class RealmService {
 	}
 	
 	@MainActor
-	public func getRealmData() async -> [PlayerRealm]? {
+	public func getRealmData() async -> Results<PlayerRealm>? {
+		var rankedPlayers: Results<PlayerRealm>?
 		let app = RealmSwift.App(id: "ts-quiz2-akffn")
 		do {
 			let user = try await app.login(credentials: .anonymous)
 			let config = user.flexibleSyncConfiguration(initialSubscriptions: { subscriptions in
 				subscriptions.append(QuerySubscription<PlayerRealm>(name: "players"))
 			})
-
+			
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 			
-			players = realm.objects(PlayerRealm.self)
+			orderedPlayers = realm.objects(PlayerRealm.self)
 				.sorted(by: { if $0.points != $1.points { // pontuation is different
-								return $0.points > $1.points
-							} else { // pontuation is the same, check difficulty
-								let difficulties = ["easy", "intermediate", "hard"]
-								return difficulties.firstIndex(of: $0.difficulty)! < difficulties.firstIndex(of: $1.difficulty)!
-							}
-						})
+					return $0.points > $1.points
+				} else { // pontuation is the same, check difficulty
+					let difficulties = ["easy", "intermediate", "hard"]
+					return difficulties.firstIndex(of: $0.difficulty)! < difficulties.firstIndex(of: $1.difficulty)!
+				}
+				})
+			if let players = orderedPlayers {
+				rankedPlayers = rankPlayers(players, realm)
+			}
 		} catch {
 			print("An error occurred: \(error)")
 		}
-		return players ?? nil
+		return rankedPlayers ?? nil
 	}
 	
-	public func rankPlayers() {
-		let realm = try! Realm()
-		let allPlayers = realm.objects(PlayerRealm.self)
-							 .sorted(byKeyPath: "score", ascending: false)
-							 .sorted(by: { if $0.difficulty == $1.difficulty {
-											return false
-										}
-										 if $0.difficulty == "hard" {
-											 return true
-										 }
-										 if $0.difficulty == "intermediate" && $1.difficulty == "easy" {
-											 return true
-										 }
-										 return false
-							 })
-//		try! realm.write {
-//			var currentRank = 1
-//			var previousPlayer: PlayerRealm?
-//			
-//			for player in allPlayers {
-//				if let previous = previousPlayer {
-//					// Mesma pontuação e dificuldade = mesmo rank
-//					if previous.points == player.points && previous.difficulty == player.difficulty {
-//						player.rank = currentRank
-//					} else {
-//						currentRank += 1
-//						player.rank = currentRank
-//					}
-//				} else {
-//					player.rank = currentRank
-//				}
-//				previousPlayer = player
-//			}
-//		}
+	@MainActor
+	private func rankPlayers(_ orderedPlayers: [PlayerRealm], _ realm: Realm) -> Results<PlayerRealm> {
+		try! realm.write {
+			var currentRank = 1
+			var previousPlayer: PlayerRealm?
+			
+			for player in orderedPlayers {
+				if let previous = previousPlayer {
+					if previous.points == player.points && previous.difficulty == player.difficulty {
+						player.rank = currentRank
+					} else {
+						currentRank += 1
+						player.rank = currentRank
+					}
+				} else {
+					player.rank = currentRank
+				}
+				previousPlayer = player
+			}
+		}
+		return realm.objects(PlayerRealm.self)
 	}
 }
