@@ -62,7 +62,7 @@ class RealmService {
 		} catch {
 			print("An error occurred: \(error)")
 		}
-		return rankedPlayers ?? nil
+		return rankedPlayers?.sorted(byKeyPath: "rank", ascending: true) ?? nil
 	}
 	
 	@MainActor

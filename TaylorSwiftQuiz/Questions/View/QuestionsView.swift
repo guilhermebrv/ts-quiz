@@ -71,7 +71,6 @@ class QuestionsView: UIView {
     lazy var questionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Which are the colors of the sun?"
         label.textColor = .customWhite
         label.textAlignment = .center
         label.font = UIFont(name: "Apercu Mono", size: 23)
