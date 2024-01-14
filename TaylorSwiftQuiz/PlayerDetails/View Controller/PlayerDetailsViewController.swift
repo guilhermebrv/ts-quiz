@@ -7,7 +7,7 @@
 
 import UIKit
 import PhotosUI
-
+import CoreData
 
 class PlayerDetailsViewController: UIViewController {
     
@@ -32,6 +32,7 @@ class PlayerDetailsViewController: UIViewController {
         dismissKeyBoard()
         alertController = SelectPhotoAlertController(controller: self)
     }
+	
 }
 
 extension PlayerDetailsViewController {
