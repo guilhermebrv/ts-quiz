@@ -147,6 +147,10 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
                 if let selectedImage = image as? UIImage {
                     DispatchQueue.main.async {
                         self?.screen?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
+						if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
+							let base64String = imageData.base64EncodedString()
+							UserDataModel.shared.savePlayerPhoto(base64String)
+						}
                     }
                 } else { return }
             }
@@ -158,6 +162,10 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
             if let selectedImage = info[.originalImage] as? UIImage {
                 self.screen?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
                 self.screen?.playerChooseImageButton.imageView?.contentMode = .scaleToFill
+				if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
+					let base64String = imageData.base64EncodedString()
+					UserDataModel.shared.savePlayerPhoto(base64String)
+				}
             }
         }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

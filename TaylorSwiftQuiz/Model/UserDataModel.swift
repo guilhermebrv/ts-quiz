@@ -25,13 +25,21 @@ class UserDataModel {
     public func savePlayerName(_ name: String, _ id: UUID) {
         newPlayer?.name = name
         newPlayer?.id = id
-        //newPlayer?.photo = photo
         do {
             try context.save()
         } catch {
             print("error saving player name: \(error.localizedDescription)")
         }
     }
+	
+	public func savePlayerPhoto(_ photo: String) {
+		newPlayer?.photo = photo
+		do {
+			try context.save()
+		} catch {
+			print("error saving player photo: \(error.localizedDescription)")
+		}
+	}
     
     public func saveDifficulty(_ difficulty: String) {
         newPlayer?.difficulty = difficulty

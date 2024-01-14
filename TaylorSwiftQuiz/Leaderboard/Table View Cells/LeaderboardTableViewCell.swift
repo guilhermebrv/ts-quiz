@@ -41,5 +41,6 @@ extension LeaderboardTableViewCell {
 		screen.playerPositionLabel.text = "#\(player.rank)"
 		screen.playerDifficultyLabel.text = player.difficulty
 		screen.playerScoreButton.setTitle(String(player.points), for: .normal)
+		//screen.playerPhoto.image = UIImage(data: player.photo)
 	}
 }

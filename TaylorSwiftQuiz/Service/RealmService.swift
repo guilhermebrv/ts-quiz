@@ -25,8 +25,9 @@ class RealmService {
 				if let name = UserDataModel.shared.newPlayer?.name,
 				   let points = UserDataModel.shared.newPlayer?.points,
 				   let difficulty = UserDataModel.shared.newPlayer?.difficulty,
-				   let era = UserDataModel.shared.newPlayer?.era {
-					player = PlayerRealm(name, era, difficulty, 0, points)
+				   let era = UserDataModel.shared.newPlayer?.era,
+				   let photo = UserDataModel.shared.newPlayer?.photo {
+					player = PlayerRealm(name, photo, era, difficulty, 0, points)
 				}
 			  realm.add(player)
 			}
@@ -73,15 +74,11 @@ class RealmService {
 			
 			for player in orderedPlayers {
 				if let previous = previousPlayer {
-					if previous.points == player.points && previous.difficulty == player.difficulty {
-						player.rank = currentRank
-					} else {
+					if !(previous.points == player.points) || !(previous.difficulty == player.difficulty) {
 						currentRank += 1
-						player.rank = currentRank
 					}
-				} else {
-					player.rank = currentRank
 				}
+				player.rank = currentRank
 				previousPlayer = player
 			}
 		}
