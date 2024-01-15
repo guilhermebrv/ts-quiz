@@ -76,6 +76,7 @@
 		2B91353C2B45890F002AC412 /* LeaderboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardViewModel.swift; sourceTree = "<group>"; };
 		2B91353F2B45DF9D002AC412 /* LeaderboardTableViewCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCellView.swift; sourceTree = "<group>"; };
 		2B9135412B45DFAC002AC412 /* LeaderboardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeaderboardTableViewCell.swift; sourceTree = "<group>"; };
+		2B93B3EE2B554C26009704F6 /* UserData 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "UserData 2.xcdatamodel"; sourceTree = "<group>"; };
 		2B93C0D72ABF0017001A2431 /* TaylorSwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaylorSwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B93C0DA2ABF0017001A2431 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B93C0DC2ABF0017001A2431 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -823,6 +824,7 @@
 		2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				2B93B3EE2B554C26009704F6 /* UserData 2.xcdatamodel */,
 				2B2BCF3F2B3DEB63003D73AA /* UserData.xcdatamodel */,
 			);
 			currentVersion = 2B2BCF3F2B3DEB63003D73AA /* UserData.xcdatamodel */;

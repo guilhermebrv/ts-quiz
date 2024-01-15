@@ -129,6 +129,10 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         self.navigationController?.pushViewController(nextScreen, animated: true)
         viewModel.createNewPlayer()
         viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
+		let photoSelected = viewModel.checkIfUserSelectedPhoto()
+		if !photoSelected {
+			UserDataModel.shared.newPlayer?.photo = "custom"
+		}
     }
 }
 
@@ -150,7 +154,7 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
                         self?.screen?.playerChooseImageButton.setBackgroundImage(selectedImage, for: .normal)
 						if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
 							let base64String = imageData.base64EncodedString()
-							UserDataModel.shared.savePlayerPhoto(base64String)
+							self?.viewModel.savePlayerPhoto(photo: base64String)
 						}
                     }
                 } else { return }
@@ -165,7 +169,7 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
                 self.screen?.playerChooseImageButton.imageView?.contentMode = .scaleToFill
 				if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
 					let base64String = imageData.base64EncodedString()
-					UserDataModel.shared.savePlayerPhoto(base64String)
+					viewModel.savePlayerPhoto(photo: base64String)
 				}
             }
         }

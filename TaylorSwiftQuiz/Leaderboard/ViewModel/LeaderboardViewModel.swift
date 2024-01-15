@@ -16,11 +16,6 @@ class LeaderboardViewModel {
 		return players
 	}
 	
-	public var getPlayersData: [Player] {
-		let players = UserDataModel.shared.fetchPlayers()
-		return players
-	}
-	
 	public var heightForRowAt: CGFloat {
 		return 100
 	}

@@ -15,6 +15,19 @@ class UserDataModel {
 	var currentPlayer: Player?
     
     private init() { }
+	
+	public func resetCoreDataContainer() {
+			let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Player")
+			let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+
+			do {
+				try context.execute(deleteRequest)
+				try context.save()
+				print("All players have been deleted from CoreData")
+			} catch {
+				print("Error resetting CoreData container: \(error.localizedDescription)")
+			}
+	}
     
     public func saveNewPlayer() {
         newPlayer = Player(context: context)
@@ -40,6 +53,16 @@ class UserDataModel {
 			print("error saving player photo: \(error.localizedDescription)")
 		}
 	}
+
+	public func saveCustomPhoto() {
+		newPlayer?.photo = "custom"
+		do {
+			try context.save()
+		} catch {
+			print("error saving custom player photo: \(error.localizedDescription)")
+		}
+	}
+	
     
     public func saveDifficulty(_ difficulty: String) {
         newPlayer?.difficulty = difficulty
@@ -90,17 +113,6 @@ class UserDataModel {
 			return 0
 		}
 	}
-    
-    public func fetchPlayers() -> [Player] {
-        let fetchRequest: NSFetchRequest<Player> = Player.fetchRequest()
-		var players = [Player]()
-        do {
-			players = try context.fetch(fetchRequest)
-        } catch {
-			print("Error fetching players: \(error.localizedDescription)")
-        }
-		return players
-    }
 
 	public func deleteCurrentSessionData() {
 		if let objectToDelete = currentPlayer {

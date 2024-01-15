@@ -21,14 +21,16 @@ class RealmService {
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 
 			try realm.write {
-				var player = PlayerRealm()
-				if let name = UserDataModel.shared.newPlayer?.name,
-				   let points = UserDataModel.shared.newPlayer?.points,
-				   let difficulty = UserDataModel.shared.newPlayer?.difficulty,
-				   let era = UserDataModel.shared.newPlayer?.era,
-				   let photo = UserDataModel.shared.newPlayer?.photo {
-					player = PlayerRealm(name, photo, era, difficulty, 0, points)
+				guard let newPlayer = UserDataModel.shared.newPlayer,
+					  let name = newPlayer.name,
+				      let difficulty = newPlayer.difficulty,
+					  let era = newPlayer.era,
+				      let photo = newPlayer.photo
+				else {
+					print("Invalid or incomplete data for new player")
+					return
 				}
+				let player = PlayerRealm(name, photo, era, difficulty, 0, newPlayer.points)
 			  realm.add(player)
 			}
 			UserDataModel.shared.deleteCurrentSessionData()
@@ -49,14 +51,24 @@ class RealmService {
 			
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 			
-			orderedPlayers = realm.objects(PlayerRealm.self)
-				.sorted(by: { if $0.points != $1.points { // pontuation is different
+			let allPlayers = realm.objects(PlayerRealm.self)
+			if allPlayers.count < 2 {
+				return allPlayers
+			}
+			
+			orderedPlayers = realm.objects(PlayerRealm.self).sorted(by: {
+				if $0.points != $1.points { // pontuation is different
 					return $0.points > $1.points
 				} else { // pontuation is the same, check difficulty
 					let difficulties = ["easy", "intermediate", "hard"]
-					return difficulties.firstIndex(of: $0.difficulty)! < difficulties.firstIndex(of: $1.difficulty)!
+					if let index0 = difficulties.firstIndex(of: $0.difficulty),
+					   let index1 = difficulties.firstIndex(of: $1.difficulty) {
+						return index0 < index1
+					} else {
+						return false
+					}
 				}
-				})
+			})
 			if let players = orderedPlayers {
 				rankedPlayers = rankPlayers(players, realm)
 			}
@@ -84,4 +96,27 @@ class RealmService {
 		}
 		return realm.objects(PlayerRealm.self)
 	}
+	
+	static func deleteRealmFile() {
+		let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
+
+		let realmURLs = [
+			realmURL,
+			realmURL.appendingPathExtension("lock"),
+			realmURL.appendingPathExtension("note"),
+			realmURL.appendingPathExtension("management")
+		]
+
+		let fileManager = FileManager.default
+		for URL in realmURLs {
+			do {
+				if fileManager.fileExists(atPath: URL.path) {
+					try fileManager.removeItem(at: URL)
+				}
+			} catch {
+				print("Error deleting Realm file: \(error)")
+			}
+		}
+	}
+
 }

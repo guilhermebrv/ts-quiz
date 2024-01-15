@@ -9,7 +9,14 @@ import UIKit
 
 class PlayerDetailsViewModel {
     
-    //private var player: [Player] = [Player]()
+	public func checkIfUserSelectedPhoto() -> Bool {
+		if UserDataModel.shared.newPlayer?.photo == nil {
+			UserDataModel.shared.saveCustomPhoto()
+			return false
+		} else {
+			return true
+		}
+	}
     
     public func createNewPlayer() {
         UserDataModel.shared.saveNewPlayer()
@@ -18,4 +25,8 @@ class PlayerDetailsViewModel {
     public func savePlayerName(name: String, id: UUID) {
         UserDataModel.shared.savePlayerName(name, id)
     }
+	
+	public func savePlayerPhoto(photo: String) {
+		UserDataModel.shared.savePlayerPhoto(photo)
+	}
 }

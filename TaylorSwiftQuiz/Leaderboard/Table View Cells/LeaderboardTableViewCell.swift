@@ -38,10 +38,12 @@ extension LeaderboardTableViewCell {
 				"midnights": .midnights]
 		screen.bgView.backgroundColor = eraColorMap[player.era]
 		screen.playerNameLabel.text = player.name
-		screen.playerPositionLabel.text = "#\(player.rank)"
+		if player.rank != 0 {
+			screen.playerPositionLabel.text = "#\(player.rank)"
+		}
 		screen.playerDifficultyLabel.text = player.difficulty
 		screen.playerScoreButton.setTitle(String(player.points), for: .normal)
-		if player.photo.isEmpty {
+		if player.photo != "custom" {
 			if let data = Data(base64Encoded: player.photo) {
 				let image = UIImage(data: data)
 				screen.playerPhoto.image = image
