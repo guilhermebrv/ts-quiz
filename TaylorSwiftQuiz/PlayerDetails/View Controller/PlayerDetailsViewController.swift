@@ -15,6 +15,7 @@ class PlayerDetailsViewController: UIViewController {
     private var screen: PlayerDetailsView?
     private var alertController: SelectPhotoAlertController?
     private var cameraPicker: UIImagePickerController = UIImagePickerController()
+	private var selectedPhoto: Bool?
         
     override func loadView() {
         screen = PlayerDetailsView()
@@ -28,6 +29,7 @@ class PlayerDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		viewModel.createNewPlayer()
         signProtocols()
         dismissKeyBoard()
         alertController = SelectPhotoAlertController(controller: self)
@@ -127,10 +129,8 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         }
         let nextScreen = ChooseDifficultyViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
-        viewModel.createNewPlayer()
         viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
-		let photoSelected = viewModel.checkIfUserSelectedPhoto()
-		if !photoSelected {
+		if !(selectedPhoto ?? true) {
 			UserDataModel.shared.newPlayer?.photo = "custom"
 		}
     }
@@ -155,6 +155,7 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
 						if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
 							let base64String = imageData.base64EncodedString()
 							self?.viewModel.savePlayerPhoto(photo: base64String)
+							self?.selectedPhoto = true
 						}
                     }
                 } else { return }
@@ -170,6 +171,7 @@ extension PlayerDetailsViewController: UINavigationControllerDelegate, UIImagePi
 				if let imageData = selectedImage.jpegData(compressionQuality: 0.5) {
 					let base64String = imageData.base64EncodedString()
 					viewModel.savePlayerPhoto(photo: base64String)
+					selectedPhoto = true
 				}
             }
         }

@@ -86,7 +86,7 @@ class RealmService {
 			
 			for player in orderedPlayers {
 				if let previous = previousPlayer {
-					if !(previous.points == player.points) || !(previous.difficulty == player.difficulty) {
+					if previous.points != player.points || previous.difficulty != player.difficulty {
 						currentRank += 1
 					}
 				}

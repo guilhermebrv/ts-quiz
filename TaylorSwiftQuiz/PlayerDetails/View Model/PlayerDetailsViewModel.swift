@@ -9,15 +9,6 @@ import UIKit
 
 class PlayerDetailsViewModel {
     
-	public func checkIfUserSelectedPhoto() -> Bool {
-		if UserDataModel.shared.newPlayer?.photo == nil {
-			UserDataModel.shared.saveCustomPhoto()
-			return false
-		} else {
-			return true
-		}
-	}
-    
     public func createNewPlayer() {
         UserDataModel.shared.saveNewPlayer()
     }
