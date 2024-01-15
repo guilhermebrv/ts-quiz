@@ -63,7 +63,7 @@ class RealmService {
 					let difficulties = ["easy", "intermediate", "hard"]
 					if let index0 = difficulties.firstIndex(of: $0.difficulty),
 					   let index1 = difficulties.firstIndex(of: $1.difficulty) {
-						return index0 < index1
+						return index0 > index1
 					} else {
 						return false
 					}
