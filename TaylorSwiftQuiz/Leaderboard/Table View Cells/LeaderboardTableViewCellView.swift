@@ -110,8 +110,8 @@ class LeaderboardTableViewCellView: UIView {
 			playerPhoto.heightAnchor.constraint(equalToConstant: 60),
 			
 			playerStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-			playerStackView.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 8),
-			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -10),
+			playerStackView.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 6),
+			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -6),
 			playerStackView.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 15),
 			playerStackView.trailingAnchor.constraint(equalTo: playerScoreButton.leadingAnchor, constant: -15),
 			
