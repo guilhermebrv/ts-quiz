@@ -27,6 +27,7 @@ class LeaderboardsViewController: UIViewController {
 		Task {
 			players = await viewModel.getDataFromRealm()
 			screen?.playersScoresTableView.reloadData()
+			screen?.spinner.stopAnimating()
 		}
     }
 }

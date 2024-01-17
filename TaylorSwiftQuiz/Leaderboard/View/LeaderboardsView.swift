@@ -76,7 +76,7 @@ class LeaderboardsView: UIView {
 	
 	private func addElements() {
 		addSubview(leaderboardLabel)
-		addSubview(spinner)
+		playersScoresTableView.addSubview(spinner)
 		addSubview(playersScoresTableView)
 		addSubview(startNewGameButton)
 	}

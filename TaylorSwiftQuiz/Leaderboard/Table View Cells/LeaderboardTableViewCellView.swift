@@ -53,7 +53,7 @@ class LeaderboardTableViewCellView: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = .customWhite
 		label.text = "#1"
-		label.font = UIFont(name: "Suisse Int'l Mono", size: 24)
+		label.font = UIFont(name: "Suisse Int'l Mono", size: 22)
 		return label
 	}()
 	
@@ -114,7 +114,7 @@ class LeaderboardTableViewCellView: UIView {
 			
 			playerStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
 			playerStackView.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 15),
-			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -22),
+			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -15),
 			playerStackView.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 7),
 			playerStackView.trailingAnchor.constraint(equalTo: playerScoreButton.leadingAnchor, constant: -7),
 			
