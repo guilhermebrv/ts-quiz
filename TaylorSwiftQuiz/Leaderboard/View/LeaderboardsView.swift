@@ -26,6 +26,14 @@ class LeaderboardsView: UIView {
 		return label
 	}()
 	
+	lazy var spinner: UIActivityIndicatorView = {
+		let spinner = UIActivityIndicatorView(style: .large)
+		spinner.translatesAutoresizingMaskIntoConstraints = false
+		spinner.center = superview?.center ?? CGPoint()
+		spinner.hidesWhenStopped = true
+		return spinner
+	}()
+	
 	lazy var playersScoresTableView: UITableView = {
 		let tableview = UITableView()
 		tableview.translatesAutoresizingMaskIntoConstraints = false
@@ -68,6 +76,7 @@ class LeaderboardsView: UIView {
 	
 	private func addElements() {
 		addSubview(leaderboardLabel)
+		addSubview(spinner)
 		addSubview(playersScoresTableView)
 		addSubview(startNewGameButton)
 	}
@@ -77,6 +86,9 @@ class LeaderboardsView: UIView {
 			leaderboardLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 20),
 			leaderboardLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
 			
+			spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
+			spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
+						
 			playersScoresTableView.topAnchor.constraint(equalTo: leaderboardLabel.bottomAnchor, constant: 15),
 			playersScoresTableView.leadingAnchor.constraint(equalTo: leadingAnchor),
 			playersScoresTableView.trailingAnchor.constraint(equalTo: trailingAnchor),

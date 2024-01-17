@@ -22,6 +22,7 @@ class LeaderboardsViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		screen?.spinner.startAnimating()
 		signProtocols()
 		Task {
 			players = await viewModel.getDataFromRealm()

@@ -127,7 +127,7 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         if let button = screen?.nextStepButton {
             tappedButtonEffect(button: button)
         }
-        let nextScreen = ChooseDifficultyViewController()
+        let nextScreen = LeaderboardsViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
         viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
 		if selectedPhoto == false {

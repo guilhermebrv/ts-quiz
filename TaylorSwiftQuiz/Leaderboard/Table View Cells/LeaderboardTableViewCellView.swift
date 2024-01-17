@@ -44,7 +44,7 @@ class LeaderboardTableViewCellView: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = .customWhite
 		label.text = "Test Name"
-		label.font = UIFont(name: "Suisse Int'l Mono", size: 15)
+		label.font = UIFont(name: "Suisse Int'l Mono", size: 18)
 		return label
 	}()
 	
@@ -53,7 +53,7 @@ class LeaderboardTableViewCellView: UIView {
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.textColor = .customWhite
 		label.text = "#1"
-		label.font = UIFont(name: "Suisse Int'l Mono", size: 12)
+		label.font = UIFont(name: "Suisse Int'l Mono", size: 24)
 		return label
 	}()
 	
@@ -91,9 +91,9 @@ class LeaderboardTableViewCellView: UIView {
 		addSubview(bgView)
 		addSubview(playerPhoto)
 		addSubview(playerStackView)
+		addSubview(playerPositionLabel)
 		playerStackView.addArrangedSubview(playerNameLabel)
 		playerStackView.addArrangedSubview(playerDifficultyLabel)
-		playerStackView.addArrangedSubview(playerPositionLabel)
 		addSubview(playerScoreButton)
 	}
 	
@@ -104,16 +104,19 @@ class LeaderboardTableViewCellView: UIView {
 			bgView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
 			bgView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
 			
-			playerPhoto.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 20),
+			playerPositionLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+			playerPositionLabel.leadingAnchor.constraint(equalTo: bgView.leadingAnchor, constant: 7),
+			
+			playerPhoto.leadingAnchor.constraint(equalTo: playerPositionLabel.trailingAnchor, constant: 7),
 			playerPhoto.centerYAnchor.constraint(equalTo: centerYAnchor),
 			playerPhoto.widthAnchor.constraint(equalToConstant: 60),
 			playerPhoto.heightAnchor.constraint(equalToConstant: 60),
 			
 			playerStackView.centerYAnchor.constraint(equalTo: centerYAnchor),
-			playerStackView.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 6),
-			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -6),
-			playerStackView.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 15),
-			playerStackView.trailingAnchor.constraint(equalTo: playerScoreButton.leadingAnchor, constant: -15),
+			playerStackView.topAnchor.constraint(equalTo: bgView.topAnchor, constant: 15),
+			playerStackView.bottomAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -22),
+			playerStackView.leadingAnchor.constraint(equalTo: playerPhoto.trailingAnchor, constant: 7),
+			playerStackView.trailingAnchor.constraint(equalTo: playerScoreButton.leadingAnchor, constant: -7),
 			
 			playerScoreButton.centerYAnchor.constraint(equalTo: centerYAnchor),
 			playerScoreButton.trailingAnchor.constraint(equalTo: bgView.trailingAnchor, constant: -20),
