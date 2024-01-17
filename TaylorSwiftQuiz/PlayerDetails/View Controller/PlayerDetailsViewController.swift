@@ -15,7 +15,7 @@ class PlayerDetailsViewController: UIViewController {
     private var screen: PlayerDetailsView?
     private var alertController: SelectPhotoAlertController?
     private var cameraPicker: UIImagePickerController = UIImagePickerController()
-	private var selectedPhoto: Bool?
+	private var selectedPhoto: Bool = false
         
     override func loadView() {
         screen = PlayerDetailsView()
@@ -130,7 +130,7 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         let nextScreen = ChooseDifficultyViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
         viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
-		if !(selectedPhoto ?? true) {
+		if selectedPhoto == false {
 			UserDataModel.shared.newPlayer?.photo = "custom"
 		}
     }

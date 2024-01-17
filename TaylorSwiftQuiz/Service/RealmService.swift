@@ -16,7 +16,9 @@ class RealmService {
 		let app = RealmSwift.App(id: "ts-quiz2-akffn")
 		do {
 			let user = try await app.login(credentials: .anonymous)
-			let config = user.flexibleSyncConfiguration()
+			let config = user.flexibleSyncConfiguration(initialSubscriptions: { subscriptions in
+				subscriptions.append(QuerySubscription<PlayerRealm>(name: "players"))
+			})
 
 			let realm = try await Realm(configuration: config, downloadBeforeOpen: .once)
 
