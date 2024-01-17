@@ -69,12 +69,12 @@ extension PlayerDetailsViewController: UITextFieldDelegate {
         if updatedText.count > maxCharacterLimit {
             animationMaxCharacters()
             return false
-        }
-        if textField.text?.count ?? 0 < minCharacterLimit {
-             animationMinCharacters()
-             return true
-        }
-        screen?.alertMaxCharactersLabel.alpha = 0.0
+		} else if updatedText.count < minCharacterLimit {
+			   animationMinCharacters()
+	   } else {
+		   screen?.alertMaxCharactersLabel.alpha = 0.0
+		}
+        //screen?.alertMaxCharactersLabel.alpha = 0.0
         return true
     }
     
@@ -127,7 +127,7 @@ extension PlayerDetailsViewController: PlayerDetailsViewProtocol {
         if let button = screen?.nextStepButton {
             tappedButtonEffect(button: button)
         }
-        let nextScreen = LeaderboardsViewController()
+        let nextScreen = ChooseDifficultyViewController()
         self.navigationController?.pushViewController(nextScreen, animated: true)
         viewModel.savePlayerName(name: screen?.playerNameTextField.text ?? "", id: UUID())
 		if selectedPhoto == false {

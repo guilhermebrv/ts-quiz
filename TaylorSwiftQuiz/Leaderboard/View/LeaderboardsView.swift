@@ -30,6 +30,7 @@ class LeaderboardsView: UIView {
 		let spinner = UIActivityIndicatorView(style: .large)
 		spinner.translatesAutoresizingMaskIntoConstraints = false
 		spinner.center = superview?.center ?? CGPoint()
+		spinner.color = .lightGray
 		spinner.hidesWhenStopped = true
 		return spinner
 	}()
