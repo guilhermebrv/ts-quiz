@@ -74,7 +74,6 @@ extension PlayerDetailsViewController: UITextFieldDelegate {
 	   } else {
 		   screen?.alertMaxCharactersLabel.alpha = 0.0
 		}
-        //screen?.alertMaxCharactersLabel.alpha = 0.0
         return true
     }
     

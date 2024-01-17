@@ -20,6 +20,7 @@ class QuestionsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         signProtocols()
         setPlayerName()
         setEraColor()

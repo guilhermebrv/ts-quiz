@@ -22,6 +22,7 @@ class LeaderboardsViewController: UIViewController {
 	
     override func viewDidLoad() {
         super.viewDidLoad()
+		navigationController?.interactivePopGestureRecognizer?.isEnabled = false
 		screen?.spinner.startAnimating()
 		signProtocols()
 		Task {

@@ -19,6 +19,7 @@ class TotalScoreViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		navigationController?.interactivePopGestureRecognizer?.isEnabled = false
         signProtocols()
         setEraColor()
         setPlayerName()
