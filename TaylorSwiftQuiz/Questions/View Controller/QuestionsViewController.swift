@@ -17,6 +17,11 @@ class QuestionsViewController: UIViewController {
         screen = QuestionsView()
         view = screen
     }
+	
+	override func viewWillAppear(_ animated: Bool) {
+		super.viewWillAppear(animated)
+		hideItemsWhileLoading()
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,6 +66,7 @@ extension QuestionsViewController {
 					if data {
 						isDataLoaded = true
 						self.updateQuestions()
+						self.finishedLoading()
 					} else {
 						print("error fetching data from API")
 					}
@@ -75,6 +81,26 @@ extension QuestionsViewController {
         screen?.nextButton.isEnabled = false
         screen?.confirmButton.isEnabled = false
     }
+	private func hideItemsWhileLoading() {
+		screen?.spinner.startAnimating()
+		screen?.questionNumberLabel.isHidden = true
+		screen?.startNewGameButton.isHidden = true
+		screen?.nextButton.isHidden = true
+		screen?.confirmButton.isHidden = true
+		screen?.firstOptionButton.isHidden = true
+		screen?.secondOptionButton.isHidden = true
+		screen?.thirdOptionButton.isHidden = true
+	}
+	private func finishedLoading() {
+		screen?.spinner.stopAnimating()
+		screen?.questionNumberLabel.isHidden = false
+		screen?.startNewGameButton.isHidden = false
+		screen?.nextButton.isHidden = false
+		screen?.confirmButton.isHidden = false
+		screen?.firstOptionButton.isHidden = false
+		screen?.secondOptionButton.isHidden = false
+		screen?.thirdOptionButton.isHidden = false
+	}
 	private func updateQuestions() {
 		if self.currentIndex == 0 {
 			questions = viewModel.questionsData

@@ -41,6 +41,15 @@ class QuestionsView: UIView {
         image.backgroundColor = .customWhite
         return image
     }()
+	
+	lazy var spinner: UIActivityIndicatorView = {
+		let spinner = UIActivityIndicatorView(style: .large)
+		spinner.translatesAutoresizingMaskIntoConstraints = false
+		spinner.center = superview?.center ?? CGPoint()
+		spinner.color = .lightGray
+		spinner.hidesWhenStopped = true
+		return spinner
+	}()
     
     lazy var playerName: UILabel = {
         let label = UILabel()
@@ -216,6 +225,7 @@ class QuestionsView: UIView {
     
     private func addElements() {
         addSubview(bgView)
+		addSubview(spinner)
         addSubview(playerPhoto)
         addSubview(playerName)
         addSubview(pointsLabel)
@@ -238,6 +248,9 @@ class QuestionsView: UIView {
             bgView.bottomAnchor.constraint(equalTo: bottomAnchor),
             bgView.leadingAnchor.constraint(equalTo: leadingAnchor),
             bgView.trailingAnchor.constraint(equalTo: trailingAnchor),
+			
+			spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
+			spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
             
             playerPhoto.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 10),
             playerPhoto.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
