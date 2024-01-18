@@ -16,6 +16,7 @@ class FirstScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+		UserDataModel.shared.resetCoreDataContainer()
         tappedImageAnimation()
         imageInitialAnimation()
     }

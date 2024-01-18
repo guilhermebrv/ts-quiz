@@ -21,10 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to select a configuration to create the new scene with.
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
     }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        self.saveContext()
-    }
 
     // MARK: - Core Data stack
     lazy var persistentContainer: NSPersistentContainer = {
