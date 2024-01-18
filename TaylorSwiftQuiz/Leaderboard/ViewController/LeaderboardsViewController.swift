@@ -27,8 +27,10 @@ class LeaderboardsViewController: UIViewController {
 		signProtocols()
 		Task {
 			players = await viewModel.getDataFromRealm()
-			screen?.playersScoresTableView.reloadData()
-			screen?.spinner.stopAnimating()
+			DispatchQueue.main.async {
+				self.screen?.playersScoresTableView.reloadData()
+				self.screen?.spinner.stopAnimating()
+			}
 		}
     }
 }

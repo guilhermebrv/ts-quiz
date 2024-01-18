@@ -17,7 +17,7 @@ class UserDataModel {
     private init() { }
 	
 	public func resetCoreDataContainer() {
-			let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "Player")
+		let fetchRequest: NSFetchRequest<NSFetchRequestResult> = Player.fetchRequest()
 			let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
 
 			do {
