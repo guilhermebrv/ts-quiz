@@ -33,6 +33,7 @@ class LeaderboardsViewController: UIViewController {
 			}
 		}
     }
+		
 }
 
 extension LeaderboardsViewController {

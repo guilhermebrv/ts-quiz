@@ -162,16 +162,17 @@ class TotalScoreView: UIView {
             scoreStackView.topAnchor.constraint(equalTo: playerStackView.bottomAnchor, constant: 30),
             
             leaderboardButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            leaderboardButton.topAnchor.constraint(equalTo: scoreStackView.bottomAnchor, constant: 40),
+            leaderboardButton.bottomAnchor.constraint(equalTo: startNewGameButton.topAnchor, constant: -20),
             leaderboardButton.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             leaderboardButton.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             leaderboardButton.heightAnchor.constraint(equalToConstant: 60),
             
             startNewGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            startNewGameButton.topAnchor.constraint(equalTo: leaderboardButton.bottomAnchor, constant: 20),
             startNewGameButton.leadingAnchor.constraint(equalTo: leaderboardButton.leadingAnchor),
             startNewGameButton.trailingAnchor.constraint(equalTo: leaderboardButton.trailingAnchor),
             startNewGameButton.heightAnchor.constraint(equalToConstant: 60),
+			startNewGameButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+
         ])
     }
 }

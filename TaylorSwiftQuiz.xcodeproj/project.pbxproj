@@ -125,15 +125,17 @@
 			path = ChooseEra;
 			sourceTree = "<group>";
 		};
-		2B16625A2AC2F1C9009ECF71 /* Model */ = {
+		2B16625A2AC2F1C9009ECF71 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				2B2BCF3E2B3DEB63003D73AA /* UserData.xcdatamodeld */,
 				2B2BCF412B3DFDD5003D73AA /* UserDataModel.swift */,
+				2BF853702B49B6EB00AE3855 /* QuestionsService.swift */,
 				2BF853722B49B72700AE3855 /* QuestionsData.swift */,
 				2B07B99C2B4D7955002664E4 /* PlayerRealm.swift */,
+				2BCEFB0C2B4F09E400AE381C /* RealmService.swift */,
 			);
-			path = Model;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		2B1662612AC344BA009ECF71 /* Questions */ = {
@@ -312,7 +314,7 @@
 				2B2F68C72B3B359C00ABCCD4 /* Extensions */,
 				2BAD55BD2B321C7000CC0598 /* Alerts */,
 				2BF8536F2B49B6D800AE3855 /* Service */,
-				2B16625A2AC2F1C9009ECF71 /* Model */,
+				2B16625A2AC2F1C9009ECF71 /* Models */,
 				2B9135342B4588CD002AC412 /* Leaderboard */,
 				2BA928D02B442EF0005B9330 /* TotalScore */,
 				2B1662612AC344BA009ECF71 /* Questions */,
@@ -454,8 +456,6 @@
 		2BF8536F2B49B6D800AE3855 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2BF853702B49B6EB00AE3855 /* QuestionsService.swift */,
-				2BCEFB0C2B4F09E400AE381C /* RealmService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";

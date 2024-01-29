@@ -8,10 +8,10 @@
 import UIKit
 
 class QuestionsViewController: UIViewController {
-    var currentIndex: Int = 0
-	var questions: [Difficulty]?
     private var screen: QuestionsView?
     private var viewModel: QuestionsViewModel = QuestionsViewModel()
+	var currentIndex: Int = 0
+	var questions: [Difficulty]?
     
     override func loadView() {
         screen = QuestionsView()

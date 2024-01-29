@@ -98,27 +98,4 @@ class RealmService {
 		}
 		return realm.objects(PlayerRealm.self)
 	}
-	
-	static func deleteRealmFile() {
-		let realmURL = Realm.Configuration.defaultConfiguration.fileURL!
-
-		let realmURLs = [
-			realmURL,
-			realmURL.appendingPathExtension("lock"),
-			realmURL.appendingPathExtension("note"),
-			realmURL.appendingPathExtension("management")
-		]
-
-		let fileManager = FileManager.default
-		for URL in realmURLs {
-			do {
-				if fileManager.fileExists(atPath: URL.path) {
-					try fileManager.removeItem(at: URL)
-				}
-			} catch {
-				print("Error deleting Realm file: \(error)")
-			}
-		}
-	}
-
 }

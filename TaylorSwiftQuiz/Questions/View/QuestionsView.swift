@@ -265,10 +265,10 @@ class QuestionsView: UIView {
             pointsLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: 15),
             pointsLabel.leadingAnchor.constraint(equalTo: centerXAnchor),
             
-            questionNumberLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: 25),
+            questionNumberLabel.topAnchor.constraint(equalTo: playerName.bottomAnchor, constant: 30),
             questionNumberLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             
-            questionLabel.topAnchor.constraint(equalTo: questionNumberLabel.bottomAnchor, constant: 12),
+            questionLabel.topAnchor.constraint(equalTo: questionNumberLabel.bottomAnchor, constant: 20),
             questionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
             questionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
@@ -300,22 +300,24 @@ class QuestionsView: UIView {
             thirdOptionLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
             confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            confirmButton.topAnchor.constraint(equalTo: thirdOptionLabel.bottomAnchor, constant: 30),
             confirmButton.leadingAnchor.constraint(equalTo: questionLabel.leadingAnchor),
             confirmButton.trailingAnchor.constraint(equalTo: questionLabel.trailingAnchor),
             confirmButton.heightAnchor.constraint(equalToConstant: 60),
+			confirmButton.bottomAnchor.constraint(equalTo: nextButton.topAnchor, constant: -20),
             
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            nextButton.topAnchor.constraint(equalTo: confirmButton.bottomAnchor, constant: 20),
             nextButton.leadingAnchor.constraint(equalTo: questionLabel.leadingAnchor),
             nextButton.trailingAnchor.constraint(equalTo: questionLabel.trailingAnchor),
             nextButton.heightAnchor.constraint(equalToConstant: 60),
+			nextButton.bottomAnchor.constraint(equalTo: startNewGameButton.topAnchor, constant: -20),
+
             
             startNewGameButton.centerXAnchor.constraint(equalTo: centerXAnchor),
-            startNewGameButton.topAnchor.constraint(equalTo: nextButton.bottomAnchor, constant: 20),
             startNewGameButton.leadingAnchor.constraint(equalTo: questionLabel.leadingAnchor),
             startNewGameButton.trailingAnchor.constraint(equalTo: questionLabel.trailingAnchor),
             startNewGameButton.heightAnchor.constraint(equalToConstant: 60),
+			startNewGameButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
+
         ])
     }
 }

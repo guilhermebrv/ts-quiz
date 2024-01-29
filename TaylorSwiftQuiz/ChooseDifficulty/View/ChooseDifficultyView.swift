@@ -215,11 +215,11 @@ class ChooseDifficultyView: UIView {
             hardLabel.leadingAnchor.constraint(equalTo: hardButton.trailingAnchor, constant: 30),
             hardLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -30),
             
-            nextButton.topAnchor.constraint(equalTo: hardLabel.bottomAnchor, constant: 90),
             nextButton.centerXAnchor.constraint(equalTo: centerXAnchor),
             nextButton.leadingAnchor.constraint(equalTo: chooseDifficultyLabel.leadingAnchor),
             nextButton.trailingAnchor.constraint(equalTo: chooseDifficultyLabel.trailingAnchor),
-            nextButton.heightAnchor.constraint(equalToConstant: 60)
+            nextButton.heightAnchor.constraint(equalToConstant: 60),
+			nextButton.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor, constant: -20),
         ])
     }
 }
