@@ -2,13 +2,14 @@
 
   I started creating this app as my first iOS development personal project while being a completely beginner - around 10 days into learning Swift and UIKit. Inspired by my love for Taylor Swift's music, it began as a simple quiz app but grew as I was studying and learning. As I was developing it, I continually added some features and refactored code to improve my skills, migrating from MVC to MVVM, for example. 
 
-  That being said, it reflects my journey from a novice to a little bit more experienced developer and combines my passion for music with my growing proficiency in iOS development. That being said, 
+  That being said, it reflects my journey from a novice to a little bit more experienced developer and combines my passion for music with my growing proficiency in iOS development. 
 
-<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/041fc826-7150-4f1f-8c76-de4472ac5380" width="180" height="400" />
-<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/8aa96808-076e-45f0-bfa3-66fd0c40f275" width="180" height="400" />
-<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/6ca6d5aa-9fe9-432c-aee4-42f3ba667926" width="180" height="400" />
-<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/f5c33e99-3fdf-4bf2-b220-62fc70323ede" width="180" height="400" />
-<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/1a2483f1-3731-438f-83ed-e332a99de971" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/d4bf017a-570e-4566-89d4-07d7a0a55560" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/48d583cd-469d-4a8c-b7cf-16fd4b0a87b7" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/36bb2d91-931a-4798-ad77-15d65efb3d6a" width="180" height="400" />
+<img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/28e77289-6b51-4e5f-8176-dc81e9224ce3" width="180" height="400" />
+
+
 
 ## Key Features
 
