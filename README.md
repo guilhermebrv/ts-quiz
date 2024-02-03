@@ -1,6 +1,6 @@
 # ts-quiz
 
-  I started creating this app as my first iOS development personal project while being a completely beginner - around 10 days into learning Swift and UIKit. Inspired by my love for Taylor Swift's music, it began as a simple quiz app but grew as I was studying and learning. As I was developing it, I continually added some features and refactored code to improve my skills, migrating from MVC to MVVM, for example. 
+ I started creating this app as my first iOS development personal project while being a completely beginner - around 10 days into learning Swift and UIKit. Inspired by my love for Taylor Swift's music, it began as a simple quiz app but grew as I was studying and learning. And while I was developing it, I continually added some new features and refactored the code to improve my skills and to adapt with what I had learn.
 
   That being said, it reflects my journey from a novice to a little bit more experienced developer and combines my passion for music with my growing proficiency in iOS development. 
 
@@ -8,8 +8,6 @@
 <img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/48d583cd-469d-4a8c-b7cf-16fd4b0a87b7" width="180" height="400" />
 <img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/36bb2d91-931a-4798-ad77-15d65efb3d6a" width="180" height="400" />
 <img src="https://github.com/guilhermebrv/ts-quiz/assets/104163003/28e77289-6b51-4e5f-8176-dc81e9224ce3" width="180" height="400" />
-
-
 
 ## Key Features
 
